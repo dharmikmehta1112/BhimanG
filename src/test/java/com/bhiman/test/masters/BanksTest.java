@@ -25,8 +25,8 @@ public class BanksTest extends BaseTest {
 		String index_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(index_actualUrl, index_expectedUrl);
 		LOG.info("At Index/Home page");
-		Banks.mouseHoverToMasters();
-		Banks.clickOnBanks();
+		bank.mouseHoverToMasters();
+		bank.clickOnBanks();
 		String banks_expectedUrl = "http://103.50.162.196/testing/bank.php";
 		String banks_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(banks_actualUrl, banks_expectedUrl);

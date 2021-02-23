@@ -21,8 +21,9 @@ public class PropertyReader {
 	 */
 	public static String getLocatorValue(String key) {
 		String value = null;
-//		String path = Constants.dir + "\\src\\main\\resources\\Configuration\\application.properties";
-		String path = "D:\\Java Program\\BhimanGroup\\ProV007\\src\\main\\resources\\Cofiguration\\application.properties";
+		String path = "./src/main/resources/Configuration/application.properties";
+//		String path = Constants.dir + "/src/main/resources/Configuration/application.properties";
+//		String path = "D:\\Java Program\\BhimanGroup\\ProV007\\src\\main\\resources\\Cofiguration\\application.properties";
 		
 		try {
 			Constants.fis = new FileInputStream(path);

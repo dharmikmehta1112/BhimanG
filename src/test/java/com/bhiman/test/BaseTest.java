@@ -1,5 +1,6 @@
 package com.bhiman.test;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,6 +18,12 @@ import com.bhiman.main.utility.PropertyReader;
 
 public class BaseTest extends UIKeywords {
 	
+//	public static WebElement mobile_no = Constants.driver.findElement(By.name("username"));
+//	
+//	public static WebElement password = Constants.driver.findElement(By.name("password"));
+//	
+//	public static WebElement login_Btn = Constants.driver.findElement(By.cssSelector("button[type='submit']"));
+	
 	@FindBy(name = "username")
 	private static WebElement mobile_no;
 	
@@ -25,16 +32,16 @@ public class BaseTest extends UIKeywords {
 
 	@FindBy(css = "button[type='submit']")
 	private static WebElement login_Btn;
-	
+
 	BaseTest test = PageFactory.initElements(Constants.driver, BaseTest.class);
 	
 	@BeforeMethod
 	public void setUp() {
 		UIKeywords.openBrowser(PropertyReader.getLocatorValue("browserName"));
 		UIKeywords.openUrl(PropertyReader.getLocatorValue("url"));
-		UIKeywords.enterText(mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
-		UIKeywords.enterText(password, PropertyReader.getLocatorValue("admin_password"));
-		UIKeywords.clickOnElement(login_Btn);	
+		UIKeywords.enterText(test.mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
+		UIKeywords.enterText(test.password, PropertyReader.getLocatorValue("admin_password"));
+		UIKeywords.clickOnElement(test.login_Btn);	
 		}
 	
 	@AfterMethod
