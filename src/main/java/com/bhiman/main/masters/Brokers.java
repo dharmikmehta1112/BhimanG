@@ -69,8 +69,11 @@ public class Brokers {
 	@FindBy(xpath="//select[@id='blood_group']")
 	private static WebElement brokersBlood_group;
 	
-	//@FindBy(name="")
-	//private static WebElement
+	@FindBy(name="//select[@id='status']")
+	private static WebElement brokersStatus;
+	
+	@FindBy(name="//input[@id='resume']")
+	private static WebElement brokersResume;
 	
 	@FindBy(name = "bank_name")
 	private static WebElement brokersBank_name;
