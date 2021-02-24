@@ -84,8 +84,8 @@ public class UIKeywords {
 	 * @param textToEnter as {@code String}.
 	 */
 	public static void enterText(WebElement element, String textToEnter) {
-		LOG.info("Entering text in WebElement: " + Constants.element);
-		Constants.element.sendKeys(textToEnter);
+		LOG.info("Entering text in WebElement: " + textToEnter);
+		element.sendKeys(textToEnter);
 	}
 	
 	/**

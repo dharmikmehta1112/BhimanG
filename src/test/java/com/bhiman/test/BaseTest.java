@@ -39,6 +39,7 @@ public class BaseTest extends UIKeywords {
 	public void setUp() {
 		UIKeywords.openBrowser(PropertyReader.getLocatorValue("browserName"));
 		UIKeywords.openUrl(PropertyReader.getLocatorValue("url"));
+		PageFactory.initElements(Constants.driver, BaseTest.class);
 		UIKeywords.enterText(test.mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
 		UIKeywords.enterText(test.password, PropertyReader.getLocatorValue("admin_password"));
 		UIKeywords.clickOnElement(test.login_Btn);	
