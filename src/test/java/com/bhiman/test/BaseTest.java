@@ -1,14 +1,14 @@
 package com.bhiman.test;
 
-import org.openqa.selenium.By;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterMethod;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-
 import com.bhiman.main.Constants;
 import com.bhiman.main.UIKeywords;
+import com.bhiman.main.WaitsInHelp;
 import com.bhiman.main.utility.PropertyReader;
 
 /**
@@ -17,12 +17,8 @@ import com.bhiman.main.utility.PropertyReader;
  */
 
 public class BaseTest extends UIKeywords {
-	
-//	public static WebElement mobile_no = Constants.driver.findElement(By.name("username"));
-//	
-//	public static WebElement password = Constants.driver.findElement(By.name("password"));
-//	
-//	public static WebElement login_Btn = Constants.driver.findElement(By.cssSelector("button[type='submit']"));
+
+	private static final Logger LOG = Logger.getLogger(BaseTest.class);
 	
 	@FindBy(name = "username")
 	private static WebElement mobile_no;
@@ -33,21 +29,26 @@ public class BaseTest extends UIKeywords {
 	@FindBy(css = "button[type='submit']")
 	private static WebElement login_Btn;
 	
-	@FindBy(xpath = "//button[text()='OK']")
-	private static WebElement okButton;
-
+	@FindBy(xpath = "//button[normalize-space()='OK']")
+	private static WebElement click_ok;
 	
 	@BeforeMethod
 	public void setUp() {
 		UIKeywords.openBrowser(PropertyReader.getLocatorValue("browserName"));
 		UIKeywords.openUrl(PropertyReader.getLocatorValue("url"));
-		BaseTest test = PageFactory.initElements(Constants.driver, BaseTest.class);
-		UIKeywords.enterText(test.mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
-		UIKeywords.enterText(test.password, PropertyReader.getLocatorValue("admin_password"));
-		UIKeywords.clickOnElement(test.login_Btn);
+		PageFactory.initElements(Constants.driver, BaseTest.class);
+		UIKeywords.maximizeWindow();
+		UIKeywords.enterText(mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
+		UIKeywords.enterText(password, PropertyReader.getLocatorValue("admin_password"));
+		UIKeywords.clickOnElement(login_Btn);
+		WaitsInHelp.threadSleepInMilliSeconds(2000);
+		UIKeywords.clickOnElement(click_ok);
+		String expectedURL = "http://103.50.162.196/testing/index.php";
+		String actualURL = UIKeywords.getPageUrl();
+		Assert.assertEquals(expectedURL, actualURL, "Login to application failed.");
 		}
 	
-	@AfterMethod
+//	@AfterMethod
 	public void tearDown() {
 		UIKeywords.closeAllBrowser();
 	}

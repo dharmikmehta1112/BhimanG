@@ -96,7 +96,7 @@ public class Brokers {
 	@FindBy(xpath = "//input[@value = 'Cancel']")
 	private static WebElement brokersCancel;
 
-	// Page Object Methods for Banks page in Masters
+// Page Object Methods for Banks page in Masters
 	
 		public static void mouseHoverToMasters() {
 			LOG.info("Mouse Hover to Masters");
@@ -139,5 +139,5 @@ public class Brokers {
 			LOG.info("Click on Cancel button of Add Bank page.");
 			UIKeywords.clickOnElement(brokersCancel);
 		}
-	
+		
 }
