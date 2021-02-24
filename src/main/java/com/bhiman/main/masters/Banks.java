@@ -3,8 +3,11 @@ package com.bhiman.main.masters;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
+import com.bhiman.main.Constants;
 import com.bhiman.main.UIKeywords;
+import com.bhiman.main.WaitsInHelp;
 
 public class Banks extends UIKeywords {
 	
@@ -12,7 +15,7 @@ public class Banks extends UIKeywords {
 	
 // Page Object Locators for Banks page in Masters --> Intialize at runtime
 	
-	@FindBy(xpath = "//span[text()='Dashboard")			 
+	@FindBy(xpath = "//span[@class='toggle-none' and text() = 'Masters']")			 
 	private static WebElement masters;		
 	
 	@FindBy(xpath = "a[text()='Banks ']")
@@ -76,90 +79,91 @@ public class Banks extends UIKeywords {
 	
 	@FindBy(xpath="//input[@value = 'Cancel']")
 	private static WebElement banks_addBank_cancelBtn;
-
+	
 // Page Object Methods for Banks page in Masters
 	
-	public static void mouseHoverToMasters() {
+	public void mouseHoverToMasters() {
 		LOG.info("At Index page mouse hover to Masters");
+		WaitsInHelp.threadSleepInMilliSeconds(2000);
 		UIKeywords.mouseHover(masters);
 	}
 	
-	public static void clickOnBanks() {
+	public void clickOnBanks() {
 		LOG.info("Clicking on Banks option in Masters");
 		UIKeywords.clickOnElement(masters_banks);
 	}
 	
-	public static void clickOnAddBankButton() {
+	public void clickOnAddBankButton() {
 		LOG.info("Click on Add Bank button of Banks page");
 		UIKeywords.clickOnElement(banks_addBankBtn);
 	}
 	
-	public static void clickOnCopyButton() {
+	public void clickOnCopyButton() {
 		LOG.info("Click on Copy button of Banks page");
 		UIKeywords.clickOnElement(banks_copyBtn);
 	}
 	
-	public static void clickOnExcelButton() {
+	public void clickOnExcelButton() {
 		LOG.info("Click on Excel button of Banks page");
 		UIKeywords.clickOnElement(banks_excelBtn);
 	}
 
-	public static void clickOnCSVButton() {
+	public void clickOnCSVButton() {
 		LOG.info("Click on CSV button of Banks page");
 		UIKeywords.clickOnElement(banks_csvBtn);
 	}
 
-	public static void clickOnPDFButton() {
+	public void clickOnPDFButton() {
 		LOG.info("Click on PDF button of Banks page");
 		UIKeywords.clickOnElement(banks_pdfBtn);
 	}
 
-	public static void clickOnPrintButton() {
+	public void clickOnPrintButton() {
 		LOG.info("Click on Print button of Banks page");
 		UIKeywords.clickOnElement(banks_printBtn);
 	}
 	
-	public static void getTextOFBanksStatusEntries() {
+	public void getTextOFBanksStatusEntries() {
 		LOG.info("Reading text at bottom (showing number of entries) of Banks page");
 		UIKeywords.getText(banks_showEntries);
 	}
 
-	public static void clickOnViewBankButton() {
+	public void clickOnViewBankButton() {
 		LOG.info("Click on View Bank button of Add Bank page.");
 		UIKeywords.clickOnElement(banks_viewBanksBtn);
 	}
 	
-	public static void enterBankName() {
+	public void enterBankName() {
 		LOG.info("Entering Bank Name text to Add Bank form");
 		UIKeywords.enterText(banks_addBank_bankName, "Axis");
 	}
 	
-	public static void enterBankAccountName() {
+	public void enterBankAccountName() {
 		LOG.info("Entering Bank Account Name text to Add Bank form");
 		UIKeywords.enterText(banks_addBank_accountName, "DM");
 	}
 	
-	public static void enterBankAccountNumber() {
+	public void enterBankAccountNumber() {
 		LOG.info("Entering Bank Account No. text to Add Bank form");
 		UIKeywords.enterText(banks_addBank_accountNo, "257825708953");
 	}
 	
-	public static void selectBankAccountTypeAsSavings() {
+	public void selectBankAccountTypeAsSavings() {
 		LOG.info("Selecting Bank Account Type as Savings to Add Bank form");
 		UIKeywords.selectByTextFromDropdown(banks_addBank_bankAccountType, "Savings");
 	}
 
-	public static void selectBankAccountTypeAsCurrent() {
+	public void selectBankAccountTypeAsCurrent() {
 		LOG.info("Selecting Bank Account Type as Current to Add Bank form");
 		UIKeywords.selectByTextFromDropdown(banks_addBank_bankAccountType, "Current");
 	}
 
-	public static void enterBankIFSCCode() {
+	public void enterBankIFSCCode() {
 		LOG.info("Entering Bank IFSC Code to Add Bank form");
 		UIKeywords.enterText(banks_addBank_ifscCode, "257825708953");
 	}
 
-	public static void enterBankMICRCode() {
+	public void enterBankMICRCode() {
 		LOG.info("Entering Bank MICR Code to Add Bank form");
 		UIKeywords.enterText(banks_addBank_micrCode, "257825708953");
 	}
@@ -177,12 +181,12 @@ public class Banks extends UIKeywords {
 	}
 */
 	
-	public static void clickOnSubmitButton() {
+	public void clickOnSubmitButton() {
 		LOG.info("Click on Submit button of Add Bank page.");
 		UIKeywords.clickOnElement(banks_addBank_submitBtn);
 	}
 	
-	public static void clickOnCancelButton() {
+	public void clickOnCancelButton() {
 		LOG.info("Click on Cancel button of Add Bank page.");
 		UIKeywords.clickOnElement(banks_addBank_cancelBtn);
 	}

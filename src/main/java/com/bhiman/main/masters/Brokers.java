@@ -139,5 +139,5 @@ public class Brokers {
 			LOG.info("Master->Brokers: Click on Cancel button of Add Broker page.");
 			UIKeywords.clickOnElement(brokersCancel);
 		}
-	
+		
 }

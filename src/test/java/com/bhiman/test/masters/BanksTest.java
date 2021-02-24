@@ -17,33 +17,21 @@ public class BanksTest extends BaseTest {
 	
 	private static final Logger LOG = Logger.getLogger(BanksTest.class);
 	
-	Banks bank = PageFactory.initElements(Constants.driver, Banks.class);
-/*
-		String addbank_expectedUrl = "http://103.50.162.196/testing/bank.php#";
-		String addbank_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(addbank_actualUrl, addbank_expectedUrl);
-//	Click on submit w/o enter any text
-		LOG.info("At Add Bank page after click on AddBank button");
-		Banks.clickOnViewBank();
-		String viewbank_expectedUrl = "http://103.50.162.196/testing/bank.php#";
-		String viewbank_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(viewbank_actualUrl, viewbank_expectedUrl);
-		LOG.info("At Bank page after click on ViewBanks button");	
-*/
+	Banks banks = PageFactory.initElements(Constants.driver, Banks.class);
 	
 	@Test (priority = 1, description = "To verify and validate 'Banks' option in 'Masters'.")
 	public void verifyBanksInMasters() {
 		LOG.info("Verify Banks option in Masters.");
-		bank.mouseHoverToMasters();
-		Assert.assertEquals("actual", "expected");
+		banks.mouseHoverToMasters();
+//		Assert.assertEquals("actual", "expected");
 	}
 	
 	@Test(description = "To verify and validate after click on 'Banks' option in 'Masters'")
 	public void verifyClickOnBanksInMasters() {
 		LOG.info("Verify click on 'Banks' option in Masters");
 		String banks_expectedUrl = "http://103.50.162.196/testing/bank.php";
-		bank.mouseHoverToMasters();	
-		bank.clickOnBanks();
+		banks.mouseHoverToMasters();
+		banks.clickOnBanks();
 		String banks_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(banks_actualUrl, banks_expectedUrl);
 	}
@@ -52,8 +40,8 @@ public class BanksTest extends BaseTest {
 	public void verifyClickOnCopyButton() {	
 		LOG.info("Verifying click on 'Copy' button in Banks page.");
 		String banks_expectedUrl = "http://103.50.162.196/testing/bank.php";
-		bank.mouseHoverToMasters();	
-		bank.clickOnBanks();
+		banks.mouseHoverToMasters();	
+		banks.clickOnBanks();
 		String banks_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(banks_actualUrl, banks_expectedUrl);
 	}
@@ -189,20 +177,5 @@ public class BanksTest extends BaseTest {
 		String actualURL = UIKeywords.getPageUrl();
 		Assert.assertEquals(actualURL, expectedURL);
 	}
-
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
 }
