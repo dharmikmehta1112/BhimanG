@@ -14,7 +14,7 @@ public class Enquiry extends UIKeywords{
 	public Enquiry(){
 		PageFactory.initElements(Constants.driver, this);
 	}
-	
+	//Enquiry page
 	//  Locators for Enquire page in Masters 
 		
 		@FindBy(xpath ="//span[text()='Masters']")			 
