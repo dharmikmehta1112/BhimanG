@@ -72,9 +72,6 @@ public class Brokers {
 	@FindBy(name="//select[@id='status']")
 	private static WebElement brokersStatus;
 	
-	@FindBy(name="//input[@id='resume']")
-	private static WebElement brokersResume;
-	
 	@FindBy(name = "bank_name")
 	private static WebElement brokersBank_name;
 
@@ -83,12 +80,64 @@ public class Brokers {
 
 	@FindBy(xpath = "//input[@id='ifsc_code']")
 	private static WebElement BrokersIFSC_code;
-
+	
+	@FindBy(xpath="//input[@id='resume']")
+	private static WebElement brokersResume;
+	
+	@FindBy(name="agreement")
+	private static WebElement brokersAgreement;
+	
+	@FindBy(name="kyc")
+	private static WebElement brokersKYC;
+	
 	@FindBy(xpath = "//input[@value = 'Submit']")
-	private static WebElement submit;
+	private static WebElement brokersSubmit;
 
 	@FindBy(xpath = "//input[@value = 'Cancel']")
-	private static WebElement cancel;
+	private static WebElement brokersCancel;
 
+	// Page Object Methods for Banks page in Masters
+	
+		public static void mouseHoverToMasters() {
+			LOG.info("Mouse Hover to Masters");
+			UIKeywords.mouseHover(masters);
+		}
+		
+		public static void clickOnBrokers() {
+			LOG.info("Click on Banks option under Masters");
+			UIKeywords.clickOnElement(brokers);
+		}
+		
+		public static void clickOnAddBroker() {
+			LOG.info("Click on Add Bank button of Brokers page");
+			UIKeywords.clickOnElement(add_broker);
+		}
+		
+		public static void clickOnViewBrokers() {
+			LOG.info("Click on View Bank button of Add Broker page.");
+			UIKeywords.clickOnElement(view_brokers);
+		}
+		
+		public static void clickOnSubmit() {
+			LOG.info("Click on Submit button of Add Broker page.");
+			UIKeywords.clickOnElement(brokersSubmit);
+		}
+		
+		public static void fillAddBrokerForm() {
+			LOG.info("Adding values to Add Broker form");
+			UIKeywords.enterText(brokersBank_name, "Abhay");
+			UIKeywords.enterText(brokersMobile_no, "8765432109");
+			UIKeywords.enterText(brokersBroker_address, "Amravati");
+			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
+			UIKeywords.enterText(brokersBlood_group, "B positive");
+			UIKeywords.enterText(brokersStatus, "Active");	
+			
+			LOG.info("Values added to Add Bank form");
+		}
+		
+		public static void clickOnCancel() {
+			LOG.info("Click on Cancel button of Add Bank page.");
+			UIKeywords.clickOnElement(brokersCancel);
+		}
 	
 }
