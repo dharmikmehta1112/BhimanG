@@ -32,6 +32,9 @@ public class BaseTest extends UIKeywords {
 
 	@FindBy(css = "button[type='submit']")
 	private static WebElement login_Btn;
+	
+	@FindBy(xpath = "//button[text()='OK']")
+	private static WebElement okButton;
 
 	
 	@BeforeMethod
@@ -41,7 +44,7 @@ public class BaseTest extends UIKeywords {
 		BaseTest test = PageFactory.initElements(Constants.driver, BaseTest.class);
 		UIKeywords.enterText(test.mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
 		UIKeywords.enterText(test.password, PropertyReader.getLocatorValue("admin_password"));
-		UIKeywords.clickOnElement(test.login_Btn);	
+		UIKeywords.clickOnElement(test.login_Btn);
 		}
 	
 	@AfterMethod
