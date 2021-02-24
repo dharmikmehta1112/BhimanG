@@ -42,7 +42,7 @@ public class BaseTest extends UIKeywords {
 		
 		UIKeywords.openBrowser(PropertyReader.getLocatorValue("browserName"));
 		UIKeywords.openUrl(PropertyReader.getLocatorValue("url"));
-		
+		//Page Factory
 		// hence initElements must be called after openBrowser only other driver will be null
 		PageFactory.initElements(Constants.driver, this);
 		UIKeywords.enterText(mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
