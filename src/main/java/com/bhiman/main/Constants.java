@@ -13,14 +13,14 @@ import ru.yandex.qatools.ashot.AShot;
 
 public class Constants {
 	
-	public static WebDriver driver = null;
-	public static WebElement element = null;
+	public static WebDriver driver;
+	public static WebElement element;
 	public static String dir = System.getProperty("user.dir");
-	public static WebDriverWait wait = null;
-	public static FileInputStream fis = null;	
-	public static Properties prop = null;
-	public static AShot shot = null;
-	public static Actions actions = null;
-	public static Select select = null;
+	public static WebDriverWait wait;
+	public static FileInputStream fis;	
+	public static Properties prop ;
+	public static AShot shot;
+	public static Actions actions;
+	public static Select select;
 
 }

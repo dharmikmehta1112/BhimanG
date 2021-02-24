@@ -48,7 +48,7 @@ public class UIKeywords {
 	 */
 	public static void clickOnElement(WebElement element) {
 		LOG.info("Click on WebElement: " +element);
-		Constants.element.click();
+		element.click();
 	}
 
 	/**
@@ -84,8 +84,20 @@ public class UIKeywords {
 	 * @param textToEnter as {@code String}.
 	 */
 	public static void enterText(WebElement element, String textToEnter) {
-		LOG.info("Entering text in WebElement: " + Constants.element);
+		LOG.info("Entering text in WebElement: " + textToEnter);
 		Constants.element.sendKeys(textToEnter);
+	}
+	
+	/**
+	 * 
+	 * Use to get text on @WebElement element  like labels etc.
+	 * 
+	 * @param element as {@code WebElement}.
+	 * 
+	 */
+	public static String getText(WebElement element) {
+		LOG.info("Getting text in WebElement: " + element.getText());
+		return element.getText();
 	}
 	
 	/**
@@ -139,7 +151,7 @@ public class UIKeywords {
 	public static void mouseHover(WebElement element) {
 		LOG.info("Mouse hover to element");
 		Constants.actions = new Actions(Constants.driver);
-		Constants.actions.moveToElement(Constants.element).perform();
+		Constants.actions.moveToElement(element).perform();
 	}
 
 	/**
@@ -190,7 +202,8 @@ public class UIKeywords {
 		switch (browserName) {
 		case "CHROME":
 			LOG.info("Opening "+browserName+" browser.");
-			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver", "G:\\selenium\\drivers\\chromedriver_win32\\chromedriver.exe");
 			Constants.driver = new ChromeDriver();
 			break;
 		case "FIREFOX":
