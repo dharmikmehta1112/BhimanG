@@ -38,18 +38,13 @@ public class BaseTest extends UIKeywords {
 
 	
 	@BeforeMethod
-	public void setUp() throws InterruptedException {
-		
+	public void setUp() {
 		UIKeywords.openBrowser(PropertyReader.getLocatorValue("browserName"));
 		UIKeywords.openUrl(PropertyReader.getLocatorValue("url"));
-		//Page Factory
-		// hence initElements must be called after openBrowser only other driver will be null
-		PageFactory.initElements(Constants.driver, this);
-		UIKeywords.enterText(mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
-		UIKeywords.enterText(password, PropertyReader.getLocatorValue("admin_password"));
-		UIKeywords.clickOnElement(login_Btn);
-		Thread.sleep(5000);
-		UIKeywords.clickOnElement(okButton);
+		BaseTest test = PageFactory.initElements(Constants.driver, BaseTest.class);
+		UIKeywords.enterText(test.mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
+		UIKeywords.enterText(test.password, PropertyReader.getLocatorValue("admin_password"));
+		UIKeywords.clickOnElement(test.login_Btn);
 		}
 	
 	@AfterMethod
