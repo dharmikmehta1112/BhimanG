@@ -35,6 +35,7 @@ public class EnquiryTests extends BaseTest {
 		
 		enquiry.submit();
 		
+		//assert (Exception add)
 		//Assert.assertEquals(enquiry.getName(), "Fareen");
 	}
 }
