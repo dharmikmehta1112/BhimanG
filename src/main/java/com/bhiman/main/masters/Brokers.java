@@ -17,7 +17,7 @@ public class Brokers {
 	private static WebElement brokers;
 
 	@FindBy(css = "#add_btn")
-	private static WebElement add_broker;
+	private static WebElement brokersAdd_broker;
 
 	@FindBy(xpath = "//span[text()='Copy']")
 	private static WebElement brokersCopy;
@@ -26,7 +26,7 @@ public class Brokers {
 	private static WebElement brokersExcel;
 
 	@FindBy(xpath = "//span[text()='CSV']")
-	private static WebElement csv;
+	private static WebElement brokersCSV;
 
 	@FindBy(xpath = "//span[text()='PDF']")
 	private static WebElement brokersPDF;
@@ -52,7 +52,7 @@ public class Brokers {
 	// Page Object Locators after click on Add Broker button in Brokers page
 
 	@FindBy(xpath = "//a[text()='View Broker']")
-	private static WebElement view_brokers;
+	private static WebElement brokersView_brokers;
 
 	@FindBy(name="broker_name")
 	private static WebElement brokersBroker_name;
@@ -96,30 +96,30 @@ public class Brokers {
 	@FindBy(xpath = "//input[@value = 'Cancel']")
 	private static WebElement brokersCancel;
 
-// Page Object Methods for Banks page in Masters
+	// Page Object Methods for Brokers page in Masters
 	
 		public static void mouseHoverToMasters() {
-			LOG.info("Mouse Hover to Masters");
+			LOG.info("Master->Brokers: Mouse Hover to Masters");
 			UIKeywords.mouseHover(masters);
 		}
 		
 		public static void clickOnBrokers() {
-			LOG.info("Click on Banks option under Masters");
+			LOG.info("Master->Brokers: Click on Brokers option under Masters");
 			UIKeywords.clickOnElement(brokers);
 		}
 		
 		public static void clickOnAddBroker() {
-			LOG.info("Click on Add Bank button of Brokers page");
-			UIKeywords.clickOnElement(add_broker);
+			LOG.info("Master->Brokers: Click on Add Broker button of Brokers page");
+			UIKeywords.clickOnElement(brokersAdd_broker);
 		}
 		
 		public static void clickOnViewBrokers() {
-			LOG.info("Click on View Bank button of Add Broker page.");
-			UIKeywords.clickOnElement(view_brokers);
+			LOG.info("Master->Brokers: Click on View Brokers button of Add Broker page.");
+			UIKeywords.clickOnElement(brokersView_brokers);
 		}
 		
 		public static void clickOnSubmit() {
-			LOG.info("Click on Submit button of Add Broker page.");
+			LOG.info("Master->Brokers: Click on Submit button of Add Broker page.");
 			UIKeywords.clickOnElement(brokersSubmit);
 		}
 		
@@ -131,12 +131,12 @@ public class Brokers {
 			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
 			UIKeywords.enterText(brokersBlood_group, "B positive");
 			UIKeywords.enterText(brokersStatus, "Active");	
-			
-			LOG.info("Values added to Add Bank form");
+				
+			LOG.info("Values added to Add Broker form");
 		}
 		
 		public static void clickOnCancel() {
-			LOG.info("Click on Cancel button of Add Bank page.");
+			LOG.info("Master->Brokers: Click on Cancel button of Add Broker page.");
 			UIKeywords.clickOnElement(brokersCancel);
 		}
 		
