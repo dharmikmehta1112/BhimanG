@@ -132,7 +132,7 @@ public class UIKeywords {
 		LOG.info("Reading current page URL.");
 		return Constants.driver.getCurrentUrl();
 	}
-		
+  
 	/**
 	 * Overload Method:
 	 * Use to read text of @Webelement element.
