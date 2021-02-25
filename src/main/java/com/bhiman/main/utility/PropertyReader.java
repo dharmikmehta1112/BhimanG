@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-
 import org.apache.log4j.Logger;
 
 import com.bhiman.main.Constants;
@@ -19,12 +18,10 @@ public class PropertyReader {
 	 * @param key as {@code String}.
 	 * @return values as {@code String}.
 	 */
+	
 	public static String getLocatorValue(String key) {
 		String value = null;
-		//String path = System.getProperty("user.dir")+"/src/main/resources/Configuration/application.properties";
-		
-	String path = Constants.dir + "/src/main/resources/Configuration/application.properties";
-//		String path = "D:\\Java Program\\BhimanGroup\\ProV007\\src\\main\\resources\\Cofiguration\\application.properties";
+		String path = Constants.basePath + "/src/main/resources/Configuration/application.properties";
 		
 		try {
 			Constants.fis = new FileInputStream(path);

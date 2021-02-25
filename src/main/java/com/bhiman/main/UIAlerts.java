@@ -19,8 +19,8 @@ public class UIAlerts {
 	/**
 	 * Switch to alert and read text message from the alert. 
 	 */
-	public static void getTextFromAlert() {
-		Constants.driver.switchTo().alert().getText();
+	public static String getTextFromAlert() {
+		return Constants.driver.switchTo().alert().getText();
 	}
 
 	/**

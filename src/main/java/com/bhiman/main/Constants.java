@@ -15,12 +15,17 @@ public class Constants {
 	
 	public static WebDriver driver;
 	public static WebElement element;
-	public static String dir = System.getProperty("user.dir");
+	public static String basePath = System.getProperty("user.dir");
 	public static WebDriverWait wait;
 	public static FileInputStream fis;	
-	public static Properties prop ;
+	public static Properties prop;
 	public static AShot shot;
 	public static Actions actions;
 	public static Select select;
+	public static Boolean flag;
+	public static String expected;
+	public static String actual;
+	
+	
 
 }

@@ -2,6 +2,7 @@ package com.bhiman.main;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,46 +20,46 @@ public class UIKeywords {
 	private static Logger LOG = Logger.getLogger(UIKeywords.class);
 
 	/**
-	 * Overload Method
+	 * Overload Method:
 	 * Use to clear text from @WebElement element like text box etc.
 	 * 
 	 * @param element as {@code WebElement}.
 	 */
 	public static void clearText(WebElement element) {
-		LOG.info("Clear text from " +element);
-		Constants.element.clear();
+		LOG.info("Clearing text from WebElement: " +element);
+		element.clear();
 	}
 
 	/**
-	 * Overload Method
+	 * Overload Method:
 	 * Use to find the element and clear text on @WebElement element like text box etc. using @By class instance.
 	 * 
 	 * @param by as {@code By}.
 	 */
 	public static void clearText(By by) {
-		LOG.info("Find element " +by+ "and clear text on web element using By class instance.");
+		LOG.info("Finding element " +by+ "and clear text on web element using By class instance.");
 		Constants.element.clear();
 	}
 
 	/**
-	 * Overload Method
+	 * Overload Method:
 	 * Use to click on @WebElement element like Button, Radio Button, Check Box, Link etc.
 	 * 
 	 * @param element as {@code WebElement}.
 	 */
 	public static void clickOnElement(WebElement element) {
-		LOG.info("Click on WebElement: " +element);
+		LOG.info("Clicking on WebElement: " +element);
 		element.click();
 	}
 
 	/**
-	 * Overload Method
+	 * Overload Method:
 	 * Use to find the element and click on @WebElement element like Button, Radio Button, Check Box, Link etc. using @By class instance.
 	 * 
 	 * @param by as {@code By}.
 	 */
 	public static void clickOnElement(By by) {
-		LOG.info("Find element " +by+ "and click on web element using By class instance.");
+		LOG.info("Finding element " +by+ "and click on web element using By class instance.");
 		Constants.driver.findElement(by).click();
 	}
 
@@ -66,6 +67,7 @@ public class UIKeywords {
 	 * Close the current browser window, or last browser window associated with this driver.
 	 */
 	public static void closeBrowser() {
+		LOG.info("Closing current browser window.");
 		Constants.driver.close();
 	}
 
@@ -73,6 +75,7 @@ public class UIKeywords {
 	 * Close all browser window associated with this driver.
 	 */
 	public static void closeAllBrowser() {
+		LOG.info("Closing all browser window.");
 		Constants.driver.quit();
 	}
 	
@@ -84,16 +87,14 @@ public class UIKeywords {
 	 * @param textToEnter as {@code String}.
 	 */
 	public static void enterText(WebElement element, String textToEnter) {
-		LOG.info("Entering text in WebElement: " + textToEnter);
+		LOG.info("Entering text as " +textToEnter+ " in WebElement: " + element);
 		element.sendKeys(textToEnter);
 	}
 	
 	/**
-	 * 
 	 * Use to get text on @WebElement element  like labels etc.
 	 * 
 	 * @param element as {@code WebElement}.
-	 * 
 	 */
 	public static String getText(WebElement element) {
 		LOG.info("Getting text in WebElement: " + element.getText());
@@ -101,14 +102,14 @@ public class UIKeywords {
 	}
 	
 	/**
-	 * Overload Method
+	 * Overload Method:
 	 * Use to find element and enter text on @WebElement element like text box etc. using @By class instance.
 	 * 
 	 * @param by as {@code By}.
 	 * @param textToEnter as {@code String}.
 	 */
 	public static void enterText(By by, String textToEnter) {
-		LOG.info("Enter text in " +by+ "using By class instance.");
+		LOG.info("Entering text in " +by+ "using By class instance.");
 		Constants.driver.findElement(by).sendKeys(textToEnter);
 	}
 
@@ -130,7 +131,7 @@ public class UIKeywords {
 	 * Read current page title.
 	 */
 	public static String getPageTitle() {
-		LOG.info("Read current page title.");
+		LOG.info("Reading current page title.");
 		return Constants.driver.getTitle();
 	}
 	
@@ -138,24 +139,47 @@ public class UIKeywords {
 	 * Read current page URL.
 	 */
 	public static String getPageUrl() {
-		LOG.info("Read current page URL.");
+		LOG.info("Reading current page URL.");
 		return Constants.driver.getCurrentUrl();
+	}
+	
+	
+	/**
+	 * Overload Method:
+	 * Use to read text of @Webelement element.
+	 * 
+	 * @param element as {@code WebElement}.
+	 */
+	public static String getText(WebElement element) {
+		LOG.info("Reading text for element: " +element+ " in page.");
+		return element.getText();
+	}
+	
+	/**
+	 * Overload Method:
+	 * Use to find @Webelement element and read text using @BY class instance.
+	 * 
+	 * @param by as {@code By}.
+	 */
+	public static String getText(By by) {
+		LOG.info("Reading text for element: " +by+ " in page.");
+		return Constants.element.getText();
 	}
 
 	/**
-	 * Overload Method
+	 * Overload Method:
 	 * Use to hover the mouse to @Webelement element.
 	 * 
 	 * @param element as {@code WebElement}.
 	 */
 	public static void mouseHover(WebElement element) {
-		LOG.info("Mouse hover to element");
+		LOG.info("Mouse hover to web element: " +element+ "in page.");
 		Constants.actions = new Actions(Constants.driver);
 		Constants.actions.moveToElement(element).perform();
 	}
 
 	/**
-	 * Overload Method
+	 * Overload Method:
 	 * Use to find element and hover the mouse using @By class instance.
 	 * 
 	 * @param by as {@code By}.
@@ -202,8 +226,7 @@ public class UIKeywords {
 		switch (browserName) {
 		case "CHROME":
 			LOG.info("Opening "+browserName+" browser.");
-			//WebDriverManager.chromedriver().setup();
-			System.setProperty("webdriver.chrome.driver", "G:\\selenium\\drivers\\chromedriver_win32\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			Constants.driver = new ChromeDriver();
 			break;
 		case "FIREFOX":
@@ -238,7 +261,7 @@ public class UIKeywords {
 	 * @param url as {@code String}.
 	 */
 	public static void openUrl(String url) {
-		LOG.info("Launching App URL: "+url);
+		LOG.info("Launching application URL: "+url);
 		Constants.driver.get(url);
 	}
 
@@ -251,27 +274,38 @@ public class UIKeywords {
 	}
 	
 	/**
-	 * Overload Method
+	 * Use to scroll vertically down the page up to view of @Webelement element.
+	 * 
+	 * @param element as {@code WebElement}.
+	 */
+	public static void scrollVerticalDown(WebElement element) {
+		LOG.info("Scrolling vertically down upto web element: " +element+ " to come view in page.");
+		JavascriptExecutor jse = (JavascriptExecutor) Constants.driver;	
+		jse.executeScript("arguments[0].scrollIntoView();", element);
+	}
+	
+	/**
+	 * Overload Method:
 	 * Use to select @Webelement element from the drop-down using visible text.
 	 * 
 	 * @param element as {@code WebElement}.
 	 * @param textToSelect as {@code String}.
 	 */
 	public static void selectByTextFromDropdown(WebElement element, String textToSelect) {
-		LOG.info("Select " +element+ "from dropdown using " +textToSelect);
-		Constants.select = new Select(Constants.element);
+		LOG.info("Selected " +element+ "from dropdown using text: " +textToSelect);
+		Constants.select = new Select(element);
 		Constants.select.selectByVisibleText(textToSelect);
 	}
 
 	/**
-	 * Overload Method
+	 * Overload Method:
 	 * Use to find and select element from the drop-down with visible text using @By class instance.
 	 * 
 	 * @param element as {@code WebElement}.
 	 * @param by as {@code By}.
 	 */
 	public static void selectByTextFromDropdown(By by, String textToSelect) {
-		LOG.info("Select element" +by+ "from dropdown using " +textToSelect);
+		LOG.info("Selected element" +by+ "from dropdown using text: " +textToSelect);
 		Constants.element = Constants.driver.findElement(by);
 		Constants.select = new Select(Constants.element);
 		Constants.select.selectByVisibleText(textToSelect);
