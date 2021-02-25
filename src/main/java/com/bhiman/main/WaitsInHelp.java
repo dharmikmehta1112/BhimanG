@@ -17,7 +17,7 @@ public class WaitsInHelp {
 	 * @param time in SECONDS.
 	 */
 	public static void implicitWaitInSeconds(int time) {
-		LOG.info("Implicity Waiting for "+time);
+		LOG.info("Implicity Waiting for "+time+  " seconds.");
 		Constants.driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
 	}
 
@@ -42,7 +42,7 @@ public class WaitsInHelp {
 	 */
 	public static void threadSleepInMilliSeconds(long time) {
 		try {
-			LOG.info("Waiting for "+time);
+			LOG.info("Thread sleep for "+time+ " milli seconds.");
 			Thread.sleep(time);
 		} catch (InterruptedException e) {
 			LOG.error("Element not found on page.");

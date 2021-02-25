@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.bhiman.main.Constants;
+import com.bhiman.main.UIAlerts;
 import com.bhiman.main.UIKeywords;
 import com.bhiman.main.WaitsInHelp;
 
@@ -15,10 +16,13 @@ public class Banks extends UIKeywords {
 	
 // Page Object Locators for Banks page in Masters --> Intialize at runtime
 	
-	@FindBy(xpath = "//span[@class='toggle-none' and text() = 'Masters']")			 
-	private static WebElement masters;		
+//	@FindBy(xpath = "//span[@class='toggle-none' and text() = 'Masters']")			 
+//	private static WebElement masters;		
 	
-	@FindBy(xpath = "a[text()='Banks ']")
+	@FindBy(xpath = "//span[text() = 'Masters']")			 
+	private static WebElement masters;		
+
+	@FindBy(xpath = "//a[text()='Banks ']")
 	private static WebElement masters_banks;
 	
 	@FindBy(css="#add_btn")
@@ -33,7 +37,7 @@ public class Banks extends UIKeywords {
 	@FindBy(xpath="//span[text()='CSV']")
 	private static WebElement banks_csvBtn;
 	
-	@FindBy(xpath="//span[text()='PDF'")
+	@FindBy(xpath="//span[text()='PDF']")
 	private static WebElement banks_pdfBtn;
 	
 	@FindBy(xpath="//span[text()='Print']")
@@ -41,11 +45,17 @@ public class Banks extends UIKeywords {
 	
 	@FindBy(xpath="//input[@type='search']")
 	private static WebElement banks_searchBox;
+	
+	@FindBy(xpath = "//td[text() = 'No matching records found']")
+	private static WebElement banks_table_noRecords;
 
-	@FindBy()
+	@FindBy(xpath = "//div[@class='dataTables_scrollBody']")
+	private static WebElement banks_scrollVerticalTableBody;
+	
+	@FindBy(xpath = "//button[@class='btn btn-primary btn-border btn-rounded btn-xs editBtn' and @data-id = '68']")
 	private static WebElement banks_action_editIcon;
 
-	@FindBy()
+	@FindBy(xpath = "//button[@class='btn btn-danger btn-border btn-rounded btn-xs deleteBtn' and @data-id = '68']")
 	private static WebElement banks_action_deleteIcon;
 	
 	@FindBy(xpath = "//div[@role='status']")
@@ -80,6 +90,12 @@ public class Banks extends UIKeywords {
 	@FindBy(xpath="//input[@value = 'Cancel']")
 	private static WebElement banks_addBank_cancelBtn;
 	
+// Constructor to instantiate an instance of class and set a lazy proxy for each of the WebElement
+	
+	public Banks() {		
+		PageFactory.initElements(Constants.driver, this);
+	}
+	
 // Page Object Methods for Banks page in Masters
 	
 	public void mouseHoverToMasters() {
@@ -106,16 +122,19 @@ public class Banks extends UIKeywords {
 	public void clickOnExcelButton() {
 		LOG.info("Click on Excel button of Banks page");
 		UIKeywords.clickOnElement(banks_excelBtn);
+		WaitsInHelp.threadSleepInMilliSeconds(2000);
 	}
 
 	public void clickOnCSVButton() {
 		LOG.info("Click on CSV button of Banks page");
 		UIKeywords.clickOnElement(banks_csvBtn);
+		WaitsInHelp.threadSleepInMilliSeconds(2000);
 	}
 
 	public void clickOnPDFButton() {
 		LOG.info("Click on PDF button of Banks page");
 		UIKeywords.clickOnElement(banks_pdfBtn);
+		WaitsInHelp.threadSleepInMilliSeconds(2000);
 	}
 
 	public void clickOnPrintButton() {
@@ -123,9 +142,40 @@ public class Banks extends UIKeywords {
 		UIKeywords.clickOnElement(banks_printBtn);
 	}
 	
-	public void getTextOFBanksStatusEntries() {
+	public void enterTextOnSearchBox(String textToEnter) {
+		LOG.info("Entering text on search box of Banks page");
+		UIKeywords.enterText(banks_searchBox, textToEnter);
+	}
+	
+	public String getTextOFBanksDataTableForInvalidSearch() {
+		LOG.info("Reading text from bank data table for invalid search of Banks page");
+		return UIKeywords.getText(banks_table_noRecords);
+	}
+	
+	public void clickOnEditIcon() {
+		LOG.info("Scroll vertically down and click on edit icon in Action column of Banks Data Table of Bank page.");
+		UIKeywords.scrollVerticalDown(banks_scrollVerticalTableBody);
+		UIKeywords.clickOnElement(banks_action_editIcon);
+	}
+	
+	public void clickOnDeleteIcon() {
+		LOG.info("Scroll vertically down and click on delete icon in Action column of Banks Data Table of Bank page.");
+		UIKeywords.scrollVerticalDown(banks_scrollVerticalTableBody);
+		UIKeywords.clickOnElement(banks_action_deleteIcon);
+	}
+	
+	public void clickOnOKInAlert() {
+		UIAlerts.acceptAlert();
+//		UIKeywords.clickOnElement("click_ok");
+	}
+	
+	public void clickOnCancelInAlert() {
+		UIAlerts.acceptAlert();
+	}
+	
+	public String getTextOFBanksStatusEntries() {
 		LOG.info("Reading text at bottom (showing number of entries) of Banks page");
-		UIKeywords.getText(banks_showEntries);
+		return UIKeywords.getText(banks_showEntries);
 	}
 
 	public void clickOnViewBankButton() {
@@ -133,39 +183,34 @@ public class Banks extends UIKeywords {
 		UIKeywords.clickOnElement(banks_viewBanksBtn);
 	}
 	
-	public void enterBankName() {
+	public void enterBankName(String bankName) {
 		LOG.info("Entering Bank Name text to Add Bank form");
-		UIKeywords.enterText(banks_addBank_bankName, "Axis");
+		UIKeywords.enterText(banks_addBank_bankName, bankName);
 	}
 	
-	public void enterBankAccountName() {
+	public void enterBankAccountName(String accountName) {
 		LOG.info("Entering Bank Account Name text to Add Bank form");
-		UIKeywords.enterText(banks_addBank_accountName, "DM");
+		UIKeywords.enterText(banks_addBank_accountName, accountName);
 	}
 	
-	public void enterBankAccountNumber() {
+	public void enterBankAccountNumber(String bankAccountNumber) {
 		LOG.info("Entering Bank Account No. text to Add Bank form");
-		UIKeywords.enterText(banks_addBank_accountNo, "257825708953");
+		UIKeywords.enterText(banks_addBank_accountNo, bankAccountNumber);
 	}
 	
-	public void selectBankAccountTypeAsSavings() {
+	public void selectBankAccountType(String bankAccountType) {
 		LOG.info("Selecting Bank Account Type as Savings to Add Bank form");
-		UIKeywords.selectByTextFromDropdown(banks_addBank_bankAccountType, "Savings");
+		UIKeywords.selectByTextFromDropdown(banks_addBank_bankAccountType, bankAccountType);
 	}
 
-	public void selectBankAccountTypeAsCurrent() {
-		LOG.info("Selecting Bank Account Type as Current to Add Bank form");
-		UIKeywords.selectByTextFromDropdown(banks_addBank_bankAccountType, "Current");
-	}
-
-	public void enterBankIFSCCode() {
+	public void enterBankIFSCCode(String bankIFSCCode) {
 		LOG.info("Entering Bank IFSC Code to Add Bank form");
-		UIKeywords.enterText(banks_addBank_ifscCode, "257825708953");
+		UIKeywords.enterText(banks_addBank_ifscCode, bankIFSCCode);
 	}
 
-	public void enterBankMICRCode() {
+	public void enterBankMICRCode(String bankMICRCode) {
 		LOG.info("Entering Bank MICR Code to Add Bank form");
-		UIKeywords.enterText(banks_addBank_micrCode, "257825708953");
+		UIKeywords.enterText(banks_addBank_micrCode, bankMICRCode);
 	}
 
 /*
