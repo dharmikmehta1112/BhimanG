@@ -34,6 +34,7 @@ public class BaseTest extends UIKeywords {
 	
 	@BeforeMethod
 	public void setUp() {
+		LOG.info("Before (setUp) method started.");
 		UIKeywords.openBrowser(PropertyReader.getLocatorValue("browserName"));
 		UIKeywords.openUrl(PropertyReader.getLocatorValue("url"));
 		PageFactory.initElements(Constants.driver, BaseTest.class);
@@ -41,15 +42,18 @@ public class BaseTest extends UIKeywords {
 		UIKeywords.enterText(mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
 		UIKeywords.enterText(password, PropertyReader.getLocatorValue("admin_password"));
 		UIKeywords.clickOnElement(login_Btn);
-		WaitsInHelp.threadSleepInMilliSeconds(2000);
+		WaitsInHelp.threadSleepInMilliSeconds(5000);
 		UIKeywords.clickOnElement(click_ok);
 		String expectedURL = "http://103.50.162.196/testing/index.php";
 		String actualURL = UIKeywords.getPageUrl();
 		Assert.assertEquals(expectedURL, actualURL, "Login to application failed.");
+		LOG.info("Login to application successfully.");
 		}
 	
 //	@AfterMethod
 	public void tearDown() {
+		LOG.info("After (tearDown) method started.");
 		UIKeywords.closeAllBrowser();
+		LOG.info("All Browser closed successfully.");
 	}
 }

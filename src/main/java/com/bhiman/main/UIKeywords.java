@@ -2,6 +2,7 @@ package com.bhiman.main;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -260,6 +261,17 @@ public class UIKeywords {
 	public static void refreshPage() {
 		LOG.info("Refreshing current page.");
 		Constants.driver.navigate().refresh();
+	}
+	
+	/**
+	 * Use to scroll vertically down the page up to view of @Webelement element.
+	 * 
+	 * @param element as {@code WebElement}.
+	 */
+	public static void scrollVerticalDown(WebElement element) {
+		LOG.info("Scrolling vertically down upto web element: " +element+ " to come view in page.");
+		JavascriptExecutor jse = (JavascriptExecutor) Constants.driver;	
+		jse.executeScript("arguments[0].scrollIntoView();", element);
 	}
 	
 	/**

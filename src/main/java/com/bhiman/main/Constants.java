@@ -22,5 +22,10 @@ public class Constants {
 	public static AShot shot;
 	public static Actions actions;
 	public static Select select;
+	public static Boolean flag;
+	public static String expected;
+	public static String actual;
+	
+	
 
 }
