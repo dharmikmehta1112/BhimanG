@@ -2,13 +2,19 @@ package com.bhiman.main.masters;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.log4testng.Logger;
 
+import com.bhiman.main.Constants;
 import com.bhiman.main.UIKeywords;
 
-public class Brokers {
+public class Brokers extends UIKeywords{
 	private static final Logger LOG = Logger.getLogger(Brokers.class);
 	// Page Object Locators for Banks page in Masters --> Intialize at runtime
+	
+	public Brokers() {
+		PageFactory.initElements(Constants.driver, this);
+	}
 
 	@FindBy(xpath = "//span[text()='Masters']")
 	private static WebElement masters;
@@ -98,32 +104,56 @@ public class Brokers {
 
 	// Page Object Methods for Brokers page in Masters
 	
-		public static void mouseHoverToMasters() {
+	
+	
+		public void mouseHoverToMastersForBrokersPage() throws InterruptedException {
 			LOG.info("Master->Brokers: Mouse Hover to Masters");
 			UIKeywords.mouseHover(masters);
+			Thread.sleep(1000);
+			//UIKeywords.clickOnElement(brokers);
 		}
 		
-		public static void clickOnBrokers() {
+		public void clickOnBrokers() {
 			LOG.info("Master->Brokers: Click on Brokers option under Masters");
-			UIKeywords.clickOnElement(brokers);
+			clickOnElement(brokers);
 		}
 		
-		public static void clickOnAddBroker() {
-			LOG.info("Master->Brokers: Click on Add Broker button of Brokers page");
-			UIKeywords.clickOnElement(brokersAdd_broker);
+		public void clickOnCopyAtBrokersPage() {
+			LOG.info("Master->Brokers: Click on Copy Button");
+			clickOnElement(brokersCopy);
 		}
 		
-		public static void clickOnViewBrokers() {
+		public void clickOnExcelBtnAtBrokersPage() {
+			LOG.info("Master->Brokers: Click on EXCEL Button");
+			clickOnElement(brokersExcel);
+		}
+		
+		public void clickOnCSVBtnAtBrokersPage() {
+			LOG.info("Master->Brokers: Click on CSV Button");
+			clickOnElement(brokersExcel);
+		}
+		
+		public void clickOnPDFBtnAtBrokersPage() {
+			LOG.info("Master->Brokers: Click on PDF Button");
+			clickOnElement(brokersPDF);
+		}
+		
+		public void clickOnPrintBtnAtBrokersPage() {
+			LOG.info("Master->Brokers: Click on Print Button");
+			clickOnElement(brokersPrint);
+		}
+		
+		public void clickOnAddBroker() {
+			LOG.info("Master->Brokers: Clicking on Add Broker button of Brokers page");
+			clickOnElement(brokersAdd_broker);
+		}
+		
+		public void clickOnViewBrokers() {
 			LOG.info("Master->Brokers: Click on View Brokers button of Add Broker page.");
-			UIKeywords.clickOnElement(brokersView_brokers);
+			clickOnElement(brokersView_brokers);
 		}
 		
-		public static void clickOnSubmit() {
-			LOG.info("Master->Brokers: Click on Submit button of Add Broker page.");
-			UIKeywords.clickOnElement(brokersSubmit);
-		}
-		
-		public static void fillAddBrokerForm() {
+		public void fillAddBrokerForm() {
 			LOG.info("Adding values to Add Broker form");
 			UIKeywords.enterText(brokersBank_name, "Abhay");
 			UIKeywords.enterText(brokersMobile_no, "8765432109");
@@ -135,7 +165,14 @@ public class Brokers {
 			LOG.info("Values added to Add Broker form");
 		}
 		
-		public static void clickOnCancel() {
+		public void clickOnSubmit() {
+			LOG.info("Master->Brokers: Click on Submit button of Add Broker page.");
+			UIKeywords.clickOnElement(brokersSubmit);
+		}
+		
+		
+		
+		public void clickOnCancel() {
 			LOG.info("Master->Brokers: Click on Cancel button of Add Broker page.");
 			UIKeywords.clickOnElement(brokersCancel);
 		}
