@@ -92,6 +92,16 @@ public class UIKeywords {
 	}
 	
 	/**
+	 * Use to get text on @WebElement element  like labels etc.
+	 * 
+	 * @param element as {@code WebElement}.
+	 */
+	public static String getText(WebElement element) {
+		LOG.info("Getting text in WebElement: " + element.getText());
+		return element.getText();
+	}
+	
+	/**
 	 * Overload Method:
 	 * Use to find element and enter text on @WebElement element like text box etc. using @By class instance.
 	 * 
