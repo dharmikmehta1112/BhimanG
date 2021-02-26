@@ -8,122 +8,90 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">MastersTest</a></td><td class="num">32</td><td class="num">0</td><td class="num">0</td><td class="num attn">4</td><td class="num">799,545</td><td></td><td></td></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">13,635</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">MastersTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">com.bhiman.test.masters.BanksTest</td><td><a href="#m0">verifyClickOnDeleteIconAndClickOKOnAlert</a></td><td rowspan="1">1614265146928</td><td rowspan="1">4087</td></tr><tr class="failedeven"><td><a href="#m1">verifyClickOnEditIcon</a></td><td rowspan="1">1614265168228</td><td rowspan="1">4116</td></tr><tr class="failedeven"><td><a href="#m2">verifyClickOnViewBankButton</a></td><td rowspan="1">1614265257279</td><td rowspan="1">22</td></tr><tr class="failedodd"><td rowspan="1">com.bhiman.test.masters.EnquiryTests</td><td><a href="#m3">tc_invalid01</a></td><td rowspan="1">1614265695914</td><td rowspan="1">10246</td></tr><tr><th colspan="4">MastersTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="19">com.bhiman.test.masters.BanksTest</td><td><a href="#m4">verifyAccountName</a></td><td rowspan="1">1614264925819</td><td rowspan="1">205</td></tr><tr class="passedeven"><td><a href="#m5">verifyAccountNo</a></td><td rowspan="1">1614264943692</td><td rowspan="1">11</td></tr><tr class="passedeven"><td><a href="#m6">verifyBankAccountTypeToSelectCurrent</a></td><td rowspan="1">1614264962204</td><td rowspan="1">8</td></tr><tr class="passedeven"><td><a href="#m7">verifyBankAccountTypeToSelectSavings</a></td><td rowspan="1">1614264979112</td><td rowspan="1">5</td></tr><tr class="passedeven"><td><a href="#m8">verifyBankName</a></td><td rowspan="1">1614264995860</td><td rowspan="1">4334</td></tr><tr class="passedeven"><td><a href="#m9">verifyBanksInMasters</a></td><td rowspan="1">1614265351278</td><td rowspan="1">2245</td></tr><tr class="passedeven"><td><a href="#m10">verifyClickOnAddBankButton</a></td><td rowspan="1">1614265016817</td><td rowspan="1">4787</td></tr><tr class="passedeven"><td><a href="#m11">verifyClickOnBanksInMasters</a></td><td rowspan="1">1614265039628</td><td rowspan="1">3656</td></tr><tr class="passedeven"><td><a href="#m12">verifyClickOnCSVButton</a></td><td rowspan="1">1614265059356</td><td rowspan="1">6256</td></tr><tr class="passedeven"><td><a href="#m13">verifyClickOnCopyButton</a></td><td rowspan="1">1614265084217</td><td rowspan="1">4081</td></tr><tr class="passedeven"><td><a href="#m14">verifyClickOnDeleteIcon</a></td><td rowspan="1">1614265104715</td><td rowspan="1">4231</td></tr><tr class="passedeven"><td><a href="#m15">verifyClickOnDeleteIconAndClickCancelOnAlert</a></td><td rowspan="1">1614265125622</td><td rowspan="1">3780</td></tr><tr class="passedeven"><td><a href="#m16">verifyClickOnExcelButton</a></td><td rowspan="1">1614265188102</td><td rowspan="1">6503</td></tr><tr class="passedeven"><td><a href="#m17">verifyClickOnPDFButton</a></td><td rowspan="1">1614265210791</td><td rowspan="1">7694</td></tr><tr class="passedeven"><td><a href="#m18">verifyClickOnPrintButton</a></td><td rowspan="1">1614265235472</td><td rowspan="1">4520</td></tr><tr class="passedeven"><td><a href="#m19">verifyIFSCCode</a></td><td rowspan="1">1614265274839</td><td rowspan="1">4</td></tr><tr class="passedeven"><td><a href="#m20">verifyMICRCode</a></td><td rowspan="1">1614265292488</td><td rowspan="1">4</td></tr><tr class="passedeven"><td><a href="#m21">verifySearchBoxWithInValidText</a></td><td rowspan="1">1614265309286</td><td rowspan="1">4149</td></tr><tr class="passedeven"><td><a href="#m22">verifySearchBoxWithValidText</a></td><td rowspan="1">1614265330535</td><td rowspan="1">4264</td></tr><tr class="passedodd"><td rowspan="7">com.bhiman.test.masters.BrokersTest</td><td><a href="#m23">clickOnCopyBtnOnBroker</a></td><td rowspan="1">1614265474971</td><td rowspan="1">8674</td></tr><tr class="passedodd"><td><a href="#m24">clickOnExcelBtn</a></td><td rowspan="1">1614265499745</td><td rowspan="1">10755</td></tr><tr class="passedodd"><td><a href="#m25">clickOnPDFBtn</a></td><td rowspan="1">1614265527508</td><td rowspan="1">11567</td></tr><tr class="passedodd"><td><a href="#m26">clickOnPrintBtn</a></td><td rowspan="1">1614265555697</td><td rowspan="1">11462</td></tr><tr class="passedodd"><td><a href="#m27">clickOnViewBrokers</a></td><td rowspan="1">1614265583322</td><td rowspan="1">9011</td></tr><tr class="passedodd"><td><a href="#m28">clickingOnBrokersPageFromMasters</a></td><td rowspan="1">1614265608990</td><td rowspan="1">8560</td></tr><tr class="passedodd"><td><a href="#m29">toCheckBrokersOption</a></td><td rowspan="1">1614265453488</td><td rowspan="1">5180</td></tr><tr class="passedeven"><td rowspan="2">com.bhiman.test.masters.EnquiryTests</td><td><a href="#m30">tc_01</a></td><td rowspan="1">1614265634183</td><td rowspan="1">17488</td></tr><tr class="passedeven"><td><a href="#m31">tc_05</a></td><td rowspan="1">1614265672724</td><td rowspan="1">4510</td></tr><tr class="passedodd"><td rowspan="4">com.bhiman.test.masters.UsersTest</td><td><a href="#m32">verifyClickOnCopyButton</a></td><td rowspan="1">1614265371918</td><td rowspan="1">1846</td></tr><tr class="passedodd"><td><a href="#m33">verifyClickOnExcelButton</a></td><td rowspan="1">1614265395209</td><td rowspan="1">1728</td></tr><tr class="passedodd"><td><a href="#m34">verifyUsersInMasters</a></td><td rowspan="1">1614265414941</td><td rowspan="1">2102</td></tr><tr class="passedodd"><td><a href="#m35">verifyaddUserinUsers</a></td><td rowspan="1">1614265433691</td><td rowspan="1">1810</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.bhiman.test.masters.BanksTest</td><td><a href="#m0">setUp</a></td><td rowspan="1">1614332847689</td><td rowspan="1">13318</td></tr><tr><th colspan="4">Default test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">com.bhiman.test.masters.BanksTest</td><td><a href="#m1">verifySearchBoxWithInValidText</a></td><td rowspan="1">1614332861266</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>MastersTest</h2><h3 id="m0">com.bhiman.test.masters.BanksTest#verifyClickOnDeleteIconAndClickOKOnAlert</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@class=&apos;btn btn-danger btn-border btn-rounded btn-xs deleteBtn&apos; and @data-id = &apos;68&apos;]&quot;}
-  (Session info: chrome=88.0.4324.182)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-V8KH0U1&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.10&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55849}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 155210f86cd88d0934c3cd7fd53699af
-*** Element info: {Using=xpath, value=//button[@class=&apos;btn btn-danger btn-border btn-rounded btn-xs deleteBtn&apos; and @data-id = &apos;68&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy14.click(Unknown Source)
-	at com.bhiman.main.UIKeywords.clickOnElement(UIKeywords.java:52)
-	at com.bhiman.main.masters.Banks.clickOnDeleteIcon(Banks.java:164)
-	at com.bhiman.test.masters.BanksTest.verifyClickOnDeleteIconAndClickOKOnAlert(BanksTest.java:160)
+<h2>Default test</h2><h3 id="m0">com.bhiman.test.masters.BanksTest#setUp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Login to application failed. expected [http://103.50.162.196/testing/user-login.php] but found [http://103.50.162.196/testing/index.php]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at com.bhiman.test.BaseTest.setUp(BaseTest.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
+	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:701)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.bhiman.test.masters.BanksTest#verifyClickOnEditIcon</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@class=&apos;btn btn-primary btn-border btn-rounded btn-xs editBtn&apos; and @data-id = &apos;68&apos;]&quot;}
-  (Session info: chrome=88.0.4324.182)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-V8KH0U1&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.10&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55891}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e97b43b1058b99e8243efe812b140210
-*** Element info: {Using=xpath, value=//button[@class=&apos;btn btn-primary btn-border btn-rounded btn-xs editBtn&apos; and @data-id = &apos;68&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy14.click(Unknown Source)
-	at com.bhiman.main.UIKeywords.clickOnElement(UIKeywords.java:52)
-	at com.bhiman.main.masters.Banks.clickOnEditIcon(Banks.java:158)
-	at com.bhiman.test.masters.BanksTest.verifyClickOnEditIcon(BanksTest.java:138)
+	at org.testng.TestRunner.privateRun(TestRunner.java:764)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.runSuites(TestNG.java:1069)
+	at org.testng.TestNG.run(TestNG.java:1037)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.bhiman.test.masters.BanksTest#verifySearchBoxWithInValidText</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Login to application failed. expected [http://103.50.162.196/testing/user-login.php] but found [http://103.50.162.196/testing/index.php]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at com.bhiman.test.BaseTest.setUp(BaseTest.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
+	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:701)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.bhiman.test.masters.BanksTest#verifyClickOnViewBankButton</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [http://103.50.162.196/testing/bank.php#] but found [http://103.50.162.196/testing/index.php]
-	at com.bhiman.test.masters.BanksTest.verifyClickOnViewBankButton(BanksTest.java:255)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.bhiman.test.masters.EnquiryTests#tc_invalid01</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=88.0.4324.182)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-V8KH0U1&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.10&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56829}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: f4fb784cac736897e0c1018aec672330
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy14.click(Unknown Source)
-	at com.bhiman.main.UIKeywords.clickOnElement(UIKeywords.java:52)
-	at com.bhiman.main.masters.Enquiry.clickOnCancelButton(Enquiry.java:148)
-	at com.bhiman.test.masters.EnquiryTests.tc_invalid01(EnquiryTests.java:59)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.bhiman.test.masters.BanksTest#verifyAccountName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.bhiman.test.masters.BanksTest#verifyAccountNo</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.bhiman.test.masters.BanksTest#verifyBankAccountTypeToSelectCurrent</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">com.bhiman.test.masters.BanksTest#verifyBankAccountTypeToSelectSavings</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">com.bhiman.test.masters.BanksTest#verifyBankName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m9">com.bhiman.test.masters.BanksTest#verifyBanksInMasters</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m10">com.bhiman.test.masters.BanksTest#verifyClickOnAddBankButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m11">com.bhiman.test.masters.BanksTest#verifyClickOnBanksInMasters</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m12">com.bhiman.test.masters.BanksTest#verifyClickOnCSVButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m13">com.bhiman.test.masters.BanksTest#verifyClickOnCopyButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m14">com.bhiman.test.masters.BanksTest#verifyClickOnDeleteIcon</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m15">com.bhiman.test.masters.BanksTest#verifyClickOnDeleteIconAndClickCancelOnAlert</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m16">com.bhiman.test.masters.BanksTest#verifyClickOnExcelButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m17">com.bhiman.test.masters.BanksTest#verifyClickOnPDFButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m18">com.bhiman.test.masters.BanksTest#verifyClickOnPrintButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m19">com.bhiman.test.masters.BanksTest#verifyIFSCCode</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m20">com.bhiman.test.masters.BanksTest#verifyMICRCode</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m21">com.bhiman.test.masters.BanksTest#verifySearchBoxWithInValidText</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m22">com.bhiman.test.masters.BanksTest#verifySearchBoxWithValidText</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m23">com.bhiman.test.masters.BrokersTest#clickOnCopyBtnOnBroker</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m24">com.bhiman.test.masters.BrokersTest#clickOnExcelBtn</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m25">com.bhiman.test.masters.BrokersTest#clickOnPDFBtn</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m26">com.bhiman.test.masters.BrokersTest#clickOnPrintBtn</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m27">com.bhiman.test.masters.BrokersTest#clickOnViewBrokers</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m28">com.bhiman.test.masters.BrokersTest#clickingOnBrokersPageFromMasters</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m29">com.bhiman.test.masters.BrokersTest#toCheckBrokersOption</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m30">com.bhiman.test.masters.EnquiryTests#tc_01</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m31">com.bhiman.test.masters.EnquiryTests#tc_05</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m32">com.bhiman.test.masters.UsersTest#verifyClickOnCopyButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m33">com.bhiman.test.masters.UsersTest#verifyClickOnExcelButton</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m34">com.bhiman.test.masters.UsersTest#verifyUsersInMasters</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m35">com.bhiman.test.masters.UsersTest#verifyaddUserinUsers</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at org.testng.TestRunner.privateRun(TestRunner.java:764)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.runSuites(TestNG.java:1069)
+	at org.testng.TestNG.run(TestNG.java:1037)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

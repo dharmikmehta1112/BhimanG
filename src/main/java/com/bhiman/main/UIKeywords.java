@@ -1,5 +1,8 @@
 package com.bhiman.main;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -78,7 +81,7 @@ public class UIKeywords {
 		LOG.info("Closing all browser window.");
 		Constants.driver.quit();
 	}
-	
+		
 	/**
 	 * Overload Method:
 	 * Use to enter text on @WebElement element  like textbox etc.
@@ -298,5 +301,25 @@ public class UIKeywords {
 		Constants.element = Constants.driver.findElement(by);
 		Constants.select = new Select(Constants.element);
 		Constants.select.selectByVisibleText(textToSelect);
-	}			
+	}	
+		
+	/**
+	 *  Use to switch driver from parent(main) window to child window. It will also print both window handles.
+	 */		
+	public static void switchToChildWindow() {		
+		String parent = Constants.driver.getWindowHandle();
+		LOG.info("Parent window handle: " +parent);
+		Set <String> windows = Constants.driver.getWindowHandles();
+		Iterator <String> itr = windows.iterator();
+		while (itr.hasNext()) {
+			String child = itr.next();
+			if (!child.equals(parent)) {
+				LOG.info("Child window handle: " +child);
+				Constants.driver.switchTo().window(child);
+			} else {
+				LOG.error("Parent(main) and child window hanldles are same.");
+			}
+		}
+	}
+		
 }
