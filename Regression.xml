@@ -18,7 +18,7 @@
 			<class name="com.bhiman.test.masters.EnquiryTests" />
 			<!-- <class name="com.bhiman.test.masters.ProjectsTests"/> -->
 			<!-- <class name="com.bhiman.test.setup.RolesTest"/> -->
-
+			
 		</classes>
 	</test> <!-- MastersTest -->
 </suite> <!-- Suite -->

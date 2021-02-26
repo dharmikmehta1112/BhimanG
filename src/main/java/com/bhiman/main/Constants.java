@@ -25,6 +25,7 @@ public class Constants {
 	public static Boolean flag;
 	public static String expected;
 	public static String actual;
+	public static String filePath;
 	
 	
 

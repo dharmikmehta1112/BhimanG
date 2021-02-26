@@ -33,7 +33,7 @@ public class BaseTest extends UIKeywords {
 	@FindBy(xpath = "//button[normalize-space()='OK']")
 	private static WebElement click_ok;
 	
-	@BeforeMethod
+	@BeforeMethod		// Pre-condition
 	public void setUp() {
 		LOG.info("Before (setUp) method started.");
 		UIKeywords.openBrowser(PropertyReader.getLocatorValue("browserName"));
@@ -51,7 +51,7 @@ public class BaseTest extends UIKeywords {
 		LOG.info("Login to application successfully.");
 		}
 	
-	@AfterMethod
+//	@AfterMethod		// Post-condition
 	public void tearDown() {
 		LOG.info("After (tearDown) method started.");
 		UIKeywords.closeAllBrowser();
