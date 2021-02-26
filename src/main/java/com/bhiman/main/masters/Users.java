@@ -28,6 +28,7 @@ public class Users extends UIKeywords {
 
 	@FindBy(css = "#view_btn")
 	private static WebElement view_users;
+	
 	@FindBy(xpath="//span[text()='Copy']")
 	private static WebElement U_copyBtn;
 	
@@ -45,6 +46,15 @@ public class Users extends UIKeywords {
 	
 	@FindBy(xpath="//input[@type='search']")
 	private static WebElement U_searchBox;
+	
+	@FindBy(xpath = "//div[@class='dataTables_scrollBody']")
+	private static WebElement User_scrollVerticalTableBody;
+	
+	@FindBy(css = "#datatable3_info")
+	private static WebElement U_datatableInfo_showing_entries;
+	
+	@FindBy(xpath = "//td[text() = 'No matching records found']")
+	private static WebElement U_table_noRecords;
 
 	@FindBy()
 	private static WebElement action_view_icon;
@@ -69,26 +79,6 @@ public class Users extends UIKeywords {
 	@FindBy(css = "#role_id")
 	private static WebElement U_role;
 
-//	@FindBy(xpath = "//select[@id='role_id']//option[text()='admin']")
-//	private static WebElement U_admin;
-//
-//	@FindBy(xpath = "//select[@id='role_id']//option[text()='Manager']")
-//	private static WebElement U_Manager;
-//
-//	@FindBy(xpath = "//select[@id='role_id']//option[text()='Sales Executive 1']")
-//	private static WebElement U_Sales_Executive_1;
-//
-//	@FindBy(xpath = "//select[@id='role_id']//option[text()='Supervioser']")
-//	private static WebElement U_Supervioser;
-//
-//	@FindBy(xpath = "//select[@id='role_id']//option[text()='Office boy q']")
-//	private static WebElement U_Office_boy_q;
-//
-//	@FindBy(xpath = "//select[@id='role_id']//option[text()='Cashier']")
-//	private static WebElement U_Cashier;
-//
-//	@FindBy(xpath = "//select[@id='role_id']//option[text()='entry operator']")
-//	private static WebElement U_entry_operator;
 
 	@FindBy(css = "#joining_date")
 	private static WebElement U_joining_date;
@@ -96,29 +86,6 @@ public class Users extends UIKeywords {
 	@FindBy(css = "#blood_group")
 	private static WebElement U_blood_group;
 
-//	@FindBy(xpath = "//select[@id='blood_group']//option[text()='O negative']")
-//	private static WebElement U_blood_o_negative;
-//
-//	@FindBy(xpath = "//select[@id='blood_group']//option[text()='O positive']")
-//	private static WebElement U_blood_O_positive;
-//
-//	@FindBy(xpath = "//select[@id='blood_group']//option[text()='A negative']")
-//	private static WebElement U_blood_A_negative;
-//
-//	@FindBy(xpath = "//select[@id='blood_group']//option[text()='A positive']")
-//	private static WebElement U_blood_A_positive;
-//
-//	@FindBy(xpath = "//select[@id='blood_group']//option[text()='B negative']")
-//	private static WebElement U_blood_B_negative;
-//
-//	@FindBy(xpath = "//select[@id='blood_group']//option[text()='B positive']")
-//	private static WebElement U_blood_B_positive;
-//
-//	@FindBy(xpath = "//select[@id='blood_group']//option[text()='AB positive']")
-//	private static WebElement U_blood_AB_positive;
-//
-//	@FindBy(xpath = "//select[@id='blood_group']//option[text()='AB negative']")
-//	private static WebElement U_blood_AB_negative;
 
 	@FindBy(css = "#bank_name")
 	private static WebElement U_bank_name;
@@ -200,9 +167,9 @@ public class Users extends UIKeywords {
 		UIKeywords.clickOnElement(U_printBtn);
 	}
 	
-	public void sarchonUsersSearchBox() {
+	public void sarchonUsersSearchBox(String enter_text ) {
 		LOG.info("Search an user Entery on user page");
-		UIKeywords.getText(U_searchBox);
+		UIKeywords.enterText(U_searchBox, enter_text);
 	}
 	public static void clickonMaster() {
 		UIKeywords.clickOnElement(mastersforuser);
@@ -230,133 +197,101 @@ public class Users extends UIKeywords {
 		UIKeywords.clickOnElement(view_users);
 	}
 
-	public static void enterUserName() {
+	public static void enterUserName(String UserNamr) {
 		LOG.info("Enter User name.");
-		UIKeywords.enterText(U_name, "Mangesh");
+		UIKeywords.enterText(U_name, UserNamr);
 	}
 
-	public static void enterMobileNo() {
+	public static void enterMobileNo(String UserMobileNo) {
 		LOG.info("Enter User Mobile no.");
-		UIKeywords.enterText(U_mobile_no, "9970579149");
+		UIKeywords.enterText(U_mobile_no, UserMobileNo);
 	}
 
-	public static void enterEmailId() {
+	public static void enterEmailId(String UserEmailId) {
 		LOG.info("Enter user mail-id");
-		UIKeywords.enterText(U_email, "mingalkar@gmail.com");
+		UIKeywords.enterText(U_email, UserEmailId);
 	}
 
-	public static void selectRoleforUser() {
+	public static void selectRoleforUser(String selectUserRole) {
 		LOG.info("Click on Role and select");
-		UIKeywords.selectByTextFromDropdown(U_role, "admin");
+		UIKeywords.selectByTextFromDropdown(U_role, selectUserRole);
 	}
 
-	public static void enterJoiningDate() {
+	public static void enterJoiningDate(String enterJoiningDate) {
 		LOG.info("Enter joining Date");
-		UIKeywords.enterText(U_joining_date, "10-02-2012");
+		UIKeywords.enterText(U_joining_date, enterJoiningDate);
 	}
 
-	public static void selectBloodGroup() {
+	public static void selectBloodGroup(String selectBloodGroup) {
 		LOG.info("Click on Bloodgroup and select ");
-		UIKeywords.selectByTextFromDropdown(U_blood_group, "O negative");
+		UIKeywords.selectByTextFromDropdown(U_blood_group, selectBloodGroup);
 	}
 
-	public static void enterBankName() {
+	public static void enterBankName(String enterBankName) {
 		LOG.info("Enter Bank Name");
-		UIKeywords.enterText(U_bank_name, "State Bank Of India");
+		UIKeywords.enterText(U_bank_name, enterBankName);
 	}
 
-	public static void enterAccountNo() {
+	public static void enterAccountNo(String enterAccountNo) {
 		LOG.info("Enter Bank Account Name");
-		UIKeywords.enterText(U_account_no, "3012055143");
+		UIKeywords.enterText(U_account_no, enterAccountNo);
 	}
 
-	public static void enterIFSCcode() {
+	public static void enterIFSCcode(String enterIFSCcoad) {
 		LOG.info("Enter Bank IFSC coad");
-		UIKeywords.enterText(U_ifsc_code, "SBIN0003866 ");
+		UIKeywords.enterText(U_ifsc_code, enterIFSCcoad);
 	}
 
-	public static void uploadUserResumeDoc() {
-		LOG.info("Upload user Resume");
-		UIKeywords.enterText(U_resume, "C:\\Users\\ingalkar\\Desktop\\up load only\\3-update_resume.rtf");
+	public static void uploadUserResumeDoc(String filepathforUploadResume) {
+		LOG.info("Scroll vertically down upto the visibility of other element.");
+		UIKeywords.scrollVerticalDown(U_resume);
+		LOG.info("define the File path to upload a Resume doc.");
+		UIKeywords.enterText(U_resume, filepathforUploadResume);
 	}
 
-	public static void uploadUserAgreementDoc() {
+	public static void uploadUserAgreementDoc(String filepathforUploadAgreement) {
 		LOG.info("Upload user Agreement");
-		UIKeywords.enterText(U_agreement, "C:\\Users\\ingalkar\\Desktop\\up load only\\3-update_agreement.rtf");
+		UIKeywords.enterText(U_agreement, filepathforUploadAgreement);
 	}
 
-	public static void uploaduserKYCDoc() {
+	public static void uploaduserKYCDoc(String filepathforUploadKYCDoc) {
 		LOG.info("Upload user KYC");
-		UIKeywords.enterText(U_kyc, "C:\\Users\\ingalkar\\Desktop\\up load only\\3-update_kyc.rtf");
+		UIKeywords.enterText(U_kyc, filepathforUploadKYCDoc);
 	}
 
-	public static void enterFatherName() {
+	public static void enterFatherName(String enterFatherName) {
 		LOG.info("Enter father name");
-		UIKeywords.enterText(U_father_name, "VITTHAL");
+		UIKeywords.enterText(U_father_name, enterFatherName);
 	}
-	public static void enterFatherMobileNo() {
+	public static void enterFatherMobileNo(String entrFatherMobileNo) {
 		LOG.info("Enter Father mobile No");
-		UIKeywords.enterText(U_father_mobile_no, "9096745274");
+		UIKeywords.enterText(U_father_mobile_no, entrFatherMobileNo);
 	}
-	public static void enterFatherOccupation() {
+	public static void enterFatherOccupation(String enterFatherOccupition) {
 		LOG.info("Enter Father occupation");
 		UIKeywords.enterText(U_father_occupation, "Worker");
 	}
-	public static void selectUserStatus() {
+	public static void selectUserStatus(String selectUserStatus) {
 		LOG.info("select user status");
-		UIKeywords.selectByTextFromDropdown(U_status, "Active");
+		UIKeywords.selectByTextFromDropdown(U_status, selectUserStatus);
 	}
-	public static void enterPassword() {
+	public static void enterPassword(String enterPassword) {
 		LOG.info("enter password");
-		UIKeywords.enterText(U_password, "123456");
+		UIKeywords.enterText(U_password, enterPassword);
 	}
-	public static void enterConfirmPassword() {
-		UIKeywords.enterText(U_confirm_password, "123456");
+	public static void enterConfirmPassword(String enterConfirmPassword) {
+		UIKeywords.enterText(U_confirm_password, enterConfirmPassword);
 	}
 
 	public static void clickOnUserSubmit() {
 		LOG.info("Click on Submit button of Add Users page.");
 		UIKeywords.clickOnElement(U_submit);
 	}
+	public String getTextOFUserDataTableForInvalidSearch() {
+		LOG.info("Reading text from Users data table for invalid search of Users page");
+		return UIKeywords.getText(U_table_noRecords);
+	}
 
-//	public static void filladdUserForm() {
-//		LOG.info("Adding values to Add User form");
-//		UIKeywords.enterText(U_name, "Mangesh");
-//		UIKeywords.enterText(U_mobile_no, "9970579149");
-//		UIKeywords.enterText(U_email, "mingalkar@gmail.com");
-//		UIKeywords.clickOnElement(U_role);
-//		UIKeywords.clickOnElement(U_admin);
-//		UIKeywords.enterText(U_joining_date, "04-10-2020");
-//		UIKeywords.clickOnElement(U_blood_group);
-//		UIKeywords.clickOnElement(U_blood_AB_negative);
-//		UIKeywords.enterText(U_bank_name, "Bank Of Maharashtra");
-//		UIKeywords.enterText(U_account_no, "30120522143");
-//		UIKeywords.enterText(U_ifsc_code, "MAHB00021");
-//
-////		 below code for vertical down word scroll purpose
-//
-//		JavascriptExecutor jse = (JavascriptExecutor) Constants.driver;
-//		WebElement Element = Constants.driver.findElement(By.cssSelector("#resume"));
-//		jse.executeScript("arguments[0].scrollIntoView();", Element);
-//
-////		need to add code for file uploading
-//		WebElement addFile = Constants.driver.findElement(By.xpath("//input[@placeholder='Upload Resume']"));
-//		addFile.sendKeys("E:\\java_Program_1\\NewProject\\src\\main\\resources\\up load only\\3-update_agreement.rtf");
-//		WebElement addFile1 = Constants.driver.findElement(By.xpath("//input[@placeholder='Upload Agreement']"));
-//		addFile1.sendKeys("E:\\java_Program_1\\NewProject\\src\\main\\resources\\up load only\\3-update_kyc.rtf");
-//		WebElement addFile2 = Constants.driver.findElement(By.xpath("//input[@placeholder='Upload KYC']"));
-//		addFile2.sendKeys("E:\\java_Program_1\\NewProject\\src\\main\\resources\\up load only\\3-update_resume.rtf");
-//
-//		UIKeywords.enterText(U_father_name, "VITTHAL");
-//		UIKeywords.enterText(U_father_mobile_no, "7777777777");
-//		UIKeywords.enterText(U_father_occupation, "Work ****");
-//		UIKeywords.clickOnElement(U_status);
-//		UIKeywords.clickOnElement(U_status_active);
-//		UIKeywords.enterText(U_password, "123456");
-//		UIKeywords.enterText(U_confirm_password, "123456");
-//		UIKeywords.clickOnElement(U_submit);
-//
-//	}
 
 	public static void clickOnUserCancel() {
 		LOG.info("Click on Cancel button of Add Users page.");
