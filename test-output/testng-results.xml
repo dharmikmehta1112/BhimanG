@@ -1,91 +1,710 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
+<testng-results ignored="0" total="36" passed="32" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="102629" started-at="2021-02-24T10:33:28Z" finished-at="2021-02-24T10:35:11Z">
+  <suite started-at="2021-02-25T20:25:07 IST" name="Suite" finished-at="2021-02-25T20:38:27 IST" duration-ms="799545">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="102629" started-at="2021-02-24T10:33:28Z" finished-at="2021-02-24T10:35:11Z">
-      <class name="com.bhiman.test.masters.EnquiryTests">
-        <test-method status="FAIL" signature="setUp()[pri:0, instance:com.bhiman.test.masters.EnquiryTests@c267ef4]" name="setUp" is-config="true" duration-ms="99348" started-at="2021-02-24T16:03:28Z" finished-at="2021-02-24T16:05:08Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.bhiman.main.UIKeywords.enterText(UIKeywords.java:88)
-	at com.bhiman.test.BaseTest.setUp(BaseTest.java:48)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+    <test started-at="2021-02-25T20:25:07 IST" name="MastersTest" finished-at="2021-02-25T20:38:27 IST" duration-ms="799545">
+      <class name="com.bhiman.test.masters.BrokersTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:33:56 IST" name="setUp" finished-at="2021-02-25T20:34:13 IST" duration-ms="16942" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="tc_01()[pri:0, instance:com.bhiman.test.masters.EnquiryTests@c267ef4]" name="tc_01" duration-ms="19" started-at="2021-02-24T16:05:10Z" finished-at="2021-02-24T16:05:10Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="toCheckBrokersOption()[pri:-1, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:34:13 IST" name="toCheckBrokersOption" description="To verify whether &#039;Brokers&#039; option is visible and clickable in Masters Tab or not." finished-at="2021-02-25T20:34:18 IST" duration-ms="5180" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toCheckBrokersOption -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:34:18 IST" name="tearDown" finished-at="2021-02-25T20:34:19 IST" duration-ms="794" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:34:19 IST" name="setUp" finished-at="2021-02-25T20:34:34 IST" duration-ms="15502" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickOnCopyBtnOnBroker()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:34:34 IST" name="clickOnCopyBtnOnBroker" description="Clicking on Copy Button" finished-at="2021-02-25T20:34:43 IST" duration-ms="8674" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnCopyBtnOnBroker -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:34:43 IST" name="tearDown" finished-at="2021-02-25T20:34:44 IST" duration-ms="798" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:34:44 IST" name="setUp" finished-at="2021-02-25T20:34:59 IST" duration-ms="15299" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickOnExcelBtn()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:34:59 IST" name="clickOnExcelBtn" description="Clicking on Excel Button" finished-at="2021-02-25T20:35:10 IST" duration-ms="10755" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnExcelBtn -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:35:10 IST" name="tearDown" finished-at="2021-02-25T20:35:11 IST" duration-ms="829" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:35:11 IST" name="setUp" finished-at="2021-02-25T20:35:27 IST" duration-ms="16167" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickOnPDFBtn()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:35:27 IST" name="clickOnPDFBtn" description="Clicking on PDF Button" finished-at="2021-02-25T20:35:39 IST" duration-ms="11567" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnPDFBtn -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:35:39 IST" name="tearDown" finished-at="2021-02-25T20:35:39 IST" duration-ms="820" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:35:39 IST" name="setUp" finished-at="2021-02-25T20:35:55 IST" duration-ms="15796" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickOnPrintBtn()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:35:55 IST" name="clickOnPrintBtn" description="Clicking on Print Button" finished-at="2021-02-25T20:36:07 IST" duration-ms="11462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnPrintBtn -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:36:07 IST" name="tearDown" finished-at="2021-02-25T20:36:07 IST" duration-ms="791" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:36:07 IST" name="setUp" finished-at="2021-02-25T20:36:23 IST" duration-ms="15368" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickOnViewBrokers()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:36:23 IST" name="clickOnViewBrokers" description="Clicking on View Broker Button after clicked on Add Broker" finished-at="2021-02-25T20:36:32 IST" duration-ms="9011" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnViewBrokers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:36:32 IST" name="tearDown" finished-at="2021-02-25T20:36:33 IST" duration-ms="880" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:36:33 IST" name="setUp" finished-at="2021-02-25T20:36:48 IST" duration-ms="15767" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickingOnBrokersPageFromMasters()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:36:48 IST" name="clickingOnBrokersPageFromMasters" description="To verify functionality of Add Broker option. " finished-at="2021-02-25T20:36:57 IST" duration-ms="8560" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickingOnBrokersPageFromMasters -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BrokersTest@56928307]" started-at="2021-02-25T20:36:57 IST" name="tearDown" finished-at="2021-02-25T20:36:58 IST" duration-ms="793" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.bhiman.test.masters.BrokersTest -->
+      <class name="com.bhiman.test.masters.BanksTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:25:07 IST" name="setUp" finished-at="2021-02-25T20:25:25 IST" duration-ms="18001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyAccountName()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:25:25 IST" name="verifyAccountName" description="To verify and validate the &#039;Account Name&#039; to accept input only small and big alphabets." finished-at="2021-02-25T20:25:26 IST" duration-ms="205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountName -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:25:26 IST" name="tearDown" finished-at="2021-02-25T20:25:27 IST" duration-ms="1279" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:25:27 IST" name="setUp" finished-at="2021-02-25T20:25:43 IST" duration-ms="16312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyAccountNo()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:25:43 IST" name="verifyAccountNo" description="To verify and validate the &#039;Account No.&#039; to accept input as 5 and more than 5 digits." finished-at="2021-02-25T20:25:43 IST" duration-ms="11" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountNo -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:25:43 IST" name="tearDown" finished-at="2021-02-25T20:25:44 IST" duration-ms="880" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:25:44 IST" name="setUp" finished-at="2021-02-25T20:26:02 IST" duration-ms="17611" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyBankAccountTypeToSelectCurrent()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:26:02 IST" name="verifyBankAccountTypeToSelectCurrent" description="To verify and validate the &#039;Bank Account Type&#039; to select &#039;Current&#039;." finished-at="2021-02-25T20:26:02 IST" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBankAccountTypeToSelectCurrent -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:26:02 IST" name="tearDown" finished-at="2021-02-25T20:26:03 IST" duration-ms="958" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:26:03 IST" name="setUp" finished-at="2021-02-25T20:26:19 IST" duration-ms="15934" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyBankAccountTypeToSelectSavings()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:26:19 IST" name="verifyBankAccountTypeToSelectSavings" description="To verify and validate the &#039;Bank Account Type&#039; to select &#039;Savings&#039;." finished-at="2021-02-25T20:26:19 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBankAccountTypeToSelectSavings -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:26:19 IST" name="tearDown" finished-at="2021-02-25T20:26:19 IST" duration-ms="812" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:26:19 IST" name="setUp" finished-at="2021-02-25T20:26:35 IST" duration-ms="15925" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyBankName()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:26:35 IST" name="verifyBankName" description="To verify and validate the &#039;Bank Name&#039; to accept input only small and big alphabets." finished-at="2021-02-25T20:26:40 IST" duration-ms="4334" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBankName -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:26:40 IST" name="tearDown" finished-at="2021-02-25T20:26:41 IST" duration-ms="853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:26:41 IST" name="setUp" finished-at="2021-02-25T20:26:56 IST" duration-ms="15753" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnAddBankButton()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:26:56 IST" name="verifyClickOnAddBankButton" description="To verify and validate click on &#039;Add Bank&#039; buttton." finished-at="2021-02-25T20:27:01 IST" duration-ms="4787" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnAddBankButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:27:01 IST" name="tearDown" finished-at="2021-02-25T20:27:03 IST" duration-ms="1642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:27:03 IST" name="setUp" finished-at="2021-02-25T20:27:19 IST" duration-ms="16369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnBanksInMasters()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:27:19 IST" name="verifyClickOnBanksInMasters" description="To verify and validate after click on &#039;Banks&#039; option in &#039;Masters&#039;" finished-at="2021-02-25T20:27:23 IST" duration-ms="3656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnBanksInMasters -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:27:23 IST" name="tearDown" finished-at="2021-02-25T20:27:24 IST" duration-ms="866" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:27:24 IST" name="setUp" finished-at="2021-02-25T20:27:39 IST" duration-ms="15200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnCSVButton()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:27:39 IST" name="verifyClickOnCSVButton" description="To verify and validate click on &#039;CSV&#039; button." finished-at="2021-02-25T20:27:45 IST" duration-ms="6256" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnCSVButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:27:45 IST" name="tearDown" finished-at="2021-02-25T20:27:46 IST" duration-ms="826" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:27:46 IST" name="setUp" finished-at="2021-02-25T20:28:04 IST" duration-ms="17768" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnCopyButton()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:28:04 IST" name="verifyClickOnCopyButton" description="To verify and validate click on &#039;Copy&#039; button." finished-at="2021-02-25T20:28:08 IST" duration-ms="4081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnCopyButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:28:08 IST" name="tearDown" finished-at="2021-02-25T20:28:09 IST" duration-ms="811" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:28:09 IST" name="setUp" finished-at="2021-02-25T20:28:24 IST" duration-ms="15594" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnDeleteIcon()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:28:24 IST" name="verifyClickOnDeleteIcon" description="To verify and validate click on &#039;Delete&#039; icon on Banks Data Table." finished-at="2021-02-25T20:28:28 IST" duration-ms="4231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnDeleteIcon -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:28:28 IST" name="tearDown" finished-at="2021-02-25T20:28:29 IST" duration-ms="900" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:28:29 IST" name="setUp" finished-at="2021-02-25T20:28:45 IST" duration-ms="15765" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnDeleteIconAndClickCancelOnAlert()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:28:45 IST" name="verifyClickOnDeleteIconAndClickCancelOnAlert" description="To verify and validate click on &#039;Delete&#039; icon on Banks Data Table and dismiss alert." finished-at="2021-02-25T20:28:49 IST" duration-ms="3780" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnDeleteIconAndClickCancelOnAlert -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:28:49 IST" name="tearDown" finished-at="2021-02-25T20:28:50 IST" duration-ms="819" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:28:50 IST" name="setUp" finished-at="2021-02-25T20:29:06 IST" duration-ms="16701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnDeleteIconAndClickOKOnAlert()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:29:06 IST" name="verifyClickOnDeleteIconAndClickOKOnAlert" description="To verify and validate click on &#039;Delete&#039; icon on Banks Data Table and accept alert." finished-at="2021-02-25T20:29:11 IST" duration-ms="4087" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn btn-danger btn-border btn-rounded btn-xs deleteBtn' and @data-id = '68']"}
+  (Session info: chrome=88.0.4324.182)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-V8KH0U1', ip: '192.168.0.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55849}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 155210f86cd88d0934c3cd7fd53699af
+*** Element info: {Using=xpath, value=//button[@class='btn btn-danger btn-border btn-rounded btn-xs deleteBtn' and @data-id = '68']}]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.bhiman.main.UIKeywords.enterText(UIKeywords.java:88)
-	at com.bhiman.test.BaseTest.setUp(BaseTest.java:48)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn btn-danger btn-border btn-rounded btn-xs deleteBtn' and @data-id = '68']"}
+  (Session info: chrome=88.0.4324.182)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-V8KH0U1', ip: '192.168.0.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55849}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 155210f86cd88d0934c3cd7fd53699af
+*** Element info: {Using=xpath, value=//button[@class='btn btn-danger btn-border btn-rounded btn-xs deleteBtn' and @data-id = '68']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy14.click(Unknown Source)
+at com.bhiman.main.UIKeywords.clickOnElement(UIKeywords.java:52)
+at com.bhiman.main.masters.Banks.clickOnDeleteIcon(Banks.java:164)
+at com.bhiman.test.masters.BanksTest.verifyClickOnDeleteIconAndClickOKOnAlert(BanksTest.java:160)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnDeleteIconAndClickOKOnAlert -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:29:11 IST" name="tearDown" finished-at="2021-02-25T20:29:11 IST" duration-ms="846" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:29:11 IST" name="setUp" finished-at="2021-02-25T20:29:28 IST" duration-ms="16351" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnEditIcon()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:29:28 IST" name="verifyClickOnEditIcon" description="To verify and validate click on &#039;Edit&#039; icon on Banks Data Table." finished-at="2021-02-25T20:29:32 IST" duration-ms="4116" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn btn-primary btn-border btn-rounded btn-xs editBtn' and @data-id = '68']"}
+  (Session info: chrome=88.0.4324.182)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-V8KH0U1', ip: '192.168.0.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55891}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e97b43b1058b99e8243efe812b140210
+*** Element info: {Using=xpath, value=//button[@class='btn btn-primary btn-border btn-rounded btn-xs editBtn' and @data-id = '68']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn btn-primary btn-border btn-rounded btn-xs editBtn' and @data-id = '68']"}
+  (Session info: chrome=88.0.4324.182)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-V8KH0U1', ip: '192.168.0.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55891}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e97b43b1058b99e8243efe812b140210
+*** Element info: {Using=xpath, value=//button[@class='btn btn-primary btn-border btn-rounded btn-xs editBtn' and @data-id = '68']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy14.click(Unknown Source)
+at com.bhiman.main.UIKeywords.clickOnElement(UIKeywords.java:52)
+at com.bhiman.main.masters.Banks.clickOnEditIcon(Banks.java:158)
+at com.bhiman.test.masters.BanksTest.verifyClickOnEditIcon(BanksTest.java:138)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnEditIcon -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:29:32 IST" name="tearDown" finished-at="2021-02-25T20:29:33 IST" duration-ms="933" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:29:33 IST" name="setUp" finished-at="2021-02-25T20:29:48 IST" duration-ms="14817" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnExcelButton()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:29:48 IST" name="verifyClickOnExcelButton" description="To verify and validate click on &#039;Excel&#039; button." finished-at="2021-02-25T20:29:54 IST" duration-ms="6503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnExcelButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:29:54 IST" name="tearDown" finished-at="2021-02-25T20:29:55 IST" duration-ms="817" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:29:55 IST" name="setUp" finished-at="2021-02-25T20:30:10 IST" duration-ms="15359" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnPDFButton()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:30:10 IST" name="verifyClickOnPDFButton" description="To verify and validate click on &#039;PDF&#039; button." finished-at="2021-02-25T20:30:18 IST" duration-ms="7694" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnPDFButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:30:18 IST" name="tearDown" finished-at="2021-02-25T20:30:19 IST" duration-ms="849" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:30:19 IST" name="setUp" finished-at="2021-02-25T20:30:35 IST" duration-ms="16132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnPrintButton()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:30:35 IST" name="verifyClickOnPrintButton" description="To verify and validate click on &#039;Print&#039; button." finished-at="2021-02-25T20:30:39 IST" duration-ms="4520" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnPrintButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:30:40 IST" name="tearDown" finished-at="2021-02-25T20:30:40 IST" duration-ms="869" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:30:40 IST" name="setUp" finished-at="2021-02-25T20:30:57 IST" duration-ms="16407" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnViewBankButton()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:30:57 IST" name="verifyClickOnViewBankButton" description="To verify and validate click on &#039;View Bank&#039; buttton." finished-at="2021-02-25T20:30:57 IST" duration-ms="22" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [http://103.50.162.196/testing/bank.php#] but found [http://103.50.162.196/testing/index.php]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [http://103.50.162.196/testing/bank.php#] but found [http://103.50.162.196/testing/index.php]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at org.testng.Assert.assertEquals(Assert.java:639)
+at com.bhiman.test.masters.BanksTest.verifyClickOnViewBankButton(BanksTest.java:255)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnViewBankButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:30:57 IST" name="tearDown" finished-at="2021-02-25T20:30:58 IST" duration-ms="922" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:30:58 IST" name="setUp" finished-at="2021-02-25T20:31:14 IST" duration-ms="16609" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyIFSCCode()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:31:14 IST" name="verifyIFSCCode" description="To verify and validate the &#039;IFSC Code&#039; to accept input as alphanumeric values min = 8 and max = 12." finished-at="2021-02-25T20:31:14 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIFSCCode -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:31:14 IST" name="tearDown" finished-at="2021-02-25T20:31:16 IST" duration-ms="1609" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:31:16 IST" name="setUp" finished-at="2021-02-25T20:31:32 IST" duration-ms="16032" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyMICRCode()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:31:32 IST" name="verifyMICRCode" description="To verify and validate the &#039;MICR Code&#039; to accept input as only 9 alphanumeric values." finished-at="2021-02-25T20:31:32 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMICRCode -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:31:32 IST" name="tearDown" finished-at="2021-02-25T20:31:33 IST" duration-ms="1222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:31:33 IST" name="setUp" finished-at="2021-02-25T20:31:49 IST" duration-ms="15567" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySearchBoxWithInValidText()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:31:49 IST" name="verifySearchBoxWithInValidText" description="To verify and validate search box field with invalid input (text)." finished-at="2021-02-25T20:31:53 IST" duration-ms="4149" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchBoxWithInValidText -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:31:53 IST" name="tearDown" finished-at="2021-02-25T20:31:54 IST" duration-ms="802" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:31:54 IST" name="setUp" finished-at="2021-02-25T20:32:10 IST" duration-ms="16291" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySearchBoxWithValidText()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:32:10 IST" name="verifySearchBoxWithValidText" description="To verify and validate search box field with valid input (text)." finished-at="2021-02-25T20:32:14 IST" duration-ms="4264" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchBoxWithValidText -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:32:14 IST" name="tearDown" finished-at="2021-02-25T20:32:15 IST" duration-ms="811" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:32:15 IST" name="setUp" finished-at="2021-02-25T20:32:31 IST" duration-ms="15660" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyBanksInMasters()[pri:1, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:32:31 IST" name="verifyBanksInMasters" description="To verify and validate &#039;Banks&#039; option in &#039;Masters&#039;." finished-at="2021-02-25T20:32:33 IST" duration-ms="2245" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBanksInMasters -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@1e461e41]" started-at="2021-02-25T20:32:33 IST" name="tearDown" finished-at="2021-02-25T20:32:35 IST" duration-ms="1850" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.bhiman.test.masters.BanksTest -->
+      <class name="com.bhiman.test.masters.EnquiryTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.EnquiryTests@3899782c]" started-at="2021-02-25T20:36:58 IST" name="setUp" finished-at="2021-02-25T20:37:14 IST" duration-ms="15835" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="tc_01()[pri:1, instance:com.bhiman.test.masters.EnquiryTests@3899782c]" started-at="2021-02-25T20:37:14 IST" name="tc_01" finished-at="2021-02-25T20:37:31 IST" duration-ms="17488" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_01 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.EnquiryTests@3899782c]" started-at="2021-02-25T20:37:31 IST" name="tearDown" finished-at="2021-02-25T20:37:34 IST" duration-ms="2648" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.EnquiryTests@3899782c]" started-at="2021-02-25T20:37:34 IST" name="setUp" finished-at="2021-02-25T20:37:52 IST" duration-ms="18400" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="tc_05()[pri:2, instance:com.bhiman.test.masters.EnquiryTests@3899782c]" started-at="2021-02-25T20:37:52 IST" name="tc_05" finished-at="2021-02-25T20:37:57 IST" duration-ms="4510" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc_05 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.EnquiryTests@3899782c]" started-at="2021-02-25T20:37:57 IST" name="tearDown" finished-at="2021-02-25T20:37:58 IST" duration-ms="839" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.EnquiryTests@3899782c]" started-at="2021-02-25T20:37:58 IST" name="setUp" finished-at="2021-02-25T20:38:15 IST" duration-ms="17837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="tc_invalid01()[pri:3, instance:com.bhiman.test.masters.EnquiryTests@3899782c]" started-at="2021-02-25T20:38:15 IST" name="tc_invalid01" finished-at="2021-02-25T20:38:26 IST" duration-ms="10246" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[element not interactable
+  (Session info: chrome=88.0.4324.182)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-V8KH0U1', ip: '192.168.0.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56829}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f4fb784cac736897e0c1018aec672330]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=88.0.4324.182)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-V8KH0U1', ip: '192.168.0.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.182, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56829}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f4fb784cac736897e0c1018aec672330
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at jdk.internal.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at com.sun.proxy.$Proxy14.click(Unknown Source)
+at com.bhiman.main.UIKeywords.clickOnElement(UIKeywords.java:52)
+at com.bhiman.main.masters.Enquiry.clickOnCancelButton(Enquiry.java:148)
+at com.bhiman.test.masters.EnquiryTests.tc_invalid01(EnquiryTests.java:59)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc_invalid01 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.EnquiryTests@3899782c]" started-at="2021-02-25T20:38:26 IST" name="tearDown" finished-at="2021-02-25T20:38:27 IST" duration-ms="913" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- com.bhiman.test.masters.EnquiryTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.bhiman.test.masters.UsersTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:32:35 IST" name="setUp" finished-at="2021-02-25T20:32:51 IST" duration-ms="16538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnCopyButton()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:32:51 IST" name="verifyClickOnCopyButton" finished-at="2021-02-25T20:32:53 IST" duration-ms="1846" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnCopyButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:32:53 IST" name="tearDown" finished-at="2021-02-25T20:32:54 IST" duration-ms="1061" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:32:54 IST" name="setUp" finished-at="2021-02-25T20:33:15 IST" duration-ms="20372" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyClickOnExcelButton()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:33:15 IST" name="verifyClickOnExcelButton" finished-at="2021-02-25T20:33:16 IST" duration-ms="1728" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnExcelButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:33:16 IST" name="tearDown" finished-at="2021-02-25T20:33:17 IST" duration-ms="847" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:33:17 IST" name="setUp" finished-at="2021-02-25T20:33:34 IST" duration-ms="17150" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUsersInMasters()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:33:34 IST" name="verifyUsersInMasters" finished-at="2021-02-25T20:33:37 IST" duration-ms="2102" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUsersInMasters -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:33:37 IST" name="tearDown" finished-at="2021-02-25T20:33:37 IST" duration-ms="910" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:33:37 IST" name="setUp" finished-at="2021-02-25T20:33:53 IST" duration-ms="15732" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyaddUserinUsers()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:33:53 IST" name="verifyaddUserinUsers" finished-at="2021-02-25T20:33:55 IST" duration-ms="1810" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyaddUserinUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.UsersTest@5ba88be8]" started-at="2021-02-25T20:33:55 IST" name="tearDown" finished-at="2021-02-25T20:33:56 IST" duration-ms="1039" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.bhiman.test.masters.UsersTest -->
+    </test> <!-- MastersTest -->
+  </suite> <!-- Suite -->
 </testng-results>

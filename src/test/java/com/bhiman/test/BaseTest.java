@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import com.bhiman.main.Constants;
 import com.bhiman.main.UIKeywords;
@@ -50,7 +51,7 @@ public class BaseTest extends UIKeywords {
 		LOG.info("Login to application successfully.");
 		}
 	
-//	@AfterMethod
+	@AfterMethod
 	public void tearDown() {
 		LOG.info("After (tearDown) method started.");
 		UIKeywords.closeAllBrowser();
