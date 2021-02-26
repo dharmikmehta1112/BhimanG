@@ -42,6 +42,12 @@ public class Brokers extends UIKeywords{
 
 	@FindBy(xpath = "//input[@type='search']")
 	private static WebElement brokersSearchbox;
+	
+	@FindBy(xpath = "//td[text() = 'No matching records found']")
+	private static WebElement brokersNoRecords;
+
+	@FindBy(xpath = "//div[@class='dataTables_scrollBody']")
+	private static WebElement brokersTableScroll;
 
 	//Needs to edit XPATH as it works for 1st entry only.
 	@FindBy(xpath="//button[@data-brokerid='1']")  
@@ -130,7 +136,7 @@ public class Brokers extends UIKeywords{
 		
 		public void clickOnCSVBtnAtBrokersPage() {
 			LOG.info("Master->Brokers: Click on CSV Button");
-			clickOnElement(brokersExcel);
+			clickOnElement(brokersCSV);
 		}
 		
 		public void clickOnPDFBtnAtBrokersPage() {
@@ -143,6 +149,15 @@ public class Brokers extends UIKeywords{
 			clickOnElement(brokersPrint);
 		}
 		
+		public void enterTextInSearchBox(String enterText) {
+			LOG.info("Entering text on search box of Banks page");
+			UIKeywords.enterText(brokersSearchbox, enterText);
+		}
+		
+		public String getTextForInvalidBrokersSearch() {
+			LOG.info("Reading text from bank data table for invalid search of Banks page");
+			return UIKeywords.getText(brokersNoRecords);
+		}
 		public void clickOnAddBroker() {
 			LOG.info("Master->Brokers: Clicking on Add Broker button of Brokers page");
 			clickOnElement(brokersAdd_broker);
@@ -153,15 +168,31 @@ public class Brokers extends UIKeywords{
 			clickOnElement(brokersView_brokers);
 		}
 		
+		public void attachResume() {
+			LOG.info("Attaching Resume to Add Broker form");
+			brokersResume.sendKeys("F:\\Bhiman Requirements\\RESUME.docx");
+		}
+		
+		public void attachAgreement() {
+			LOG.info("Attaching Resume to Add Broker form");
+			brokersAgreement.sendKeys("F:\\Bhiman Requirements\\Agreement.docx");
+		}
+		
+		public void attachKYC() {
+			LOG.info("Attaching KYC to Add Broker form");
+			brokersKYC.sendKeys("F:\\Bhiman Requirements\\KYC.docx");
+		}
 		public void fillAddBrokerForm() {
 			LOG.info("Adding values to Add Broker form");
-			UIKeywords.enterText(brokersBank_name, "Abhay");
+			UIKeywords.enterText(brokersBroker_name, "Abhay");
 			UIKeywords.enterText(brokersMobile_no, "8765432109");
 			UIKeywords.enterText(brokersBroker_address, "Amravati");
 			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
 			UIKeywords.enterText(brokersBlood_group, "B positive");
-			UIKeywords.enterText(brokersStatus, "Active");	
-				
+			UIKeywords.enterText(brokersStatus, "Active");
+			attachResume();
+			attachAgreement();
+			attachKYC();
 			LOG.info("Values added to Add Broker form");
 		}
 		
