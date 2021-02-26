@@ -17,36 +17,27 @@ public class RolesTest extends BaseTest {
 	
 	Roles role = PageFactory.initElements(Constants.driver, Roles.class);
 	/**
-	 * In tc_01 testcase admin will add new role and observe, role will get added 
+	 * In tc_01 test case Admin will add new role and observe, role will get added 
 	 * in roles table after click on submit button 
 	 */
-	@Test
-	public void tc_01() {
+	@Test(groups = {"Regression","Sanity","Smoke"},description = "Add new role with permissions and click on submit button")
+	public void addNewRole() {
 		
-		String index_expectedUrl = "http://103.50.162.196/testing/index.php";
-		String index_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(index_actualUrl, index_expectedUrl);
 		LOG.info("Home Page -- Performing Mouse hover to setUp");
-		role.mouseHoverToSetUp();
+		Roles.mouseHoverToSetUp();
 		LOG.info("Click on Roles under Setup");
-		role.clickOnRolesUnderSetup();
-		String roles_expectedUrl = "http://103.50.162.196/testing/role.php";
-		String roles_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(roles_actualUrl, roles_expectedUrl);
+		Roles.clickOnRolesUnderSetup();
 		LOG.info("Click on Add Role Button on Roles Page");
-		role.clickOnAddRole();
+		Roles.clickOnAddRole();
 		String addRole_expectedUrl = "http://103.50.162.196/testing/role.php#";
 		String addRole_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(addRole_actualUrl, addRole_expectedUrl);
 		LOG.info("Enter new Role in Role Name");
-		role.enterTextInRoleName();
-		String addRoleName_expectedUrl = "http://103.50.162.196/testing/role.php#";
-		String addRoleName_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(addRoleName_actualUrl, addRoleName_expectedUrl);
+		Roles.enterTextInRoleName();
 		LOG.info("Set all permission to Role");
-		role.permissions();
+		Roles.permissions();
 		LOG.info("Click on submit button After setting permissions to Role");
-		role.clickOnSubmitInRoles();
+		Roles.clickOnSubmitInRoles();
 		String submitRole_expectedUrl = "http://103.50.162.196/testing/role.php";
 		String submitRole_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(submitRole_actualUrl, submitRole_expectedUrl);
@@ -59,37 +50,22 @@ public class RolesTest extends BaseTest {
 	 * Then after click on Add_Role button will observe whatever data got reseted will not refelect on role table 
 	 * 
 	 */
-	
-	public void tc_02() {
-		String index_expectedUrl = "http://103.50.162.196/testing/index.php";
-		String index_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(index_actualUrl, index_expectedUrl);
+	@Test(groups = {"Regression","Sanity","Smoke"},description = "verify click on cancle button it will reset the upadted data ")
+	public void verifyCancelButtonInAddRole() {
 		LOG.info("Home Page -- Performing Mouse hover to setUp");
-		role.mouseHoverToSetUp();
+		Roles.mouseHoverToSetUp();
 		LOG.info("Click on Roles under Setup");
 		role.clickOnRolesUnderSetup();
-		String roles_expectedUrl = "http://103.50.162.196/testing/role.php";
-		String roles_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(roles_actualUrl, roles_expectedUrl);
 		LOG.info("Click on Add Role Button on Roles Page");
-		role.clickOnAddRole();
-		String addRole_expectedUrl = "http://103.50.162.196/testing/role.php#";
-		String addRole_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(addRole_actualUrl, addRole_expectedUrl);
+		Roles.clickOnAddRole();
 		LOG.info("Enter new Role in Role Name");
-		role.enterTextInRoleName();
-		String addRoleName_expectedUrl = "http://103.50.162.196/testing/role.php#";
-		String addRoleName_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(addRoleName_actualUrl, addRoleName_expectedUrl);
+		Roles.enterTextInRoleName();
 		LOG.info("Set all permission to Role");
-		role.permissions();
+		Roles.permissions();
 		LOG.info("Click on Cancle button After setting permissions to Role");
-		role.clickOnCancleInRoles();
-		String submitRole_expectedUrl = "http://103.50.162.196/testing/role.php#";
-		String submitRole_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(submitRole_actualUrl, submitRole_expectedUrl);
+		Roles.clickOnCancleInRoles();
 		LOG.info("Click on View Role Button on view Role page");
-		role.clickOnViewRole();
+		Roles.clickOnViewRole();
 		String viewRole_expectedUrl = "http://103.50.162.196/testing/role.php";
 		String viewRole_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(viewRole_actualUrl, viewRole_expectedUrl);
@@ -100,151 +76,117 @@ public class RolesTest extends BaseTest {
 	 * In tc_03 testcase admin will click on copy button 
 	 * and observe all data will get copy or not
 	 */
-	public void tc_03() {
+	@Test(groups = {"Regression","Sanity","Smoke"},description ="To verify copy button on roles page")
+	public void verifyCopyButtonOnRoles() {
 		String index_expectedUrl = "http://103.50.162.196/testing/index.php";
 		String index_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(index_actualUrl, index_expectedUrl);
 		LOG.info("Home Page -- Performing Mouse hover to setUp");
-		role.mouseHoverToSetUp();
+		Roles.mouseHoverToSetUp();
 		LOG.info("Click on Roles under Setup");
-		role.clickOnRolesUnderSetup();
+		Roles.clickOnRolesUnderSetup();
 		String roles_expectedUrl = "http://103.50.162.196/testing/role.php";
 		String roles_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(roles_actualUrl, roles_expectedUrl);
 		LOG.info("Performed click operation on copy button on Role page" );
-		role.clickOnCopyInRoles();
+		Roles.clickOnCopyInRoles();
 	}
 	
 	/**
 	 * In tc_04 testcase admin will click on Excel button 
 	 * and observe all data will get copy on excel sheet or not with extension .xlsx
 	 */
-	public void tc_04() {
+	@Test(groups = {"Regression","Sanity","Smoke"},description = "To verify Excel button on roles page")
+	public void verifyExcelButtonOnRoles() {
 		String index_expectedUrl = "http://103.50.162.196/testing/index.php";
 		String index_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(index_actualUrl, index_expectedUrl);
 		LOG.info("Home Page -- Performing Mouse hover to setUp");
-		role.mouseHoverToSetUp();
+		Roles.mouseHoverToSetUp();
 		LOG.info("Click on Roles under Setup");
-		role.clickOnRolesUnderSetup();
+		Roles.clickOnRolesUnderSetup();
 		String roles_expectedUrl = "http://103.50.162.196/testing/role.php";
 		String roles_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(roles_actualUrl, roles_expectedUrl);
 		LOG.info("Performed click operation on copy button on Role page" );
-		role.clickOnExcelInRoles();
+		Roles.clickOnExcelInRoles();
 	}
 	
 	/**
 	 * In tc_05 testcase admin will click on CSV button 
 	 * and observe all data will get copy on excel sheet or not with extension .csv
 	 */
-	public void tc_05() {
-		String index_expectedUrl = "http://103.50.162.196/testing/index.php";
-		String index_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(index_actualUrl, index_expectedUrl);
+	@Test(groups = {"Regression","Sanity","Smoke"},description ="To verify CSV button on roles page")
+	public void verifyCSVButtonOnRoles() {
 		LOG.info("Home Page -- Performing Mouse hover to setUp");
-		role.mouseHoverToSetUp();
+		Roles.mouseHoverToSetUp();
 		LOG.info("Click on Roles under Setup");
-		role.clickOnRolesUnderSetup();
-		String roles_expectedUrl = "http://103.50.162.196/testing/role.php";
-		String roles_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(roles_actualUrl, roles_expectedUrl);
-		LOG.info("Performed click operation on copy button on Role page" );
-		role.clickOnCSVInRoles();
+		Roles.clickOnRolesUnderSetup();
+		Roles.clickOnCSVInRoles();
 	}
 	
 	/**
-	 * In tc_06 testcase admin will click on CSV button 
+	 * In tc_06 testcase admin will click on PDF button 
 	 * and observe all data will get copy in pdf format or not with extension .pdf
 	 */
-	public void tc_06() {
-		String index_expectedUrl = "http://103.50.162.196/testing/index.php";
-		String index_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(index_actualUrl, index_expectedUrl);
+	@Test(groups = {"Regression","Sanity","Smoke"},description = "To verify PDF button on roles page")
+	public void verifyPDFButtonOnRoles() {
 		LOG.info("Home Page -- Performing Mouse hover to setUp");
-		role.mouseHoverToSetUp();
+		Roles.mouseHoverToSetUp();
 		LOG.info("Click on Roles under Setup");
-		role.clickOnRolesUnderSetup();
-		String roles_expectedUrl = "http://103.50.162.196/testing/role.php";
-		String roles_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(roles_actualUrl, roles_expectedUrl);
+		Roles.clickOnRolesUnderSetup();
 		LOG.info("Performed click operation on copy button on Role page" );
-		role.clickOnPDFInRoles();
+		Roles.clickOnPDFInRoles();
 	}
 	
 	/**
-	 * In tc_07 testcase admin will click on Print button and will observe 
+	 * <p> Admin will click on Print button and will observe 
 	 * admin will be able to print the Role data table
+	 * </p>
 	 */
-	public void tc_07() {
-		String index_expectedUrl = "http://103.50.162.196/testing/index.php";
-		String index_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(index_actualUrl, index_expectedUrl);
+	@Test(groups = {"Regression","Sanity","Smoke"},description = "To verify Print button on roles page")
+	public void verifyPrintButtonOnRoles() {
 		LOG.info("Home Page -- Performing Mouse hover to setUp");
-		role.mouseHoverToSetUp();
+		Roles.mouseHoverToSetUp();
 		LOG.info("Click on Roles under Setup");
-		role.clickOnRolesUnderSetup();
-		String roles_expectedUrl = "http://103.50.162.196/testing/role.php";
-		String roles_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(roles_actualUrl, roles_expectedUrl);
+		Roles.clickOnRolesUnderSetup();
 		LOG.info("Performed click operation on copy button on Role page" );
-		role.clickOnPrintInRoles();
+		Roles.clickOnPrintInRoles();
 	}
 	
 	/**
-	 * In tc_08 testcase admin will enter input in search box on roles page
+	 * In this  testcase admin will enter input in search box on roles page
 	 * admin will get same date as per input in role data table
 	 */
-	public void tc_08() {
-		String index_expectedUrl = "http://103.50.162.196/testing/index.php";
-		String index_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(index_actualUrl, index_expectedUrl);
+	@Test(groups = {"Regression","Sanity","Smoke"},description = "To verify Search box on Roles Page")
+	public void verifySearchBoxOnRoles() {
 		LOG.info("Home Page -- Performing Mouse hover to setUp");
-		role.mouseHoverToSetUp();
+		Roles.mouseHoverToSetUp();
 		LOG.info("Click on Roles under Setup");
-		role.clickOnRolesUnderSetup();
-		String roles_expectedUrl = "http://103.50.162.196/testing/role.php";
-		String roles_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(roles_actualUrl, roles_expectedUrl);
+		Roles.clickOnRolesUnderSetup();
 		LOG.info("Searching role in Roles page");
-		role.enterTextInSearchBoxInRole();
-		String searchRole_expectedUrl = "http://103.50.162.196/testing/role.php";
-		String searchRole_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(searchRole_actualUrl, searchRole_actualUrl);
+		Roles.enterTextInSearchBoxInRole();
 		
 	}
 	/**
 	 * In tc_09 testcase admin will edit role and set new permission to re-enter role
 	 * and able to see Role updated popup message
 	 */
-	public void tc_09() {
-		String index_expectedUrl = "http://103.50.162.196/testing/index.php";
-		String index_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(index_actualUrl, index_expectedUrl);
+	@Test(groups = {"Regression","Sanity","Smoke"},description = "To verify Edit icon in Actions on Roles Page")
+	public void verifyEditIconInActionsOnRoles() {
+		
 		LOG.info("Home Page -- Performing Mouse hover to setUp");
-		role.mouseHoverToSetUp();
+		Roles.mouseHoverToSetUp();
 		LOG.info("Click on Roles under Setup");
-		role.clickOnRolesUnderSetup();
-		String roles_expectedUrl = "http://103.50.162.196/testing/role.php";
-		String roles_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(roles_actualUrl, roles_expectedUrl);
+		Roles.clickOnRolesUnderSetup();
 		LOG.info("Click on edit icon in roles page");
-		role.clickOnEditIconInRole();
-		String editRole_expectedUrl = "http://103.50.162.196/testing/role.php#";
-		String editRole_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(editRole_actualUrl, editRole_expectedUrl);
+		Roles.clickOnEditIconInRole();
 		LOG.info("Re-enter new Role in Role Name");
-		role.enterTextInRoleName();
-		String re_enterRoleName_expectedUrl = "http://103.50.162.196/testing/role.php#";
-		String re_enterRoleName_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(re_enterRoleName_actualUrl, re_enterRoleName_expectedUrl);
+		Roles.enterTextInRoleName();
 		LOG.info("Set new permission to Re-enter Role");
-		role.permissions();
-		String editPermissionRole_expectedUrl = "http://103.50.162.196/testing/role.php#";
-		String editPermissionRole_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(editPermissionRole_actualUrl, editPermissionRole_expectedUrl);
+		Roles.permissions();
 		LOG.info("Click on submit button After setting permissions to Role");
-		role.clickOnSubmitInRoles();
+		Roles.clickOnSubmitInRoles();
 		String edit_submit_expectedUrl = "http://103.50.162.196/testing/role.php";
 		String edit_submit_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(edit_submit_actualUrl, edit_submit_expectedUrl);
@@ -254,19 +196,14 @@ public class RolesTest extends BaseTest {
 	 * In tc_10 testcase admin will able to delete role on Roles page 
 	 * and able to see Role deleted Popup message
 	 */
-	public void tc_10() {
-		String index_expectedUrl = "http://103.50.162.196/testing/index.php";
-		String index_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(index_actualUrl, index_expectedUrl);
+	@Test(groups = {"Regression","Sanity","Smoke"},description = "To verify delete icon in Actions on Roles Page")
+	public void verifyDeleteIconInActionsOnRoles() {
 		LOG.info("Home Page -- Performing Mouse hover to setUp");
-		role.mouseHoverToSetUp();
+		Roles.mouseHoverToSetUp();
 		LOG.info("Click on Roles under Setup");
-		role.clickOnRolesUnderSetup();
-		String roles_expectedUrl = "http://103.50.162.196/testing/role.php";
-		String roles_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(roles_actualUrl, roles_expectedUrl);
+		Roles.clickOnRolesUnderSetup();
 		LOG.info("Click on delete icon in roles page");
-		role.clickOnDeleteIconInRole();
+		Roles.clickOnDeleteIconInRole();
 		LOG.info("Role get deleted");
 		
 	}
