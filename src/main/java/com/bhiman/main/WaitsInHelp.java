@@ -32,7 +32,7 @@ public class WaitsInHelp {
 	public static void webDriverWaitInSeconds(WebElement element, int timeOutInSeconds, int sleepInMillis) {
 		Constants.wait = new WebDriverWait(Constants.driver, timeOutInSeconds, sleepInMillis);
 		LOG.info("Webdriver is waiting for "+element+ " to be visible.");
-		Constants.wait.until(ExpectedConditions.visibilityOf(Constants.element));
+		Constants.wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
 	/**

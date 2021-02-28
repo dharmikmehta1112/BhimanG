@@ -108,7 +108,7 @@ public class UsersTest extends BaseTest {
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnPrintButton();
-		
+
 //work in progress
 	}
 
