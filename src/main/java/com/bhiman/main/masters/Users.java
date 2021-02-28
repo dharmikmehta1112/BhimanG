@@ -198,6 +198,7 @@ public class Users extends UIKeywords {
 
 	public static void clickOnViewUsers() {
 		LOG.info("Click on View users button of Add Users page.");
+		WaitsInHelp.implicitWaitInSeconds(10);
 		UIKeywords.clickOnElement(view_users);
 	}
 
