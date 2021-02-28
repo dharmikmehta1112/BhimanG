@@ -67,11 +67,17 @@ public class Users extends UIKeywords {
 
 	// ******************Page Object Locators after click on AddUsers button in
 	// Users page******************
-	@FindBy(css = "user_name")
+	@FindBy(xpath = "//input[@placeholder='Enter User Name']")
 	private static WebElement U_name;
-
+	
+	@FindBy(xpath = "//label[normalize-space()='Please Enter User Name']#user_name-error")
+	private static WebElement U_name_error;
+	
+	
 	@FindBy(css = "#mobile_no")
 	private static WebElement U_mobile_no;
+	
+	
 
 	@FindBy(css = "#email")
 	private static WebElement U_email;
@@ -117,12 +123,6 @@ public class Users extends UIKeywords {
 	@FindBy(css = "#status")
 	private static WebElement U_status;
 
-	@FindBy(xpath = "//select[@id='status']//option[text()='Active']")
-	private static WebElement U_status_active;
-
-	@FindBy(xpath = "//select[@id='status']//option[text()='In-Active']")
-	private static WebElement U_status_in_active;
-
 	@FindBy(css = "#password")
 	private static WebElement U_password;
 
@@ -139,6 +139,10 @@ public class Users extends UIKeywords {
 
 	public Users() {
 		PageFactory.initElements(Constants.driver, this);
+	}
+	public  String gettextofUserNameErroeMessage() {
+		LOG.info("to get err messge ");
+		return UIKeywords.getText(U_name_error);
 	}
 	// ***********Page Object Methods for Users page in Masters******************
 	public static void clickOnUserCopyButton() {
@@ -199,6 +203,7 @@ public class Users extends UIKeywords {
 
 	public static void enterUserName(String UserNamr) {
 		LOG.info("Enter User name.");
+		WaitsInHelp.implicitWaitInSeconds(10);
 		UIKeywords.enterText(U_name, UserNamr);
 	}
 
@@ -240,6 +245,10 @@ public class Users extends UIKeywords {
 	public static void enterIFSCcode(String enterIFSCcoad) {
 		LOG.info("Enter Bank IFSC coad");
 		UIKeywords.enterText(U_ifsc_code, enterIFSCcoad);
+	}
+	public static void scrollVerticalDownloadWhenRequired() {
+		LOG.info("Scroll vertically down upto the visibility of other element.");
+		UIKeywords.scrollVerticalDown(U_father_name);
 	}
 
 	public static void uploadUserResumeDoc(String filepathforUploadResume) {

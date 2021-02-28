@@ -63,7 +63,7 @@ public class UsersTest extends BaseTest {
 		users.clickOnUsers();
 		users.clickOnExcelButton();
 		Constants.actual = "Users.xlsx";
-		String filePath = "C:\\Users\\ingalkar\\Downloads\\Users.xlsx";
+		String filePath = PropertyReader.getLocatorValue("Users_download_filePath")+".xlsx";
 		File file = new File(filePath);
 		Constants.flag = file.exists();
 		assertTrue(Constants.flag, "File name: " + Constants.actual + " is not downloaded at location: " + filePath);
@@ -79,7 +79,7 @@ public class UsersTest extends BaseTest {
 		users.clickOnUsers();
 		users.clickOnCSVButton();
 		Constants.actual = "Users.csv";
-		String filePath = "C:\\Users\\ingalkar\\Downloads\\Users.csv";
+		String filePath = PropertyReader.getLocatorValue("Users_download_filePath")+".csv";
 		File file = new File(filePath);
 		Constants.flag = file.exists();
 		assertTrue(Constants.flag, "File name: " + Constants.actual + " is not downloaded at location: " + filePath);
@@ -94,7 +94,7 @@ public class UsersTest extends BaseTest {
 		users.clickOnUsers();
 		users.clickOnPDFButton();
 		Constants.actual = "Users.pdf";
-		String filePath = "C:\\Users\\ingalkar\\Downloads\\Users.pdf";
+		String filePath = PropertyReader.getLocatorValue("Users_download_filePath")+".pdf";
 		File file = new File(filePath);
 		Constants.flag = file.exists();
 		assertTrue(Constants.flag, "File name: " + Constants.actual + " is not downloaded at location: " + filePath);
@@ -108,7 +108,7 @@ public class UsersTest extends BaseTest {
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnPrintButton();
-		//users.switchToWindow(1);
+
 //work in progress
 	}
 
@@ -135,15 +135,21 @@ public class UsersTest extends BaseTest {
 	}
 	
 	@Test (description = "To verify save button. when all field is blank.")
-	public void toVerifySavebtnWhenAlltheFieldAreBlank() {
-		
+	public void toVerifySavebtnWhenAlltheFieldAreBlank() {	
 		Users users = new Users();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
+		users.scrollVerticalDownloadWhenRequired();
 		users.clickOnUserSubmit();
-		// To Do write code to assert		
+		String Users_expectedUrl = "http://103.50.162.196/testing/user.php#";
+		String Users_actualUrl = UIKeywords.getPageUrl();
+//		Constants.expected ="Please Enter User Name";
+//		Constants.actual = users.gettextofUserNameErroeMessage();
+//		Assert.assertEquals(Constants.actual, Constants.expected);	
+		Assert.assertEquals(Users_actualUrl, Users_expectedUrl);
 	}
+	
 	
 	@Test (description = "To verify and validate Save button. when enter a Valid entry.")
 	public void endToendTestforUserenterALLValidData() {
@@ -151,42 +157,75 @@ public class UsersTest extends BaseTest {
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
-		users.clickOnUserSubmit();
+		
 		users.enterUserName("Mangesh");
 		users.enterMobileNo("9970579149");
 		users.enterEmailId("mingalkar@gmail.com");
 		users.selectRoleforUser("Admin");
-		// To Do write code to assert		
+		users.enterJoiningDate("10-02-1987");
+		users.selectBloodGroup("O negative");
+		users.enterBankName("State Bank Of India");
+		users.enterIFSCcode("SBIN0000455");
+		users.scrollVerticalDownloadWhenRequired();
+		users.uploadUserResumeDoc("C:\\Users\\ingalkar\\Desktop\\up load only\\3-update_resume.rtf");
+		users.uploadUserAgreementDoc("C:\\Users\\ingalkar\\Desktop\\up load only\\3-update_agreement.rtf");
+		users.uploaduserKYCDoc("C:\\Users\\ingalkar\\Desktop\\up load only\\3-update_kyc.rtf");
+		users.enterFatherName("Vitthal");
+		users.enterFatherMobileNo("8989151423");
+		users.enterFatherOccupation("worker");
+		users.selectUserStatus("Active");
+		users.enterPassword("123456");
+		users.enterConfirmPassword("123456");
+		
+		users.clickOnUserSubmit();
+		String Users_expectedUrl = "http://103.50.162.196/testing/user.php";
+		String Users_actualUrl = UIKeywords.getPageUrl();	
+		Assert.assertEquals(Users_actualUrl, Users_expectedUrl);
 	}
 	
-	@Test (description = "To verify and validate Save button. when enter a In-Valid user Name entry.")
-	public void toverifySavebtnWhenEnterInvaldUsername() {
+	@Test (description = "To verify when enter a In-Valid user Name.")
+	public void toverifyUserEnterInvaldUsername() {
 		Users users = new Users();
+		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
-		users.clickOnUserSubmit();
-		users.enterUserName("@$%*&^%#MANGO_Gold#$");
-		users.enterMobileNo("9970579149");
-		users.enterEmailId("mingalkar@gmail.com");
-		users.selectRoleforUser("Admin");
-		// To Do write code to assert	
+		String value=PropertyReader.getLocatorValue("User_name_addUser");
+		if (value != null && value.matches("^[a-zA-Z ]*$")) {
+			users.enterUserName(value);
+			Constants.flag = true;
+		}
+		Assert.assertTrue(Constants.flag, "Invalid User Name. Only blank space, lowercase and uppercase alphabets are allowed.");
 
 	}
-	@Test (description = "To verify and validate Save button. when enter a In-Valid mobile no .")
+	@Test (description = "To verify users enter a In-Valid mobile no .")
 	public void toverifySavebtnWhenEnterInvaldMobileNo() {
 		Users users = new Users();
+		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
-		users.clickOnUserSubmit();
-		users.enterUserName("@$%*&^%#MANGO_Gold#$");
-		users.enterMobileNo("9970579149");
-		users.enterEmailId("mingalkar@gmail.com");
-		users.selectRoleforUser("Admin");
-		// To Do write code to assert	
-
+		String value = PropertyReader.getLocatorValue("User_mobile_No");
+//		if(value !=null  ) {
+//			users.enterMobileNo(value);
+//			Constants.flag = true;
+//		} 
+//		if (value.length()<=10) {
+//			users.enterMobileNo(value);
+//			Constants.flag = true;
+//		}
+//		if (value.matches("\\d{10}") ) {
+//			users.enterMobileNo(value);
+//			Constants.flag = true;
+//		}
+		if ((value !=null) && (value.length()<=10) && (value.matches("\\d{10}") ) ) {
+			users.enterMobileNo(value);
+			Constants.flag = true;
+		}
+		Assert.assertTrue(Constants.flag, "  validate phone numbers of format will consider.");		
 	}
+
+	
 	@Test (description = "To verify and validate Save button. when enter a In-Valid Email_id .")
 	public void toverifySavebtnWhenEnterInvaldEmailId() {
 		Users users = new Users();
@@ -194,10 +233,7 @@ public class UsersTest extends BaseTest {
 		users.clickOnUsers();
 		users.clickOnAddUsers();
 		users.clickOnUserSubmit();
-		users.enterUserName("@$%*&^%#MANGO_Gold#$");
-		users.enterMobileNo("9970579149");
-		users.enterEmailId("mingalkar@gmail.com");
-		users.selectRoleforUser("Admin");
+	
 		// To Do write code to assert	
 
 	}
