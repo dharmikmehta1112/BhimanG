@@ -25,27 +25,22 @@ public class BrokersTest extends BaseTest {
 	//Brokers broker=PageFactory.initElements(Constants.driver, Brokers.class);
 	//TC-01
 	@Test(priority=-1, description="To verify whether 'Brokers' option is visible and clickable in Masters Tab or not.")
-	public void toCheckBrokersOption() throws InterruptedException {
+	public void toCheckBrokersOption()  {
 		LOG.info("Checking for Brokers option in Masters Tab After MouseHover");
 		Brokers brokers=new Brokers();
-		Thread.sleep(2000);
 		brokers.mouseHoverToMastersForBrokersPage();
-		Thread.sleep(2000);
 		//Constants.driver.close();	
 	}
 	
 	//TC-02
 	@Test( description="To verify functionality of Add Broker option. ", alwaysRun=true)
-	public void clickingOnBrokersPageFromMasters() throws InterruptedException {
+	public void clickingOnBrokersPageFromMasters() {
 		LOG.info("Clicking on Add Broker from Masters Broker");
 		Brokers brokers=new Brokers();
 		String brokers_expectedUrl = "http://103.50.162.196/testing/broker.php#";
 		brokers.mouseHoverToMastersForBrokersPage();
-		Thread.sleep(2000);
 		brokers.clickOnBrokers();
-		Thread.sleep(2000);
 		brokers.clickOnAddBroker();
-		Thread.sleep(2000);
 		String brokers_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(brokers_actualUrl, brokers_expectedUrl);
 		//Constants.driver.close();		
@@ -53,16 +48,13 @@ public class BrokersTest extends BaseTest {
 	
 	//TC-03
 	@Test( description="Clicking on View Broker Button after clicked on Add Broker")
-	public void clickOnViewBrokers() throws InterruptedException {
+	public void clickOnViewBrokers() {
 		LOG.info("Clicking on View Broker after clicked on Add Broker from Masters Broker");
 		Brokers brokers=new Brokers();
 		String brokers_expectedUrl = "http://103.50.162.196/testing/broker.php#";
 		brokers.mouseHoverToMastersForBrokersPage();
-		Thread.sleep(2000);
 		brokers.clickOnBrokers();
-		Thread.sleep(2000);
 		brokers.clickOnAddBroker();
-		Thread.sleep(2000);
 		brokers.clickOnViewBrokers();
 		String brokers_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(brokers_actualUrl, brokers_expectedUrl);
@@ -70,29 +62,22 @@ public class BrokersTest extends BaseTest {
 	
 	//TC-04
 	@Test( description="Clicking on Copy Button")
-	public void clickOnCopyBtnOnBroker() throws InterruptedException {
+	public void clickOnCopyBtnOnBroker() {
 		LOG.info("Clicking on Copy Button");
 		Brokers brokers=new Brokers();
 		brokers.mouseHoverToMastersForBrokersPage();
-		Thread.sleep(2000);
 		brokers.clickOnBrokers();
-		Thread.sleep(2000);
 		brokers.clickOnCopyAtBrokersPage();
-		Thread.sleep(2000);
 	}
 	
 	//TC-05
 	@Test(description="Clicking on Excel Button")
-	public void clickOnExcelBtn() throws InterruptedException {
+	public void clickOnExcelBtn() {
 		LOG.info("Clicking on Excel Button");
 		Brokers brokers=new Brokers();
-		Thread.sleep(2000);
 		brokers.mouseHoverToMastersForBrokersPage();
-		Thread.sleep(2000);
 		brokers.clickOnBrokers();
-		Thread.sleep(2000);
 		brokers.clickOnExcelBtnAtBrokersPage();
-		Thread.sleep(2000);
 		Constants.actual = "Brokers.xlsx";
 		String brokersFilePath = "C:\\Users\\VINITA\\Downloads\\Brokers.xlsx";
 		File file = new File(brokersFilePath);
@@ -102,16 +87,12 @@ public class BrokersTest extends BaseTest {
 	
 	//TC-06
 	@Test( description="Clicking on CSV Button")
-	public void clickOnCSVBtn() throws InterruptedException {
+	public void clickOnCSVBtn() {
 		LOG.info("Clicking on CSV Button");
 		Brokers brokers=new Brokers();
-		Thread.sleep(1000);
 		brokers.mouseHoverToMastersForBrokersPage();
-		Thread.sleep(1000);
 		brokers.clickOnBrokers();
-		Thread.sleep(1000);
 		brokers.clickOnCSVBtnAtBrokersPage();
-		Thread.sleep(1000);
 		Constants.actual = "Brokers.csv";
 		String brokersFilePath = "C:\\Users\\VINITA\\Downloads\\Brokers.csv";
 		File file = new File(brokersFilePath);
@@ -121,16 +102,12 @@ public class BrokersTest extends BaseTest {
 	
 	//TC-07
 	@Test( description="Clicking on PDF Button")
-	public void clickOnPDFBtn() throws InterruptedException {
+	public void clickOnPDFBtn() {
 		LOG.info("Clicking on PDF Button");
 		Brokers brokers=new Brokers();
-		Thread.sleep(1000);
 		brokers.mouseHoverToMastersForBrokersPage();
-		Thread.sleep(1000);
 		brokers.clickOnBrokers();
-		Thread.sleep(1000);
 		brokers.clickOnPDFBtnAtBrokersPage();
-		Thread.sleep(1000);
 		Constants.actual = "Brokers.pdf";
 		String brokersFilePath = "C:\\Users\\VINITA\\Downloads\\Brokers.pdf";
 		File file = new File(brokersFilePath);
@@ -140,46 +117,46 @@ public class BrokersTest extends BaseTest {
 	
 	//TC-08
 	@Test( description="Clicking on Print Button")
-	public void clickOnPrintBtn() throws InterruptedException {
-		LOG.info("Clicking on PDF Button");
+	public void clickOnPrintBtn() {
+		LOG.info("Clicking on Print Button");
 		Brokers brokers=new Brokers();
-		Thread.sleep(2000);
 		brokers.mouseHoverToMastersForBrokersPage();
-		Thread.sleep(2000);
 		brokers.clickOnBrokers();
-		Thread.sleep(2000);
 		brokers.clickOnPrintBtnAtBrokersPage();
-		
-		Thread.sleep(2000);
 	}
 	
 	//TC-09
 	@Test(description = "To verify/validate functionality of search box with valid input.")
-	public void searchBoxWithValidText() throws InterruptedException {
+	public void searchBoxWithValidText() {
 		LOG.info("Masters-->Brokers: Entering invalid text in Search box ");
 		Brokers brokers=new Brokers();
-		Thread.sleep(2000);
 		brokers.mouseHoverToMastersForBrokersPage();
-		Thread.sleep(2000);
 		brokers.clickOnBrokers();
-		Thread.sleep(2000);
 		brokers.enterTextInSearchBox(PropertyReader.getLocatorValue("brokers_search_valid_text"));
-		
 	}
 		
 	//TC-10
 	@Test(description = "To verify/validate functionality of search box with invalid input.")
-	public void searchBoxWithInvalidText() throws InterruptedException {
+	public void searchBoxWithInvalidText() {
 		LOG.info("Masters-->Brokers: Entering invalid text in Search box ");
 		Brokers brokers=new Brokers();
-		Thread.sleep(2000);
 		brokers.mouseHoverToMastersForBrokersPage();
-		Thread.sleep(2000);
 		brokers.clickOnBrokers();
-		Thread.sleep(2000);
 		brokers.enterTextInSearchBox(PropertyReader.getLocatorValue("brokers_search_invalid_text"));
 		Constants.expected = "No matching records found";
 		Constants.actual = brokers.getTextForInvalidBrokersSearch();
 		Assert.assertEquals(Constants.actual, Constants.expected);	
+	}
+	
+	//TC-11
+	@Test(description = "To verify/validate functionality of search box with invalid input.")
+	private void fillAddBrokerFormTest() {
+		LOG.info("Masters-->Brokers: Entering invalid text in Search box ");
+		Brokers brokers=new Brokers();
+		brokers.mouseHoverToMastersForBrokersPage();
+		brokers.clickOnBrokers();
+		brokers.clickOnAddBroker();
+		brokers.fillAddBrokerForm();
+		brokers.clickOnSubmit();
 	}
 }
