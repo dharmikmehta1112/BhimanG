@@ -6,58 +6,63 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.bhiman.main.Constants;
 import com.bhiman.main.UIKeywords;
+
+import jdk.internal.org.jline.utils.Log;
 
 public class BhimanListeners implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
-		//ITestListener.super.onTestStart(result);
-	}
+		// Log.info("Running started for "+result+ " test case.");
+		
+	} // end of method
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
-		//ITestListener.super.onTestSuccess(result);
-	}
+		// Log.info("Successfully completed run for "+result+ "test case.");
+		
+	} // end of method
 
 	@Override
 	public void onTestFailure(ITestResult result) {
+		// Log.info("Test case "+ result +" failed.");
 		Date date = new Date();
-		String screenshotName = "bhiman_007_" + date.getDate() + "_" + date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds() + ".png";
-		UIKeywords.takeScreenshot(System.getProperty("user.dir")+"\\screenshots", screenshotName);
-	}
+		String screenshotName = "bhiman_"+ result.getName() + "_" + date.getDate() + "_" + date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds() + ".png";
+		// Log.info("Taking screenshot of "+ result +" failed test case.");
+		UIKeywords.takeScreenshot(Constants.basePath+"\\screenshots", screenshotName);
+		
+	} // end of method
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
-		//ITestListener.super.onTestSkipped(result);
-	}
+		Log.info("Test case "+result+ " skipped.");
+		
+	} // end of method
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		// TODO Auto-generated method stub
-		//ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
-	}
+		// Log.info("Test case "+ result +" failed but with in success percentage.");
+		
+	} // end of method
 
 	@Override
 	public void onTestFailedWithTimeout(ITestResult result) {
-		// TODO Auto-generated method stub
-		//ITestListener.super.onTestFailedWithTimeout(result);
-	}
+		// Log.info("Test case "+ result +" failed due to timeout.");
+		
+	} // end of method
 
 	@Override
 	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
-		//ITestListener.super.onStart(context);
-	}
+		// Log.info("Started running "+context+ " test case.");
+		
+	} // end of method
 
 	@Override
 	public void onFinish(ITestContext context) {
-		// TODO Auto-generated method stub
-		//ITestListener.super.onFinish(context);
-	}
-
+		// Log.info("Finish running "+context+ " test case.");
+		
+	} // end of method
 	
 }

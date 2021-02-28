@@ -37,7 +37,8 @@ public class UIKeywords {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Clearing text from WebElement: " +element);
 		element.clear();
-	}
+		
+	} // end of method
 
 	/**
 	 * Overload Method:
@@ -47,8 +48,9 @@ public class UIKeywords {
 	 */
 	public static void clearText(By by) {
 		LOG.info("Finding element " +by+ "and clear text on web element using By class instance.");
-		Constants.element.clear();
-	}
+		Constants.driver.findElement(by).clear();
+		
+	} // end of method
 
 	/**
 	 * Overload Method:
@@ -60,7 +62,8 @@ public class UIKeywords {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Clicking on WebElement: " +element);
 		element.click();
-	}
+		
+	} // end of method
 
 	/**
 	 * Overload Method:
@@ -71,7 +74,8 @@ public class UIKeywords {
 	public static void clickOnElement(By by) {
 		LOG.info("Finding element " +by+ "and click on web element using By class instance.");
 		Constants.driver.findElement(by).click();
-	}
+		
+	} // end of method
 
 	/**
 	 * Close the current browser window, or last browser window associated with this driver.
@@ -79,7 +83,9 @@ public class UIKeywords {
 	public static void closeBrowser() {
 		LOG.info("Closing current browser window.");
 		Constants.driver.close();
-	}
+		LOG.info("Closed current browser window.");
+		
+	} // end of method
 
 	/**
 	 * Close all browser window associated with this driver.
@@ -87,8 +93,21 @@ public class UIKeywords {
 	public static void closeAllBrowser() {
 		LOG.info("Closing all browser window.");
 		Constants.driver.quit();
+		LOG.info("Closed all browser window.");
 	}
 		
+	/**
+	 * Use to deletes all cookies of browser.
+	 * Cookies are messages that web servers pass to your web browser when you visit Internet sites.
+	 */
+	public static void deleteAllCookies() {
+		LOG.info("Deleting all browser cookies");
+		Constants.driver.manage().deleteAllCookies();
+		LOG.info("Deleted all cookies");
+		
+	} // end of method
+	
+	
 	/**
 	 * Overload Method:
 	 * Use to enter text on @WebElement element  like textbox etc.
@@ -100,7 +119,8 @@ public class UIKeywords {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Entering text as " +textToEnter+ " in WebElement: " + element);
 		element.sendKeys(textToEnter);
-	}
+		
+	} // end of method
 	
 	/**
 	 * Overload Method:
@@ -112,7 +132,8 @@ public class UIKeywords {
 	public static void enterText(By by, String textToEnter) {
 		LOG.info("Entering text in " +by+ "using By class instance.");
 		Constants.driver.findElement(by).sendKeys(textToEnter);
-	}
+		
+	} // end of method
 
 	/**
 	 * Create a @WebDriver driver instance.
@@ -126,7 +147,8 @@ public class UIKeywords {
 			LOG.info("Driver instance created.");
 			return Constants.driver;			
 		}
-	}
+		
+	} // end of method
 
 	/**
 	 * Read current page title.
@@ -134,7 +156,8 @@ public class UIKeywords {
 	public static String getPageTitle() {
 		LOG.info("Reading current page title.");
 		return Constants.driver.getTitle();
-	}
+		
+	} // end of method
 	
 	/**
 	 * Read current page URL.
@@ -142,7 +165,8 @@ public class UIKeywords {
 	public static String getPageUrl() {
 		LOG.info("Reading current page URL.");
 		return Constants.driver.getCurrentUrl();
-	}
+		
+	} // end of method
   
 	/**
 	 * Overload Method:
@@ -154,7 +178,8 @@ public class UIKeywords {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Reading text for element: " +element+ " in page.");
 		return element.getText();
-	}
+		
+	} // end of method
 	
 	/**
 	 * Overload Method:
@@ -165,7 +190,8 @@ public class UIKeywords {
 	public static String getText(By by) {
 		LOG.info("Reading text for element: " +by+ " in page.");
 		return Constants.element.getText();
-	}
+		
+	} // end of method
 
 	/**
 	 * Overload Method:
@@ -176,8 +202,9 @@ public class UIKeywords {
 	public static void mouseHover(WebElement element) {
 		LOG.info("Mouse hover to web element: " +element+ "in page.");
 		Constants.actions = new Actions(Constants.driver);
-		Constants.actions.moveToElement(element).perform();
-	}
+		Constants.actions.moveToElement(element).build().perform();
+		
+	} // end of method
 
 	/**
 	 * Overload Method:
@@ -190,7 +217,8 @@ public class UIKeywords {
 		Constants.element = Constants.driver.findElement(by);
 		Constants.actions = new Actions(Constants.driver);
 		Constants.actions.moveToElement(Constants.element).perform();
-	}
+		
+	} // end of method
 
 	/**
 	 * Maximizes the current browser window, if it is not already maximized using this driver.
@@ -198,7 +226,8 @@ public class UIKeywords {
 	public static void maximizeWindow() {
 		LOG.info("Maximize browser window.");
 		Constants.driver.manage().window().maximize();
-	}	
+		
+	} // end of method
 
 	/**
 	 * Navigate to back page from current page.
@@ -206,7 +235,8 @@ public class UIKeywords {
 	public static void navigateBack() {
 		LOG.info("Navigate to back page from current page.");
 		Constants.driver.navigate().back();
-	}
+		
+	} // end of method
 	
 	/**
 	 * Navigate to forward page from current page.
@@ -214,7 +244,8 @@ public class UIKeywords {
 	public static void navigateForward() {
 		LOG.info("Navigate to forward page from current page.");
 		Constants.driver.navigate().forward();
-	}
+		
+	} // end of method
 
 	/**
 	 * Launch specified web browser. Only @browserName as chrome, firefox, edge, ie and opera are allowed.
@@ -254,7 +285,8 @@ public class UIKeywords {
 			LOG.error("Invalid browser name: "+browserName+".\nExpected: 'chrome','firefox','edge','ie',and 'opera'.");
 			break;
 		}
-	}
+		
+	} // end of method
 	
 	/**
 	 * Open the specified url.
@@ -264,7 +296,8 @@ public class UIKeywords {
 	public static void openUrl(String url) {
 		LOG.info("Launching application URL: "+url);
 		Constants.driver.get(url);
-	}
+		
+	} // end of method
 
 	/**
 	 * Refresh the current page.
@@ -272,7 +305,8 @@ public class UIKeywords {
 	public static void refreshPage() {
 		LOG.info("Refreshing current page.");
 		Constants.driver.navigate().refresh();
-	}
+		
+	} // end of method
 	
 	/**
 	 * Use to scroll vertically down the page up to view of @Webelement element.
@@ -283,7 +317,8 @@ public class UIKeywords {
 		LOG.info("Scrolling vertically down upto web element: " +element+ " to come view in page.");
 		JavascriptExecutor jse = (JavascriptExecutor) Constants.driver;	
 		jse.executeScript("arguments[0].scrollIntoView();", element);
-	}
+		
+	} // end of method
 	
 	/**
 	 * Overload Method:
@@ -296,7 +331,8 @@ public class UIKeywords {
 		LOG.info("Selected " +element+ "from dropdown using text: " +textToSelect);
 		Constants.select = new Select(element);
 		Constants.select.selectByVisibleText(textToSelect);
-	}
+		
+	} // end of method
 
 	/**
 	 * Overload Method:
@@ -310,7 +346,8 @@ public class UIKeywords {
 		Constants.element = Constants.driver.findElement(by);
 		Constants.select = new Select(Constants.element);
 		Constants.select.selectByVisibleText(textToSelect);
-	}	
+		
+	} // end of method
 		
 	/**
 	 *  Use to switch driver from parent(main) window to child window. It will also print both window handles.
@@ -329,7 +366,32 @@ public class UIKeywords {
 				LOG.error("Parent(main) and child window hanldles are same.");
 			}
 		}
-	}
+		
+	} // end of method
+	
+	/**
+	 * Uses to switch to the desired frame.
+	 * 
+	 * @param index as {@code int} frame index
+	 */
+	public static void switchToFrame(int index) {
+		LOG.info("Switching to frame");
+		Constants.driver.switchTo().frame(index);
+		LOG.info("Switched to frame");
+	} // end of method
+
+	/**
+	 * Uses to switch to the desired frame.
+	 * 
+	 * @param element as {@code WebElement}.
+	 */
+	public static void switchToFrame(WebElement element) {
+		LOG.info("Switching to frame");
+		Constants.driver.switchTo().frame(element);
+		LOG.info("Switched to frame");
+		
+	} // end of method
+
 	
 	/**
 	 * Use to check if @WebElement element is displayed.
@@ -340,7 +402,8 @@ public class UIKeywords {
 	public static Boolean isElementDisplayed(WebElement element) {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		return element.isDisplayed();
-	}
+		
+	} // end of method
 	
 	/**
 	 *
@@ -350,17 +413,18 @@ public class UIKeywords {
 	 * @param fileName as {@code String}.
 	 */
 	public boolean isFileDownloaded(String downloadPath, String fileName) {
-		boolean flag = false;
+		Constants.flag = false;
 		File dir = new File(downloadPath);
 		File[] dir_contents = dir.listFiles();
 
 		for (int i = 0; i < dir_contents.length; i++) {
 			if (dir_contents[i].getName().equals(fileName))
-				return flag=true;
+				return Constants.flag = true;
 		}
 
-		return flag;
-	}
+		return Constants.flag;
+		
+	} // end of method
 
 	/**
 	 *
@@ -377,7 +441,7 @@ public class UIKeywords {
 			LOG.error("Failed to delete the file.");
 		}
 		 
-	}
+	} // end of method
 	
 	/**
 	 *
@@ -396,6 +460,9 @@ public class UIKeywords {
        } catch (IOException e) {
            System.out.println(e.getMessage());
        }
-	}
-		
+	
+	} // end of method
+	
+
+
 }
