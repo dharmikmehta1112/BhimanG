@@ -1,11 +1,16 @@
 package com.bhiman.main;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -29,6 +34,7 @@ public class UIKeywords {
 	 * @param element as {@code WebElement}.
 	 */
 	public static void clearText(WebElement element) {
+		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Clearing text from WebElement: " +element);
 		element.clear();
 	}
@@ -51,6 +57,7 @@ public class UIKeywords {
 	 * @param element as {@code WebElement}.
 	 */
 	public static void clickOnElement(WebElement element) {
+		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Clicking on WebElement: " +element);
 		element.click();
 	}
@@ -90,6 +97,7 @@ public class UIKeywords {
 	 * @param textToEnter as {@code String}.
 	 */
 	public static void enterText(WebElement element, String textToEnter) {
+		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Entering text as " +textToEnter+ " in WebElement: " + element);
 		element.sendKeys(textToEnter);
 	}
@@ -143,6 +151,7 @@ public class UIKeywords {
 	 * @param element as {@code WebElement}.
 	 */
 	public static String getText(WebElement element) {
+		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Reading text for element: " +element+ " in page.");
 		return element.getText();
 	}
@@ -320,6 +329,73 @@ public class UIKeywords {
 				LOG.error("Parent(main) and child window hanldles are same.");
 			}
 		}
+	}
+	
+	/**
+	 * Use to check if @WebElement element is displayed.
+	 * 
+	 * @param element as {@code WebElement}.
+	 * 
+	 */
+	public static Boolean isElementDisplayed(WebElement element) {
+		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
+		return element.isDisplayed();
+	}
+	
+	/**
+	 *
+	 * Returns true if file is downloaded or false if file is not downloaded
+	 * 
+	 * @param downloadPath as {@code String}.
+	 * @param fileName as {@code String}.
+	 */
+	public boolean isFileDownloaded(String downloadPath, String fileName) {
+		boolean flag = false;
+		File dir = new File(downloadPath);
+		File[] dir_contents = dir.listFiles();
+
+		for (int i = 0; i < dir_contents.length; i++) {
+			if (dir_contents[i].getName().equals(fileName))
+				return flag=true;
+		}
+
+		return flag;
+	}
+
+	/**
+	 *
+	 * Deletes the existing file
+	 * 
+	 * @param filePath as {@code String}.
+	 * @param fileName as {@code String}.
+	 */
+	public void deleteFile(String filePath, String fileName) {
+		File myObj = new File(filePath+"\\"+fileName); 
+		if (myObj.delete()) { 
+			LOG.info("Deleted the file: " + myObj.getName());
+		} else {
+			LOG.error("Failed to delete the file.");
+		}
+		 
+	}
+	
+	/**
+	 *
+	 * takes screenshot
+	 * 
+	 * @param filePath as {@code String}.
+	 * @param screenshotName as {@code String}.
+	 */
+	public static void takeScreenshot(String filePath, String screenshotName) {
+		//Take the screenshot
+       File screenshot = ((TakesScreenshot) Constants.driver).getScreenshotAs(OutputType.FILE);
+       
+       //Copy the file to a location and use try catch block to handle exception
+       try {
+           FileUtils.copyFile(screenshot, new File(filePath+"\\"+screenshotName));
+       } catch (IOException e) {
+           System.out.println(e.getMessage());
+       }
 	}
 		
 }

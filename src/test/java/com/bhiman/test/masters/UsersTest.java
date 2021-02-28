@@ -108,7 +108,7 @@ public class UsersTest extends BaseTest {
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnPrintButton();
-		users.switchToWindow(1);
+		//users.switchToWindow(1);
 //work in progress
 	}
 

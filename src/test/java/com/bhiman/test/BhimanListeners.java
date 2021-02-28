@@ -1,8 +1,12 @@
 package com.bhiman.test;
 
+import java.util.Date;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import com.bhiman.main.UIKeywords;
 
 public class BhimanListeners implements ITestListener {
 
@@ -20,8 +24,9 @@ public class BhimanListeners implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
-		//ITestListener.super.onTestFailure(result);
+		Date date = new Date();
+		String screenshotName = "bhiman_007_" + date.getDate() + "_" + date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds() + ".png";
+		UIKeywords.takeScreenshot(System.getProperty("user.dir")+"\\screenshots", screenshotName);
 	}
 
 	@Override
