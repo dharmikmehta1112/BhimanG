@@ -10,7 +10,9 @@ import com.bhiman.test.BaseTest;
 import com.bhiman.test.masters.UsersTest;
 
 public class MaterialsTest extends BaseTest {
+  
 	private static final Logger LOG = Logger.getLogger(UsersTest.class);
+  
 	@Test(description = "To verify and validate Material tab ")
 	public void toverifyClickOnMaterial() {
 		Materials material = new Materials();
@@ -19,6 +21,7 @@ public class MaterialsTest extends BaseTest {
 		String Materials_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(Materials_actualUrl, Materials_expectedUrl);
 	}
+  
 	@Test(description = "To verify and validate Text of Material  ")
 	public void toVrifynameofmaterial() {
 		Materials material = new Materials();
@@ -26,6 +29,7 @@ public class MaterialsTest extends BaseTest {
 		String Material_Name_actual=material.getTextofMaterial();
 		Assert.assertEquals(Material_Name_actual, Material_name_expected);	
 	}
+  
 	@Test(description = "To verify and validate Text of copy on material page  ")
 	public void toVerifytextofCopyTabforMaterialPage() {
 		Materials material = new Materials();
@@ -45,6 +49,7 @@ public class MaterialsTest extends BaseTest {
 		String Materials_actualUrl = UIKeywords.getPageUrl();
 		Assert.assertEquals(Materials_actualUrl, Materials_expectedUrl);
 	}
+  
 	@Test
 	public void toverifyviewMaterialTabisclickable() {
 		Materials material = new Materials();
@@ -56,11 +61,13 @@ public class MaterialsTest extends BaseTest {
 		Assert.assertEquals(Materials_actualUrl, Materials_expectedUrl);
 
 	}
+  
 	public void toVerifyDateTabonMatrialPage() {
 		Materials material = new Materials();
 		material.clickonMaterials();
 		material.clickonaddMaterial();
 		
-
 	}
+
+  
 }

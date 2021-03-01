@@ -43,7 +43,7 @@ public class BaseTest extends UIKeywords {
 		UIKeywords.enterText(mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
 		UIKeywords.enterText(password, PropertyReader.getLocatorValue("admin_password"));
 		UIKeywords.clickOnElement(login_Btn);
-		WaitsInHelp.threadSleepInMilliSeconds(5000);
+		//WaitsInHelp.threadSleepInMilliSeconds(5000);
 		UIKeywords.clickOnElement(click_ok);
 		String expectedURL = "http://103.50.162.196/testing/index.php";
 		String actualURL = UIKeywords.getPageUrl();
@@ -51,7 +51,7 @@ public class BaseTest extends UIKeywords {
 		LOG.info("Login to application successfully.");
 		}
 	
-//	@AfterMethod		// Post-condition
+	@AfterMethod		// Post-condition
 	public void tearDown() {
 		LOG.info("After (tearDown) method started.");
 		UIKeywords.closeAllBrowser();

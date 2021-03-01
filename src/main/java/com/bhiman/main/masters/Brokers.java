@@ -7,6 +7,7 @@ import org.testng.log4testng.Logger;
 
 import com.bhiman.main.Constants;
 import com.bhiman.main.UIKeywords;
+import com.bhiman.main.WaitsInHelp;
 
 public class Brokers extends UIKeywords{
 	private static final Logger LOG = Logger.getLogger(Brokers.class);
@@ -112,31 +113,37 @@ public class Brokers extends UIKeywords{
 	
 	
 	
-		public void mouseHoverToMastersForBrokersPage() throws InterruptedException {
+		public void mouseHoverToMastersForBrokersPage() {
 			LOG.info("Master->Brokers: Mouse Hover to Masters");
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 			UIKeywords.mouseHover(masters);
-			Thread.sleep(1000);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
+			
 			//UIKeywords.clickOnElement(brokers);
 		}
 		
 		public void clickOnBrokers() {
 			LOG.info("Master->Brokers: Click on Brokers option under Masters");
 			clickOnElement(brokers);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public void clickOnCopyAtBrokersPage() {
 			LOG.info("Master->Brokers: Click on Copy Button");
 			clickOnElement(brokersCopy);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public void clickOnExcelBtnAtBrokersPage() {
 			LOG.info("Master->Brokers: Click on EXCEL Button");
 			clickOnElement(brokersExcel);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public void clickOnCSVBtnAtBrokersPage() {
 			LOG.info("Master->Brokers: Click on CSV Button");
 			clickOnElement(brokersCSV);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public void clickOnPDFBtnAtBrokersPage() {
@@ -147,41 +154,52 @@ public class Brokers extends UIKeywords{
 		public void clickOnPrintBtnAtBrokersPage() {
 			LOG.info("Master->Brokers: Click on Print Button");
 			clickOnElement(brokersPrint);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public void enterTextInSearchBox(String enterText) {
 			LOG.info("Entering text on search box of Banks page");
 			UIKeywords.enterText(brokersSearchbox, enterText);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public String getTextForInvalidBrokersSearch() {
 			LOG.info("Reading text from bank data table for invalid search of Banks page");
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 			return UIKeywords.getText(brokersNoRecords);
+			
 		}
+		
 		public void clickOnAddBroker() {
 			LOG.info("Master->Brokers: Clicking on Add Broker button of Brokers page");
 			clickOnElement(brokersAdd_broker);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public void clickOnViewBrokers() {
 			LOG.info("Master->Brokers: Click on View Brokers button of Add Broker page.");
 			clickOnElement(brokersView_brokers);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public void attachResume() {
 			LOG.info("Attaching Resume to Add Broker form");
 			brokersResume.sendKeys("F:\\Bhiman Requirements\\RESUME.docx");
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public void attachAgreement() {
 			LOG.info("Attaching Resume to Add Broker form");
 			brokersAgreement.sendKeys("F:\\Bhiman Requirements\\Agreement.docx");
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public void attachKYC() {
 			LOG.info("Attaching KYC to Add Broker form");
 			brokersKYC.sendKeys("F:\\Bhiman Requirements\\KYC.docx");
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
+		
 		public void fillAddBrokerForm() {
 			LOG.info("Adding values to Add Broker form");
 			UIKeywords.enterText(brokersBroker_name, "Abhay");
@@ -189,11 +207,15 @@ public class Brokers extends UIKeywords{
 			UIKeywords.enterText(brokersBroker_address, "Amravati");
 			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
 			UIKeywords.enterText(brokersBlood_group, "B positive");
-			UIKeywords.enterText(brokersStatus, "Active");
-			attachResume();
-			attachAgreement();
-			attachKYC();
+			UIKeywords.selectByTextFromDropdown(brokersStatus, "Active");
+			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\RESUME.docx");
+			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\Agreement.docx");
+			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\KYC.docx");
+			//attachResume();
+			//attachAgreement();
+			//attachKYC();
 			LOG.info("Values added to Add Broker form");
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public void clickOnSubmit() {

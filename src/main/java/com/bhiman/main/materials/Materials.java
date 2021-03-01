@@ -10,6 +10,7 @@ import com.bhiman.main.UIKeywords;
 import com.bhiman.main.masters.Banks;
 
 public class Materials extends UIKeywords {
+  
 	private static final Logger LOG = Logger.getLogger(Banks.class);
 
 	// ***************Page Object Locators for Materials*********************
@@ -72,77 +73,96 @@ public class Materials extends UIKeywords {
 	public Materials() {
 		PageFactory.initElements(Constants.driver, this);
 	}
+  
 	public String getTextofMaterial() {
 		LOG.info("get material Name");
 		return UIKeywords.getText(materials);
 	}
+  
 	public void clickonMaterials() {
 		LOG.info("click on Material :");
 		UIKeywords.clickOnElement(materials);
 	}
+  
 	public String getTextofCopyonMaterialPage() {
 		LOG.info("get Text of copy name on material page");
 		return UIKeywords.getText(materials_copyBtn);
 
 	}
+  
 	public void clickonmaterialcopy() {
 		LOG.info("click on Copy");
 		UIKeywords.clickOnElement(materials_copyBtn);
 	}
+  
 	public void clickonmaterialexcel() {
 		LOG.info("click on Excel");
 		UIKeywords.clickOnElement(materials_excelBtn);
 	}
+  
 	public void clickonmaterialcsv() {
 		LOG.info("click on csv");
 		UIKeywords.clickOnElement(materials_csvBtn);
 	}
+  
 	public void clickonmaterialpdf() {
 		LOG.info("click on pdf");
 		UIKeywords.clickOnElement(materials_pdfBtn);
 	}
+  
 	public void clickonmaterialprint() {
 		LOG.info("click on print");
 		UIKeywords.clickOnElement(materials_printBtn);
 	}
+  
 	public void enterTextOnSearchBox(String textToEnter) {
 		LOG.info("Entering text on search box of material page");
 		UIKeywords.enterText(materials_searchBox, textToEnter);
 	}
+  
 	public void clickonaddMaterial() {
 		LOG.info("click on add material");
 		UIKeywords.clickOnElement(material_add);
 	}
+  
 	public void clickonViewMaterial() {
 		LOG.info("click on view material");
 		UIKeywords.clickOnElement(material_view);
 	}
+  
 	public void entertoMaterialDate(String dateToEnter) {
 		LOG.info("enter material date");
 		UIKeywords.enterText(material_Date, dateToEnter);
 	}
+  
 	public void selectProjectName(String textToEnter) {
 		LOG.info("select project name from drop don list");
 		UIKeywords.selectByTextFromDropdown(material_project_name, textToEnter);
 	}
+  
 	public void enterMaterialName(String TextToEnter) {
 		LOG.info("enter material name");
 		UIKeywords.enterText(material_Name, TextToEnter);
 	}
+  
 	public void enterAmountforMaterial(String TextToEnter) {
 		LOG.info("enter amount of material :");
 		UIKeywords.enterText(material_amount, TextToEnter);
 	}
+  
 	public void uploadmaterialBill(String filePath) {
 		LOG.info("File to upload");
 		UIKeywords.enterText(material_upload_bill, filePath);
 	}
+  
 	public void clickonsubmit() {
 		LOG.info("click on submit");
 		UIKeywords.clickOnElement(material_submit);
 	}
+  
 	public void clickonCancel() {
 		LOG.info("click on cancel");
 		UIKeywords.clickOnElement(material_cancel);
 	}
+
 }
