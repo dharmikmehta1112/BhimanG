@@ -36,7 +36,7 @@ public class BanksTest extends BaseTest {
 		banks.mouseHoverToMasters();
 		banks.clickOnBanks();
 		Constants.actual = UIKeywords.getPageUrl();
-		Constants.expected = "http://103.50.162.196/testing/bank.php";
+		Constants.expected = "http://103.50.162.196/testng/bank.php";
 		Assert.assertEquals(Constants.actual, Constants.expected);
 	}
 	

@@ -32,7 +32,6 @@ public class UsersTest extends BaseTest {
 		LOG.info("userPageTest_01");
 		Users users = new Users();
 		users.mouseHoverToMastersforuser();
-		
 		users.clickOnUsers();
 		String Users_expectedUrl = "http://103.50.162.196/testing/user.php";
 		String Users_actualUrl = UIKeywords.getPageUrl();

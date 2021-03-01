@@ -5,8 +5,9 @@
     <classes>
       <class name="com.bhiman.test.masters.BanksTest">
         <methods>
-          <include name="verifySearchBoxWithInValidText"/>
           <include name="setUp"/>
+          <include name="verifyClickOnBanksInMasters"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.bhiman.test.masters.BanksTest -->
     </classes>

@@ -13,7 +13,7 @@ public static void main(String[] args) throws ClassNotFoundException, SQLExcepti
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "root");
 		Statement sta = con.createStatement();
-		ResultSet set = sta.executeQuery("select * from PomData");
+		ResultSet set = sta.executeQuery("select * from BaseData");
 
 	} // end of method
 
