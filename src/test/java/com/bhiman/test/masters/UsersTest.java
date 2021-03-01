@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.bhiman.main.Constants;
@@ -20,7 +21,8 @@ import com.bhiman.main.masters.Banks;
 import com.bhiman.main.masters.Users;
 import com.bhiman.main.utility.PropertyReader;
 import com.bhiman.test.BaseTest;
-
+import com.bhiman.test.BhimanListeners;
+@Listeners(BhimanListeners.class)
 public class UsersTest extends BaseTest {
 
 	private static final Logger LOG = Logger.getLogger(UsersTest.class);
@@ -185,9 +187,9 @@ public class UsersTest extends BaseTest {
 		users.enterBankName("State Bank Of India");
 		users.enterIFSCcode("SBIN0000455");
 		users.scrollVerticalDownloadWhenRequired();
-		users.uploadUserResumeDoc("C:\\Users\\ingalkar\\Desktop\\up load only\\3-update_resume.rtf");
-		users.uploadUserAgreementDoc("C:\\Users\\ingalkar\\Desktop\\up load only\\3-update_agreement.rtf");
-		users.uploaduserKYCDoc("C:\\Users\\ingalkar\\Desktop\\up load only\\3-update_kyc.rtf");
+		users.uploadUserResumeDoc("E:\\java_Program_1\\New folder (2)\\BhimanG\\src\\main\\resources\\up load only\\3-update_resume.rtf");
+		users.uploadUserAgreementDoc("E:\\java_Program_1\\New folder (2)\\BhimanG\\src\\main\\resources\\up load only\\3-update_agreement.rtf");
+		users.uploaduserKYCDoc("E:\\java_Program_1\\New folder (2)\\BhimanG\\src\\main\\resources\\up load only\\3-update_kyc.rtf");
 		users.enterFatherName("Vitthal");
 		users.enterFatherMobileNo("8989151423");
 		users.enterFatherOccupation("worker");
