@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-skipped">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--711982182\testng-customsuite.xml</span>
+                    <span>C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse-2121743660\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Default_suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.bhiman.test.masters.BanksTest" class="method navigator-link" hash-for-method="verifySearchBoxWithInValidText">verifySearchBoxWithInValidText</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.bhiman.test.masters.BanksTest" class="method navigator-link" hash-for-method="verifyClickOnBanksInMasters">verifyClickOnBanksInMasters</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,34 +119,31 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-skipped">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.bhiman.test.masters.BanksTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifySearchBoxWithInValidText">
-                  </a> <!-- verifySearchBoxWithInValidText -->
-                  <span class="method-name">verifySearchBoxWithInValidText</span>
-                  <div class="stack-trace">java.lang.AssertionError: Login to application failed. expected [http://103.50.162.196/testing/user-login.php] but found [http://103.50.162.196/testing/index.php]
+                  <a name="verifyClickOnBanksInMasters">
+                  </a> <!-- verifyClickOnBanksInMasters -->
+                  <span class="method-name">verifyClickOnBanksInMasters</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [http://103.50.162.196/testng/bank.php] but found [http://103.50.162.196/testing/bank.php]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 	at org.testng.Assert.assertEquals(Assert.java:122)
 	at org.testng.Assert.assertEquals(Assert.java:629)
-	at com.bhiman.test.BaseTest.setUp(BaseTest.java:50)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at com.bhiman.test.masters.BanksTest.verifyClickOnBanksInMasters(BanksTest.java:40)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
-	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:701)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
 	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
 	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
@@ -172,15 +169,15 @@
 
 </div> <!-- stack-trace -->
                   <em>
-(To verify and validate search box field with invalid input (text).)                  </em>
+(To verify and validate after click on 'Banks' option in 'Masters')                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-skipped -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--711982182\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse-2121743660\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -191,7 +188,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;com.bhiman.test.masters.BanksTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifySearchBoxWithInValidText&quot;/&gt;
+          &lt;include name=&quot;verifyClickOnBanksInMasters&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.bhiman.test.masters.BanksTest --&gt;
     &lt;/classes&gt;
@@ -217,6 +214,14 @@
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">Regression</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyClickOnBanksInMasters</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_suite" class="panel">
@@ -235,14 +240,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifySearchBoxWithInValidText')
+data.setCell(0, 1, 'verifyClickOnBanksInMasters')
 data.setCell(0, 2, 'com.bhiman.test.masters.BanksTest')
-data.setCell(0, 3, 0);
+data.setCell(0, 3, 9811);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -257,47 +262,31 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">18 ignored methods</span>
+            <span class="header-content">10 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.bhiman.test.masters.BanksTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyClickOnCSVButton</span>
-                <br/>
-                <span class="ignored-method-name">verifyClickOnEditIcon</span>
-                <br/>
-                <span class="ignored-method-name">verifyClickOnDeleteIconAndClickOKOnAlert</span>
-                <br/>
-                <span class="ignored-method-name">verifyClickOnExcelButton</span>
-                <br/>
-                <span class="ignored-method-name">verifyClickOnViewBankButton</span>
-                <br/>
-                <span class="ignored-method-name">verifyAccountName</span>
-                <br/>
-                <span class="ignored-method-name">verifyBankAccountTypeToSelectCurrent</span>
-                <br/>
-                <span class="ignored-method-name">verifyBankName</span>
-                <br/>
-                <span class="ignored-method-name">verifyClickOnDeleteIconAndClickCancelOnAlert</span>
+                <span class="ignored-method-name">verifyBankNameAfterClickOnAddBank</span>
                 <br/>
                 <span class="ignored-method-name">verifyClickOnDeleteIcon</span>
                 <br/>
-                <span class="ignored-method-name">verifyIFSCCode</span>
-                <br/>
-                <span class="ignored-method-name">verifyMICRCode</span>
+                <span class="ignored-method-name">verifySearchBoxWithInValidText</span>
                 <br/>
                 <span class="ignored-method-name">verifyClickOnPDFButton</span>
                 <br/>
-                <span class="ignored-method-name">verifyBankAccountTypeToSelectSavings</span>
-                <br/>
-                <span class="ignored-method-name">verifyAccountNo</span>
+                <span class="ignored-method-name">verifyClickOnCSVButton</span>
                 <br/>
                 <span class="ignored-method-name">verifyClickOnAddBankButton</span>
                 <br/>
-                <span class="ignored-method-name">verifyClickOnBanksInMasters</span>
+                <span class="ignored-method-name">verifyClickOnExcelButton</span>
                 <br/>
                 <span class="ignored-method-name">verifyBanksInMasters</span>
+                <br/>
+                <span class="ignored-method-name">verifyClickOnViewBankButtonAfterClickOnAddBank</span>
+                <br/>
+                <span class="ignored-method-name">verifyAccountNameAfterClickOnAddBank</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -311,15 +300,19 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.bhiman.test.masters.BanksTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifySearchBoxWithInValidText</span>
-                <span class="method-start">13577 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyClickOnBanksInMasters</span>
+                <span class="method-start">56657 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">67229 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
