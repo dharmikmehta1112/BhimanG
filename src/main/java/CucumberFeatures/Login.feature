@@ -1,4 +1,4 @@
-Feature: Bhiman Login page test scenarios
+Feature: Check Login test scenarios.
 
 Scenario:
 		Given Enter valid mobile no.

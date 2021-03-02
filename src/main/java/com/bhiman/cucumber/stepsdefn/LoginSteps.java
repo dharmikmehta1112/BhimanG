@@ -1,4 +1,4 @@
-package com.bhiman.cucumber.stepdefinitions;
+package com.bhiman.cucumber.stepsdefn;
 
 import com.bhiman.main.login.Admin;
 
@@ -38,6 +38,5 @@ public class LoginSteps extends Admin {
 	public void enter_invalid_password() {
 	    adm.enterPassword("admin1");
 	}
-
 
 }
