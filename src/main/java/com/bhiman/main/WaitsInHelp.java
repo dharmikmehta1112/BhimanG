@@ -26,11 +26,11 @@ public class WaitsInHelp {
 	 * with expected condition as until visibility of web-element.
 	 * 
 	 * @param element as {@code WebElement}.
-	 * @param timeOutInSeconds in {@code SECONDS}
+	 * @param timeOutInSecs in {@code SECONDS}
 	 * @param sleepInMillis in {@code MILLISECONDS}.
 	 */
-	public static void webDriverWaitInSeconds(WebElement element, int timeOutInSeconds, int sleepInMillis) {
-		Constants.wait = new WebDriverWait(Constants.driver, timeOutInSeconds, sleepInMillis);
+	public static void webDriverWaitInSeconds(WebElement element, int timeOutInSecs, int sleepInMillis) {
+		Constants.wait = new WebDriverWait(Constants.driver, timeOutInSecs, sleepInMillis);
 		LOG.info("Webdriver is waiting for "+element+ " to be visible.");
 		Constants.wait.until(ExpectedConditions.visibilityOf(element));
 	}

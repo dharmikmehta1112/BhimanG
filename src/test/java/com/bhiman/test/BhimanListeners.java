@@ -30,7 +30,7 @@ public class BhimanListeners implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		LOG.info("Test case "+ result +" failed.");
 		Date date = new Date();
-		String screenshotName = "bhiman_"+ result.getName() + "_" + date.getDate() + "_" + date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds() + ".png";
+		String screenshotName = result.getTestClass() + "_" + result.getName() + "_" + date.getDate() + "_" + date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds() + ".png";
 		LOG.info("Taking screenshot of "+ result +" failed test case.");
 		UIKeywords.takeScreenshot(Constants.basePath+"\\screenshots", screenshotName);
 		

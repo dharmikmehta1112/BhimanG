@@ -100,6 +100,12 @@ public class Branches {
 		WaitsInHelp.threadSleepInMilliSeconds(2000);
 		UIKeywords.mouseHover(masters);
 	}
+	
+	public String getTextOfBranches() {
+		LOG.info("Reading Branches text after mouse hover to Masters.");
+		return UIKeywords.getText(masters_branches);
+	}
+
 
 	public void clickOnBranches() {
 		LOG.info("Clicking on Branches option in Masters");

@@ -6,7 +6,7 @@
       <class name="com.bhiman.test.masters.BanksTest">
         <methods>
           <include name="setUp"/>
-          <include name="verifyClickOnBanksInMasters"/>
+          <include name="verifyBanksInMasters"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.bhiman.test.masters.BanksTest -->

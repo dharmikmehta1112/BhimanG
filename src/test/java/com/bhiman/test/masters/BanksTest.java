@@ -26,7 +26,9 @@ public class BanksTest extends BaseTest {
 		LOG.info("Verify Banks option in Masters.");
 		Banks banks = new Banks();
 		banks.mouseHoverToMasters();
-//		Assert.assertEquals("actual", "expected");
+		Constants.expected = "Banks";
+		Constants.actual = banks.getTextOfBanks();
+		Assert.assertEquals(Constants.actual, Constants.expected);
 	}
 	
 	@Test (groups = "Regression", description = "To verify and validate after click on 'Banks' option in 'Masters'")
