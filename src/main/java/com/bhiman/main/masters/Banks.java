@@ -98,8 +98,12 @@ public class Banks extends UIKeywords {
 
 	public void mouseHoverToMasters() {
 		LOG.info("At Index page mouse hover to Masters");
-		WaitsInHelp.threadSleepInMilliSeconds(2000);
 		UIKeywords.mouseHover(masters);
+	}
+	
+	public String getTextOfBanks() {
+		LOG.info("Reading Banks text after mouse hover to Masters.");
+		return UIKeywords.getText(masters_banks);
 	}
 
 	public void clickOnBanks() {
@@ -120,19 +124,16 @@ public class Banks extends UIKeywords {
 	public void clickOnExcelButton() {
 		LOG.info("Click on Excel button of Banks page");
 		UIKeywords.clickOnElement(banks_excelBtn);
-		WaitsInHelp.threadSleepInMilliSeconds(2000);
 	}
 
 	public void clickOnCSVButton() {
 		LOG.info("Click on CSV button of Banks page");
 		UIKeywords.clickOnElement(banks_csvBtn);
-		WaitsInHelp.threadSleepInMilliSeconds(2000);
 	}
 
 	public void clickOnPDFButton() {
 		LOG.info("Click on PDF button of Banks page");
 		UIKeywords.clickOnElement(banks_pdfBtn);
-		WaitsInHelp.threadSleepInMilliSeconds(2000);
 	}
 
 	public void clickOnPrintButton() {
@@ -143,7 +144,6 @@ public class Banks extends UIKeywords {
 	public String getSwitchWindowURL() {
 		LOG.info("Click to handle print window.");
 		UIKeywords.switchToChildWindow();
-		WaitsInHelp.threadSleepInMilliSeconds(2000);
 		return UIKeywords.getPageUrl();
 	}
 
