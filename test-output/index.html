@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--1826160378\testng-customsuite.xml</span>
+                    <span>C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--389107306\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.bhiman.test.masters.BanksTest" class="method navigator-link" hash-for-method="verifyBanksInMasters">verifyBanksInMasters</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.bhiman.test.masters.BanksTest" class="method navigator-link" hash-for-method="verifySearchBoxWithValidText">verifySearchBoxWithValidText</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -127,11 +127,11 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyBanksInMasters">
-                  </a> <!-- verifyBanksInMasters -->
-                  <span class="method-name">verifyBanksInMasters</span>
+                  <a name="verifySearchBoxWithValidText">
+                  </a> <!-- verifySearchBoxWithValidText -->
+                  <span class="method-name">verifySearchBoxWithValidText</span>
                   <em>
-(To verify and validate 'Banks' option in 'Masters'.)                  </em>
+(To verify and validate search box field with valid input (text).)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -139,7 +139,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--1826160378\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--389107306\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -150,7 +150,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;com.bhiman.test.masters.BanksTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifyBanksInMasters&quot;/&gt;
+          &lt;include name=&quot;verifySearchBoxWithValidText&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.bhiman.test.masters.BanksTest --&gt;
     &lt;/classes&gt;
@@ -180,7 +180,7 @@
               <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">verifyBanksInMasters</span>
+                <span class="method-in-group-name">verifySearchBoxWithValidText</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -202,14 +202,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyBanksInMasters')
+data.setCell(0, 1, 'verifySearchBoxWithValidText')
 data.setCell(0, 2, 'com.bhiman.test.masters.BanksTest')
-data.setCell(0, 3, 512);
+data.setCell(0, 3, 2150);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 512 ms</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -224,13 +224,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">10 ignored methods</span>
+            <span class="header-content">12 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.bhiman.test.masters.BanksTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">verifyBankNameAfterClickOnAddBank</span>
+                <br/>
+                <span class="ignored-method-name">verifyClickOnCopyButton</span>
                 <br/>
                 <span class="ignored-method-name">verifyClickOnDeleteIcon</span>
                 <br/>
@@ -242,9 +244,11 @@ return data;
                 <br/>
                 <span class="ignored-method-name">verifyClickOnAddBankButton</span>
                 <br/>
+                <span class="ignored-method-name">verifyClickOnExcelButton</span>
+                <br/>
                 <span class="ignored-method-name">verifyClickOnBanksInMasters</span>
                 <br/>
-                <span class="ignored-method-name">verifyClickOnExcelButton</span>
+                <span class="ignored-method-name">verifyBanksInMasters</span>
                 <br/>
                 <span class="ignored-method-name">verifyClickOnViewBankButtonAfterClickOnAddBank</span>
                 <br/>
@@ -266,12 +270,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyBanksInMasters</span>
-                <span class="method-start">22965 ms</span>
+                <span class="method-name">verifySearchBoxWithValidText</span>
+                <span class="method-start">14318 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">23517 ms</span>
+                <span class="method-start">16497 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

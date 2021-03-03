@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
+<testng-results ignored="12" total="13" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-02T17:14:58 IST" name="Default suite" finished-at="2021-03-02T17:15:24 IST" duration-ms="25905">
+  <suite started-at="2021-03-03T16:56:46 IST" name="Default suite" finished-at="2021-03-03T16:57:04 IST" duration-ms="17877">
     <groups>
       <group name="Regression">
-        <method signature="BanksTest.verifyBanksInMasters()[pri:0, instance:com.bhiman.test.masters.BanksTest@5ba88be8]" name="verifyBanksInMasters" class="com.bhiman.test.masters.BanksTest"/>
+        <method signature="BanksTest.verifySearchBoxWithValidText()[pri:0, instance:com.bhiman.test.masters.BanksTest@5ba88be8]" name="verifySearchBoxWithValidText" class="com.bhiman.test.masters.BanksTest"/>
       </group> <!-- Regression -->
     </groups>
-    <test started-at="2021-03-02T17:14:58 IST" name="Default test" finished-at="2021-03-02T17:15:24 IST" duration-ms="25905">
+    <test started-at="2021-03-03T16:56:46 IST" name="Default test" finished-at="2021-03-03T16:57:04 IST" duration-ms="17877">
       <class name="com.bhiman.test.masters.BanksTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@5ba88be8]" started-at="2021-03-02T17:14:58 IST" name="setUp" finished-at="2021-03-02T17:15:21 IST" duration-ms="22793" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.masters.BanksTest@5ba88be8]" started-at="2021-03-03T16:56:47 IST" name="setUp" finished-at="2021-03-03T16:57:01 IST" duration-ms="14139" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyBanksInMasters()[pri:0, instance:com.bhiman.test.masters.BanksTest@5ba88be8]" started-at="2021-03-02T17:15:21 IST" name="verifyBanksInMasters" description="To verify and validate &#039;Banks&#039; option in &#039;Masters&#039;." finished-at="2021-03-02T17:15:22 IST" duration-ms="512" status="PASS">
+        <test-method signature="verifySearchBoxWithValidText()[pri:0, instance:com.bhiman.test.masters.BanksTest@5ba88be8]" started-at="2021-03-03T16:57:01 IST" name="verifySearchBoxWithValidText" description="To verify and validate search box field with valid input (text)." finished-at="2021-03-03T16:57:03 IST" duration-ms="2150" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyBanksInMasters -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@5ba88be8]" started-at="2021-03-02T17:15:22 IST" name="tearDown" finished-at="2021-03-02T17:15:24 IST" duration-ms="2265" status="PASS">
+        </test-method> <!-- verifySearchBoxWithValidText -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.masters.BanksTest@5ba88be8]" started-at="2021-03-03T16:57:03 IST" name="tearDown" finished-at="2021-03-03T16:57:04 IST" duration-ms="1330" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

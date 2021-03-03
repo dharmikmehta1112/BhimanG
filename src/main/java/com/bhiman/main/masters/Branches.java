@@ -27,6 +27,9 @@ public class Branches {
 
 	@FindBy(xpath = "//span[text()='Copy']")
 	private static WebElement branches_copyBtn;
+	
+	@FindBy(xpath = "//h2[text()='Copy to clipboard']")
+	private static WebElement branches_copyBtn_clickText;
 
 	@FindBy(xpath = "//span[text()='Excel']")
 	private static WebElement branches_excelBtn;
@@ -106,7 +109,6 @@ public class Branches {
 		return UIKeywords.getText(masters_branches);
 	}
 
-
 	public void clickOnBranches() {
 		LOG.info("Clicking on Branches option in Masters");
 		UIKeywords.clickOnElement(masters_branches);
@@ -120,6 +122,11 @@ public class Branches {
 	public void clickOnCopyButton() {
 		LOG.info("Click on Copy button of Branches page");
 		UIKeywords.clickOnElement(branches_copyBtn);
+	}
+	
+	public String getTextAfterClick() {
+		LOG.info("Reading text after click on Copy button of Branches page");		
+		return UIKeywords.getText(branches_copyBtn_clickText);
 	}
 
 	public void clickOnExcelButton() {
@@ -245,6 +252,5 @@ public class Branches {
 		LOG.info("Click on Cancel button of Add Branch page.");
 		UIKeywords.clickOnElement(branches_addBranch_cancelBtn);
 	}
-
 	
 }
