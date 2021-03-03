@@ -95,9 +95,9 @@ public class RolesTest extends BaseTest {
 		role.clickOnRolesUnderSetup();
 		role.clickOnPrintInRoles();
 		/*
-		 * Constants.expected = "about:blank"; Constants.actual =
-		 * role.getSwitchWindowURL(); Assert.assertEquals(Constants.actual,
-		 * Constants.expected);
+		 * Constants.expected = "about:blank"; 
+		 * Constants.actual =role.getSwitchWindowURL(); 
+		 * Assert.assertEquals(Constants.actual,Constants.expected);
 		 */
 	}
 
