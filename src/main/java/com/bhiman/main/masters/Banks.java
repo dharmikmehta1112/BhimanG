@@ -1,7 +1,6 @@
 package com.bhiman.main.masters;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.bhiman.main.Constants;
 import com.bhiman.main.UIAlerts;
 import com.bhiman.main.UIKeywords;
-import com.bhiman.main.WaitsInHelp;
 
 public class Banks extends UIKeywords {
 
@@ -28,6 +26,9 @@ public class Banks extends UIKeywords {
 
 	@FindBy(xpath = "//span[text()='Copy']")
 	private static WebElement banks_copyBtn;
+	
+	@FindBy(xpath = "//h2[text()='Copy to clipboard']")
+	private static WebElement banks_copyBtn_clickText;
 
 	@FindBy(xpath = "//span[text()='Excel']")
 	private static WebElement banks_excelBtn;
@@ -67,20 +68,38 @@ public class Banks extends UIKeywords {
 	@FindBy(name = "bank_name")
 	private static WebElement banks_addBank_bankName;
 
+	@FindBy(id = "bank_name-error")
+	private static WebElement banks_addBank_bankName_errorMsg;
+
 	@FindBy(name = "account_name")
 	private static WebElement banks_addBank_accountName;
+	
+	@FindBy(id = "account_name-error")
+	private static WebElement banks_addBank_accountName_errorMsg;
 
 	@FindBy(name = "account_no")
 	private static WebElement banks_addBank_accountNo;
 
+	@FindBy(name = "account_no-error")
+	private static WebElement banks_addBank_accountNo_errorMsg;
+
 	@FindBy(name = "bank_account_type")
 	private static WebElement banks_addBank_bankAccountType;
-
+	
+	@FindBy(name = "bank_account_type-error")
+	private static WebElement banks_addBank_bankAccountType_errorMsg;
+	
 	@FindBy(name = "ifsc_code")
 	private static WebElement banks_addBank_ifscCode;
+	
+	@FindBy(id = "ifsc_code-error")
+	private static WebElement banks_addBank_ifscCode_errorMsg;
 
 	@FindBy(name = "micr_code")
 	private static WebElement banks_addBank_micrCode;
+
+	@FindBy(id = "micr_code-error")
+	private static WebElement banks_addBank_micrCode_errorMsg;
 
 	@FindBy(xpath = "//input[@value = 'Submit']")
 	private static WebElement banks_addBank_submitBtn;
@@ -121,6 +140,11 @@ public class Banks extends UIKeywords {
 		UIKeywords.clickOnElement(banks_copyBtn);
 	}
 
+	public String getTextAfterClick() {
+		LOG.info("Reading text after click on Copy button of Banks page");		
+		return UIKeywords.getText(banks_copyBtn_clickText);
+	}
+	
 	public void clickOnExcelButton() {
 		LOG.info("Click on Excel button of Banks page");
 		UIKeywords.clickOnElement(banks_excelBtn);
@@ -196,30 +220,60 @@ public class Banks extends UIKeywords {
 		LOG.info("Entering Bank Name text to Add Bank form");
 		UIKeywords.enterText(banks_addBank_bankName, bankName);
 	}
+	
+	public String getBankNameErrorMsg() {
+		LOG.info("Reading Bank Name error text msg on Add Bank form");
+		return UIKeywords.getText(banks_addBank_accountName_errorMsg);
+	}	
 
 	public void enterBankAccountName(String accountName) {
 		LOG.info("Entering Bank Account Name text to Add Bank form");
 		UIKeywords.enterText(banks_addBank_accountName, accountName);
+	}
+	
+	public String getBankAccountNameErrorMsg() {
+		LOG.info("Reading Bank Account Name error text msg on Add Bank form");
+		return UIKeywords.getText(banks_addBank_accountName_errorMsg);
 	}
 
 	public void enterBankAccountNumber(String bankAccountNumber) {
 		LOG.info("Entering Bank Account No. text to Add Bank form");
 		UIKeywords.enterText(banks_addBank_accountNo, bankAccountNumber);
 	}
+	
+	public String getBankAccountNumberErrorMsg() {
+		LOG.info("Reading Bank Account Number error text msg on Add Bank form");
+		return UIKeywords.getText(banks_addBank_accountNo_errorMsg);
+	}
 
 	public void selectBankAccountType(String bankAccountType) {
 		LOG.info("Selecting Bank Account Type as Savings to Add Bank form");
 		UIKeywords.selectByTextFromDropdown(banks_addBank_bankAccountType, bankAccountType);
+	}
+	
+	public String getBankAccountTypeErrorMsg() {
+		LOG.info("Reading Bank AccountType error text msg on Add Bank form");
+		return UIKeywords.getText(banks_addBank_bankAccountType_errorMsg);
 	}
 
 	public void enterBankIFSCCode(String bankIFSCCode) {
 		LOG.info("Entering Bank IFSC Code to Add Bank form");
 		UIKeywords.enterText(banks_addBank_ifscCode, bankIFSCCode);
 	}
+	
+	public String getBankIFSCCodeErrorMsg() {
+		LOG.info("Reading Bank IFSC Code error text msg on Add Bank form");
+		return UIKeywords.getText(banks_addBank_ifscCode_errorMsg);
+	}
 
 	public void enterBankMICRCode(String bankMICRCode) {
 		LOG.info("Entering Bank MICR Code to Add Bank form");
 		UIKeywords.enterText(banks_addBank_micrCode, bankMICRCode);
+	}
+	
+	public String getBankMICRCodeErrorMsg() {
+		LOG.info("Reading Bank MICR Code error text msg on Add Bank form");
+		return UIKeywords.getText(banks_addBank_micrCode_errorMsg);
 	}
 
 	/*
