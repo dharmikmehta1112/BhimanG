@@ -11,7 +11,7 @@ import com.bhiman.main.masters.Banks;
 
 public class Materials extends UIKeywords {
   
-	private static final Logger LOG = Logger.getLogger(Banks.class);
+	private static final Logger LOG = Logger.getLogger(Materials.class);
 
 	// ***************Page Object Locators for Materials*********************
 
