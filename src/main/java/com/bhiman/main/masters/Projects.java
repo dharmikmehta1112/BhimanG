@@ -1,9 +1,21 @@
 package com.bhiman.main.masters;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.bhiman.main.Constants;
+import com.bhiman.main.UIKeywords;
+import com.bhiman.main.WaitsInHelp;
 
 public class Projects {
+	
+	private static final Logger LOG = Logger.getLogger(Projects.class);
+	
+	public Projects() {
+		PageFactory.initElements(Constants.driver, this);
+	}
 
 	// Page Object Locators for Project page in Masters --> Intialize at runtime
 	
@@ -78,7 +90,7 @@ public class Projects {
 	@FindBy(id="total_amount")
 	private static WebElement projects_totalAmount;
 
-	@FindBy(id="layout")
+	@FindBy(css="input[type='file']")
 	private static WebElement projects_layout;
 
 	@FindBy(id="na_order")
@@ -162,5 +174,120 @@ public class Projects {
 	@FindBy(xpath="//input[@type='reset']")
 	private static WebElement projects_addPlot_cancleBtn;
 
+	// Page Object Methods for Projects page in Masters
+	
+	public String getSwitchWindowURL() {
+		LOG.info("Click to handle print window.");
+		UIKeywords.switchToChildWindow();
+		return UIKeywords.getPageUrl();
+	}
 
+	
+	public void mouseHoverToMasters() {
+		UIKeywords.mouseHover(masters);
+	}
+	
+	public void clickOnProjectsUnderMaster() {
+		
+		UIKeywords.clickOnElement(projects_under_masters);
+		WaitsInHelp.threadSleepInMilliSeconds(1000);
+	}
+	
+	public String getTextOfProjectsUnderMaster() {
+		return UIKeywords.getText(projects_under_masters);
+	}
+	
+	public void clickOnProjectcsCopyButton() {
+		UIKeywords.clickOnElement(projects_copyBtn);
+	}
+	
+	public void clickOnProjectcsExcelButton() {
+		UIKeywords.clickOnElement(projects_excelBtn);
+	}
+	
+	public void clickOnProjectcsCSVButton() {
+		UIKeywords.clickOnElement(projects_csvBtn);
+	}
+	
+	public void clickOnProjectcsPDFButton() {
+		UIKeywords.clickOnElement(projects_pdfBtn);
+	}
+	
+	public void clickOnProjectcsPrintButton() {
+		UIKeywords.clickOnElement(projects_printBtn);
+		WaitsInHelp.threadSleepInMilliSeconds(1000);
+	}
+	
+	public void clickOnAddProjectButton() {
+		UIKeywords.clickOnElement(projects_addProjectBtn);
+		WaitsInHelp.threadSleepInMilliSeconds(1000);
+	}
+	
+	public void enterProjectsInSearchBox() {
+		UIKeywords.enterText(projects_searchTxtBx, "Incyte");
+	}
+	
+	public void clickOnManagePlots() {
+		UIKeywords.clickOnElement(projects_managePlotBtn);
+	}
+	
+	public void clickOnCompleteButtonOnActions() {
+		UIKeywords.clickOnElement(projects_complete_actionBtn);
+	}
+	
+	public void clickOnEnableButtonOnActions() {
+		UIKeywords.clickOnElement(projects_enable_actionBtn);
+	}
+	
+	public void clickOnEditButtonOnActions() {
+		UIKeywords.clickOnElement(Projects_edit_actionBtn);
+	}
+	
+	public void clickOnDeleteButtonOnActions() {
+		UIKeywords.clickOnElement(projects_delete_actionBtn);
+	}
+	
+	// Page Object Methods for Add Projects page in Masters
+	
+	public void selectBranchName(String branchName) {
+		UIKeywords.selectByTextFromDropdown(projects_branchName,branchName);
+	}
+	
+	public void enterProjectName(String projectName) {
+		UIKeywords.enterText(projects_projectName, projectName);
+	}
+	
+	public void enterProjectsNoOfPlots(int noOfPlot) {
+		String value_noOfPlot = String.valueOf(noOfPlot);
+		UIKeywords.enterText(projects_noOfplots, value_noOfPlot);
+	}
+	
+	public void enterProjectsTotalArea(float totalArea) {
+		String value_totalArea = String.valueOf(totalArea);
+		UIKeywords.enterText(projects_totalArea, value_totalArea);
+	}
+	
+	public void enterProjectsRate(float rate) {
+		String value_rate = String.valueOf(rate);
+		UIKeywords.enterText(projects_rate, value_rate);
+	}
+	
+	public void enterProjectsTotalAmount(float totalAmount) {
+		String value_totalAmount = String.valueOf(totalAmount);
+		UIKeywords.enterText(projects_totalAmount, value_totalAmount);
+	}
+	
+	public void clickOnSubmitButtonOnAddProject() {
+		UIKeywords.clickOnElement(projects_addProject_submitBtn);
+	}
+	
+	public void clickOnCancleButtonOnAddProject() {
+		UIKeywords.clickOnElement(projects_addProject_cancleBtn);
+	}
+	
+	public  void clickOnProjectsLayout() {
+		UIKeywords.clickOnElement(projects_layout);
+		WaitsInHelp.threadSleepInMilliSeconds(1000);
+		
+	}
 }
