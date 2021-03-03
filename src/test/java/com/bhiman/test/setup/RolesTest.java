@@ -23,8 +23,8 @@ public class RolesTest extends BaseTest {
 		LOG.info("Verify roles option in Setup");
 		Roles role = new Roles();
 		role.mouseHoverToSetUp();
-		Constants.actual = UIKeywords.getPageUrl();
-		Constants.expected = "http://103.50.162.196/testing/index.php";
+		Constants.actual = "Roles";
+		Constants.expected = role.getRolesText();
 		Assert.assertEquals(Constants.actual, Constants.expected);
 	}
 
