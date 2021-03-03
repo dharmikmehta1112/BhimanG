@@ -166,6 +166,10 @@ public class Roles extends UIKeywords {
 		LOG.info("Click on Roles under SetUp");
 		UIKeywords.clickOnElement(roles_under_setup);
 	}
+	
+	public String getRolesText() {
+		return UIKeywords.getText(roles_under_setup);
+	}
 
 	public void clickOnAddRole() {
 		LOG.info("Click on Add Role on Roles Page");
