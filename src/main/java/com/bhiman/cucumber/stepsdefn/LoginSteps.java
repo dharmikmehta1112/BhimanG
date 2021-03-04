@@ -26,7 +26,7 @@ public class LoginSteps extends Admin {
 
 	@Then("Click on OK button")
 	public void click_on_ok_button() {
-	    adm.clickOnSignInButton();
+	    adm.clickOnSignInOkButton();
 	}
 	
 	@Given("Enter invalid mobile no.")
