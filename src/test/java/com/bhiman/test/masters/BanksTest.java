@@ -58,6 +58,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyClickOnExcelButton() {
 		LOG.info("Verifying click on 'Excel' button in Banks page.");
 		Banks banks = new Banks();
+		Constants.flag = false;
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnExcelButton();
@@ -72,6 +73,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyClickOnCSVButton() {
 		LOG.info("Verifying click on 'CSV' button in Banks page.");
 		Banks banks = new Banks();
+		Constants.flag = false;
 		Constants.actual = "Banks.csv";
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
@@ -87,6 +89,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyClickOnPDFButton() {
 		LOG.info("Verifying click on 'PDF' button in Banks page.");
 		Banks banks = new Banks();
+		Constants.flag = false;
 		Constants.actual = "Banks.pdf";
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
