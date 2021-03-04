@@ -12,7 +12,7 @@ import com.bhiman.main.UIKeywords;
 import com.bhiman.main.WaitsInHelp;
 
 public class Users extends UIKeywords {
-	private static final Logger LOG = Logger.getLogger(Banks.class);
+	private static final Logger LOG = Logger.getLogger(Users.class);
 
 	// Page Object Locators for Users page in Masters ******************Initialize
 	// at runtime*****************
@@ -22,6 +22,9 @@ public class Users extends UIKeywords {
 
 	@FindBy(xpath = "//a[normalize-space(text())='Users']")
 	private static WebElement users;
+	
+	@FindBy(xpath = "//li[@class='nav-item']/a[normalize-space()='Users']")
+	private static WebElement Users_For_C;
 
 	@FindBy(css = "#add_btn")
 	private static WebElement add_users;
@@ -306,6 +309,15 @@ public class Users extends UIKeywords {
 	public static void clickOnUserCancel() {
 		LOG.info("Click on Cancel button of Add Users page.");
 		UIKeywords.clickOnElement(U_cancel);
+	}
+	
+	public static String getTextofUser() {
+		LOG.info("get text of user from master");
+		return UIKeywords.getText(users);
+	}
+	public String getTextofUsersforC() {
+		LOG.info("get text of users from master");
+		return UIKeywords.getText(Users_For_C);
 	}
 
 }

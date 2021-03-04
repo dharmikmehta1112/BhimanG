@@ -13,8 +13,9 @@ import com.bhiman.main.WaitsInHelp;
 import com.bhiman.main.login.Admin;
 import com.bhiman.main.utility.ExcelReader;
 import com.bhiman.main.utility.PropertyReader;
+import com.bhiman.test.BaseTest;
 
-public class AdminTest {
+public class AdminTest extends BaseTest {
 	
 	private static final Logger LOG = Logger.getLogger(AdminTest.class);
 
@@ -25,33 +26,33 @@ public class AdminTest {
 	@Test(dataProvider = "loginData")
 	public void adminLogin(String mobileNo, String password, String expected_Result) throws InterruptedException {
 
+		Admin admin = new Admin();
 		PageFactory.initElements(Constants.driver, this);
-		LOG.info("Refreshing the Login Page");
-		Admin.RefershPage();
-		LOG.info("Enter input as mobile no as username");
-		Admin.enterUsername(mobileNo);
-		LOG.info("Enter input as the password");
-		Admin.enterPassword(password);
-		LOG.info("click on Login button");
-		Admin.clickOnLoginButton();
+		admin.RefershPage();
+		//LOG.info("Enter input mobile no as username");
+		admin.enterUsername(mobileNo);
+		//LOG.info("Enter input as the password");
+		admin.enterPassword(password);
+		//LOG.info("click on Login button");
+		admin.clickOnLoginButton();
 
 		if (mobileNo.contentEquals("9876543210") && password.contentEquals("admin")) {
 			WaitsInHelp.threadSleepInMilliSeconds(2000);
 			LOG.info("Username and password is correct");
-			Admin.clickOnSignInButton();
+			admin.clickOnSignInOkButton();
 			Assert.assertEquals("Login Successfull.", expected_Result);
 
 		} else if (mobileNo.contentEquals("9876543210") && password.contentEquals("ADMIN")) {
 			WaitsInHelp.threadSleepInMilliSeconds(2000);
 			LOG.info("Username and password is Incorrect");
-			Admin.clickOnErrorInButton();
+			admin.clickOnErrorInOkButton();
 			Assert.assertEquals("Username/Password is wrong. Please try again.", expected_Result);
 		}
 
 		else {
 			WaitsInHelp.threadSleepInMilliSeconds(2000);
 			LOG.info("Username and password is Incorrect");
-			Admin.clickOnErrorInButton();
+			admin.clickOnErrorInOkButton();
 			Assert.assertEquals("Please enter proper mobile no. Mobile No must be start with 6,7,8,9", expected_Result);
 		}
 	}
@@ -74,5 +75,4 @@ public class AdminTest {
 		}
 		return loginData;
 	}
-
 }

@@ -27,18 +27,17 @@ public class UsersTest extends BaseTest {
 
 	private static final Logger LOG = Logger.getLogger(UsersTest.class);
 
-	@Test(description = "To verify and validate 'Users' option in 'Masters'.")
+	@Test(groups = "Regression",description = "To verify and validate 'Users' option in 'Masters'.")
 	public void verifyUsersInMasters() {
 		LOG.info("userPageTest_01");
 		Users users = new Users();
 		users.mouseHoverToMastersforuser();
-		users.clickOnUsers();
-		String Users_expectedUrl = "http://103.50.162.196/testing/user.php";
-		String Users_actualUrl = UIKeywords.getPageUrl();
-		Assert.assertEquals(Users_actualUrl, Users_expectedUrl);
+		Constants.expected= "Users";
+		Constants.actual=users.getTextofUsersforC();
+		Assert.assertEquals(Constants.expected, Constants.actual);
 	}
 
-	@Test(description = "To verify and validate after click on 'Users' option in 'Masters'")
+	@Test(groups = "Regression",description = "To verify and validate after click on 'Users' option in 'Masters'")
 	public void verifyaddUserinUsers() {
 		Users users = new Users();
 		users.mouseHoverToMastersforuser();
@@ -49,7 +48,7 @@ public class UsersTest extends BaseTest {
 		Assert.assertEquals(Users_actualUrl, Users_expectedUrl);
 	}
 	
-	@Test (description = "To verify and validate after click on 'View Users btn.")
+	@Test (groups = "Regression",description = "To verify and validate after click on 'View Users btn.")
 	public void toverifyViewUsersBtn() {
 		Users users = new Users();
 		users.mouseHoverToMastersforuser();
@@ -62,7 +61,7 @@ public class UsersTest extends BaseTest {
 
 	}
 
-	@Test(description = "To verify and validate click on 'Copy' button on User page.")
+	@Test(groups = "Regression",description = "To verify and validate click on 'Copy' button on User page.")
 	public void verifyClickOnCopyButton() {
 		Users users = new Users();
 		LOG.info("Verifying click on 'Copy' button in user page.");
@@ -74,7 +73,7 @@ public class UsersTest extends BaseTest {
 		Assert.assertEquals(user_actualUrl, user_expectedUrl);
 	}
 
-	@Test(description = "To verify and validate click on 'Excel' button on User page.")
+	@Test(groups = "Regression",description = "To verify and validate click on 'Excel' button on User page.")
 	public void verifyClickOnExcelButton() {
 		Users users = new Users();
 		LOG.info("Verifying click on ''Excel' button in user page.");
@@ -89,7 +88,7 @@ public class UsersTest extends BaseTest {
 
 	}
 
-	@Test(description = "To verify and validate click on 'CSV' button in User page.")
+	@Test(groups = "Regression",description = "To verify and validate click on 'CSV' button in User page.")
 	public static void verifyClickOnCSVButton() {
 		LOG.info("Verifying click on 'CSV' button in User page.");
 		Users users = new Users();
@@ -104,7 +103,7 @@ public class UsersTest extends BaseTest {
 		assertTrue(Constants.flag, "File name: " + Constants.actual + " is not downloaded at location: " + filePath);
 	}
 
-	@Test(description = "To verify and validate click on 'PDF' button in User page.")
+	@Test(groups = "Regression",description = "To verify and validate click on 'PDF' button in User page.")
 	public static void verifyClickOnPDFButton() {
 		LOG.info("Verifying click on 'CSV' button in User page.");
 		Users users = new Users();
@@ -119,7 +118,7 @@ public class UsersTest extends BaseTest {
 		assertTrue(Constants.flag, "File name: " + Constants.actual + " is not downloaded at location: " + filePath);
 	}
 
-	@Test(description = "To verify and validate click on 'Print' button in User page")
+	@Test(groups = "Regression",description = "To verify and validate click on 'Print' button in User page")
 	public static void verifyPrintButton() {
 		LOG.info("Verifying click on 'Print' button in User page.");
 		Users users = new Users();
@@ -131,7 +130,7 @@ public class UsersTest extends BaseTest {
 //work in progress
 	}
 
-	@Test (description = "To verify and validate search box field with In-valid input (text).")
+	@Test (groups = "Regression",description = "To verify and validate search box field with In-valid input (text).")
 	public void verifySearchBoxWithInValidText() {
 		LOG.info("Entering invalid text on 'Search' textbox in User page.");
 		Users users = new Users();
@@ -143,7 +142,7 @@ public class UsersTest extends BaseTest {
 		Assert.assertEquals(Constants.actual, Constants.expected);
 	}
 	
-	@Test(description = "To verify and validate search box field with valid input (text).")
+	@Test(groups = "Regression",description = "To verify and validate search box field with valid input (text).")
 	public void verifySearchBoxWithValidText() {
 		LOG.info("Entering valid text on 'Search' textbox in Users page.");
 		Users users = new Users();
@@ -153,7 +152,7 @@ public class UsersTest extends BaseTest {
 		//not updated
 	}
 	
-	@Test (description = "To verify save button. when all field is blank.")
+	@Test (groups = "Regression",description = "To verify save button. when all field is blank.")
 	public void toVerifySavebtnWhenAlltheFieldAreBlank() {	
 		Users users = new Users();
 		users.mouseHoverToMastersforuser();
@@ -170,7 +169,7 @@ public class UsersTest extends BaseTest {
 	}
 	
 	
-	@Test (description = "To verify and validate Save button. when enter a Valid entry.")
+	@Test (groups = "Regression",description = "To verify and validate Save button. when enter a Valid entry.")
 	public void endToendTestforUserenterALLValidData() {
 		Users users = new Users();
 		users.mouseHoverToMastersforuser();
@@ -202,7 +201,7 @@ public class UsersTest extends BaseTest {
 		Assert.assertEquals(Users_actualUrl, Users_expectedUrl);
 	}
 	
-	@Test (description = "To verify when enter a In-Valid user Name.")
+	@Test (groups = "Regression",description = "To verify when enter a In-Valid user Name.")
 	public void toverifyUserEnterInvaldUsername() {
 		Users users = new Users();
 		Constants.flag = false;
@@ -217,7 +216,7 @@ public class UsersTest extends BaseTest {
 		Assert.assertTrue(Constants.flag, "Invalid User Name. Only blank space, lowercase and uppercase alphabets are allowed.");
 
 	}
-	@Test (description = "To verify users enter a In-Valid mobile no .")
+	@Test (groups = "Regression",description = "To verify users enter a In-Valid mobile no .")
 	public void toverifySavebtnWhenEnterInvaldMobileNo() {
 		Users users = new Users();
 		Constants.flag = false;
@@ -245,7 +244,7 @@ public class UsersTest extends BaseTest {
 	}
 
 	
-	@Test (description = "To verify users  enter a In-Valid Email_id .")
+	@Test (groups = "Regression",description = "To verify users  enter a In-Valid Email_id .")
 	public void toverifyInvaldEmailId() {
 		Users users = new Users();
 		Constants.flag = false;
@@ -262,7 +261,7 @@ public class UsersTest extends BaseTest {
 		//Assert.assertFalse(Constants.flag, "invalid email id");
 	}
 	
-	@Test (description = "To verify users enter a  in valid joining date format")
+	@Test (groups = "Regression",description = "To verify users enter a  in valid joining date format")
 	public void toverifyvalidDateFormat() {
 		Users users = new Users();
 		Constants.flag = false;
@@ -279,7 +278,7 @@ public class UsersTest extends BaseTest {
 		Assert.assertFalse(false, "invalid date format consider");	
 	}
 	
-	@Test(description = "To verify users enter valid bank name for user")
+	@Test(groups = "Regression",description = "To verify users enter valid bank name for user")
 	public void toVerifyValidBankNameforuser() {
 		Users users = new Users();
 		Constants.flag = false;
@@ -294,7 +293,7 @@ public class UsersTest extends BaseTest {
 		//Assert.assertFalse(false, "Valid Bank name is consider");
 		Assert.assertTrue(true,"Valid Bank name is consider");
 	}
-	@Test(description = "To verify users enter valid Account no for user Bank")
+	@Test(groups = "Regression",description = "To verify users enter valid Account no for user Bank")
 	public void toVerifyValidAccountNumberforUserBank() {
 		Users users = new Users();
 		Constants.flag = false;
@@ -309,7 +308,7 @@ public class UsersTest extends BaseTest {
 		Assert.assertTrue(true,"Valid Account no. is consider");
 
 	}
-	@Test (description = "To verify users enter valid IFSC code for user Bank")
+	@Test (groups = "Regression",description = "To verify users enter valid IFSC code for user Bank")
 	public void toVerifyValidIFSCCodeforUserBank() {
 		Users users = new Users();
 		Constants.flag = false;

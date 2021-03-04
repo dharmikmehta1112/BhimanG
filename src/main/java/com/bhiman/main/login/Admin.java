@@ -1,6 +1,6 @@
 package com.bhiman.main.login;
 
-import org.apache.log4j.Logger;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,8 +10,6 @@ import com.bhiman.main.UIKeywords;
 
 public class Admin {
 	
-	private static final Logger LOG = Logger.getLogger(Admin.class);
-
 	public Admin(){
 		PageFactory.initElements(Constants.driver, this);
 	}
@@ -20,7 +18,7 @@ public class Admin {
 	private static WebElement mobile_no;
 
 	@FindBy(name = "password")
-	private static WebElement password;
+	private static WebElement pass_word;
 
 	@FindBy(css = "button[type='submit']")
 	private static WebElement login_Btn;
@@ -40,25 +38,24 @@ public class Admin {
 
 //	----------------------Methods------------------------
 	
-	public static void enterUsername(String mob_no) {
-		mobile_no.clear();
-		mobile_no.sendKeys(mob_no);
+	public void enterUsername(String mobileNo) {
+		UIKeywords.clearText(mobile_no);
+		UIKeywords.enterText(mobile_no, mobileNo);
 	}
 	
-	public static void enterPassword(String pass) {
-		password.clear();
-		password.sendKeys(pass);
-		
+	public void enterPassword(String password) {
+		UIKeywords.clearText(pass_word);
+		UIKeywords.enterText(pass_word, password);
 	}
-	public static void clickOnLoginButton() {
+	public void clickOnLoginButton() {
 		UIKeywords.clickOnElement(login_Btn);
 	}
 	
-	public static void clickOnSignInButton() {
+	public void clickOnSignInOkButton() {
 		UIKeywords.clickOnElement(loginSignInBtn);
 	}
 	
-	public static void clickOnErrorInButton() {
+	public void clickOnErrorInOkButton() {
 		UIKeywords.clickOnElement(loginErrorInBtn);
 	}
 	
@@ -66,7 +63,7 @@ public class Admin {
 		 return getSignInMessage.getText();
 	}
 
-	public static void RefershPage() {
+	public void RefershPage() {
 		UIKeywords.refreshPage();
 	}
 	

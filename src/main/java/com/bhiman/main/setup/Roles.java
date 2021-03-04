@@ -62,7 +62,7 @@ public class Roles extends UIKeywords {
 	private static WebElement view_roles;
 
 	@FindBy(css = "input#role_name")
-	private static WebElement role_name;
+	private static WebElement role_enter_rollName;
 
 	@FindBy(xpath = "//label[@for='dashboard']")
 	private static WebElement dashboard;
@@ -158,13 +158,17 @@ public class Roles extends UIKeywords {
 
 	public void mouseHoverToSetUp() {
 		UIKeywords.clickOnElement(setup);
+		//WaitsInHelp.threadSleepInMilliSeconds(1000);
 		LOG.info("Mouse Hover to SetUp");
 	}
 
 	public void clickOnRolesUnderSetup() {
 		LOG.info("Click on Roles under SetUp");
 		UIKeywords.clickOnElement(roles_under_setup);
-		WaitsInHelp.threadSleepInMilliSeconds(1000);
+	}
+	
+	public String getRolesText() {
+		return UIKeywords.getText(roles_under_setup);
 	}
 
 	public void clickOnAddRole() {
@@ -175,16 +179,17 @@ public class Roles extends UIKeywords {
 
 	public void clickOnViewRole() {
 		LOG.info("Click on View Role on Add Roles Page");
-		UIKeywords.clickOnElement(roles_under_setup);
+		UIKeywords.clickOnElement(view_roles);
+		WaitsInHelp.threadSleepInMilliSeconds(1000);
 	}
 
-	public void enterTextInRoleName() {
+	public void enterRoleInRoleName(String roleName) {
 		LOG.info("Enter the new Role in Role Name");
-		UIKeywords.clearText(role_name);
-		WaitsInHelp.threadSleepInMilliSeconds(2000);
-		UIKeywords.enterText(role_name, "Admin");
+		UIKeywords.clearText(role_enter_rollName);
+		WaitsInHelp.threadSleepInMilliSeconds(1000);
+		UIKeywords.enterText(role_enter_rollName, roleName);
 	}
-
+	
 	public void scrollPageOperation() throws InterruptedException {
 
 		String javaScript = "window.scrollBy(0,1600);";
@@ -230,6 +235,7 @@ public class Roles extends UIKeywords {
 	public void clickOnExcelInRoles() {
 		LOG.info("Click on Excel button on Roles page");
 		UIKeywords.clickOnElement(role_excelBtn);
+		WaitsInHelp.threadSleepInMilliSeconds(1000);
 	}
 
 	public void clickOnCSVInRoles() {
@@ -246,10 +252,18 @@ public class Roles extends UIKeywords {
 		LOG.info("Click on Print button on Roles page");
 		UIKeywords.clickOnElement(role_printBtn);
 	}
+	
+	public String getSwitchWindowURL() {
+		LOG.info("Click to handle print window.");
+		UIKeywords.switchToChildWindow();
+		WaitsInHelp.threadSleepInMilliSeconds(2000);
+		return UIKeywords.getPageUrl();
+	}
 
-	public void enterTextInSearchBoxInRole() {
+	public void enterRoleInSearchBoxInRole(String searchRoleName) {
 		LOG.info("Enter the input in search box on Role page");
-		UIKeywords.enterText(role_searchTxtBx, "Admin");
+		UIKeywords.enterText(role_searchTxtBx, searchRoleName);
+		WaitsInHelp.threadSleepInMilliSeconds(1000);
 	}
 
 	public void clickOnEditIconInRole() {
@@ -265,7 +279,7 @@ public class Roles extends UIKeywords {
 	
 	public void clickOnAddRoleNameTextBox() {
 		LOG.info("Editing role");
+		UIKeywords.clickOnElement(role_enter_rollName);
 		WaitsInHelp.threadSleepInMilliSeconds(1000);
-		UIKeywords.clickOnElement(role_name);
 	}
 }
