@@ -13,8 +13,9 @@ import com.bhiman.main.UIKeywords;
 import com.bhiman.main.masters.Banks;
 import com.bhiman.main.masters.Branches;
 import com.bhiman.main.utility.PropertyReader;
+import com.bhiman.test.BaseTest;
 
-public class BranchesTest {
+public class BranchesTest extends BaseTest {
 	
 	private static final Logger LOG = Logger.getLogger(BranchesTest.class);
 	
@@ -35,7 +36,7 @@ public class BranchesTest {
 		branch.mouseHoverToMasters();
 		branch.clickOnBranches();
 		Constants.actual = UIKeywords.getPageUrl();
-		Constants.expected = "http://103.50.162.196/testng/branch.php";
+		Constants.expected = "http://103.50.162.196/testing/branch.php";
 		Assert.assertEquals(Constants.actual, Constants.expected);
 	}
 	
@@ -93,7 +94,51 @@ public class BranchesTest {
 		assertTrue(Constants.flag, "File name: " +Constants.actual+ " is not downloaded at location: " +filePath);
 	}
 
+	@Test (groups = {"Regression"}, description = "To verify and validate click on 'Print' button.")
+	public static void verifyClickOnPrintButton() {
+		LOG.info("Verifying click on 'Print' button in Branches page.");
+		Branches branch = new Branches();
+		branch.mouseHoverToMasters();
+		branch.clickOnBranches();
+		branch.clickOnPrintButton();
+		Constants.expected = "about:blank";
+		Constants.actual = branch.getSwitchWindowURL();
+		Assert.assertEquals(Constants.actual, Constants.expected);		
+	}
 	
+//	@Test (groups = {"Regression"}, description = "To verify and validate search box field with valid input (text).")
+	public void verifySearchBoxWithValidText() {
+		LOG.info("Entering valid text on 'Search' textbox in Branches page.");
+		Branches branch = new Branches();
+		branch.mouseHoverToMasters();
+		branch.clickOnBranches();
+		branch.enterTextOnSearchBox(PropertyReader.getLocatorValue("branches_search_valid_text"));
+		
+// To Do write code to assert				
+	}
+	
+	@Test (groups = {"Regression"}, description = "To verify and validate search box field with invalid input (text).")
+	public void verifySearchBoxWithInValidText() {
+		LOG.info("Entering invalid text on 'Search' textbox in Branches page.");
+		Branches branch = new Branches();
+		branch.mouseHoverToMasters();
+		branch.clickOnBranches();
+		branch.enterTextOnSearchBox(PropertyReader.getLocatorValue("branches_search_invalid_text"));
+		Constants.expected = "No matching records found";
+		Constants.actual = branch.getTextOFBranchesDataTableForInvalidSearch();
+		Assert.assertEquals(Constants.actual, Constants.expected);	
+	}
+
+//	@Test (groups = {"Regression"}, description = "To verify and validate click on 'Edit' icon on Branches Data Table.")
+	public static void verifyClickOnEditIcon() {
+		LOG.info("Verifying click on 'Edit' icon of Action column of Bank Data Table in Branches page.");
+		Branches branch = new Branches();
+		branch.mouseHoverToMasters();
+		branch.clickOnBranches();
+		branch.clickOnEditIcon();
+// To Do write code to assert		
+	}
+
 	
 
 	

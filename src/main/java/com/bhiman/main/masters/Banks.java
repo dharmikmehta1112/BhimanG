@@ -48,14 +48,20 @@ public class Banks extends UIKeywords {
 	@FindBy(xpath = "//td[text() = 'No matching records found']")
 	private static WebElement banks_table_noRecords;
 
-	@FindBy(xpath = "//div[@class='dataTables_scrollBody']")
-	private static WebElement banks_scrollVerticalTableBody;
+//	@FindBy(xpath = "//div[@class='dataTables_scrollBody']")
+//	private static WebElement banks_scrollVerticalTableBody;
 
-	@FindBy(xpath = "//button[@class='btn btn-primary btn-border btn-rounded btn-xs editBtn' and @data-id = '68']")
+	@FindBy(xpath = "//button[@class='btn btn-primary btn-border btn-rounded btn-xs editBtn' and @data-id = '28']")
 	private static WebElement banks_action_editIcon;
 
-	@FindBy(xpath = "//button[@class='btn btn-danger btn-border btn-rounded btn-xs deleteBtn' and @data-id = '68']")
+	@FindBy(xpath = "//button[@class='btn btn-primary btn-border btn-rounded btn-xs editBtn' and @data-id = '29']")
+	private static WebElement banks_action_editIcon_next;
+
+	@FindBy(xpath = "//button[@class='btn btn-danger btn-border btn-rounded btn-xs deleteBtn' and @data-id = '28']")
 	private static WebElement banks_action_deleteIcon;
+
+	@FindBy(xpath = "//button[@class='btn btn-danger btn-border btn-rounded btn-xs deleteBtn' and @data-id = '29']")
+	private static WebElement banks_action_deleteIcon_next;
 
 	@FindBy(xpath = "//div[@role='status']")
 	private static WebElement banks_showEntries;
@@ -182,15 +188,25 @@ public class Banks extends UIKeywords {
 	}
 
 	public void clickOnEditIcon() {
-		LOG.info("Scroll vertically down and click on edit icon in Action column of Banks Data Table of Bank page.");
-		UIKeywords.scrollVerticalDown(banks_scrollVerticalTableBody);
-		UIKeywords.clickOnElement(banks_action_editIcon);
+		LOG.info("Click on edit icon in Action column of Banks Data Table (if not found then scroll page vertically down and perform click action) of Bank page.");
+		if(UIKeywords.isElementDisplayed(banks_action_editIcon_next))
+			UIKeywords.clickOnElement(banks_action_editIcon);
+		else {
+			UIKeywords.scrollPageVerticalDown(2000);
+			UIKeywords.scrollVerticalDown(banks_action_editIcon_next);
+			UIKeywords.clickOnElement(banks_action_editIcon);			
+		}
 	}
 
 	public void clickOnDeleteIcon() {
-		LOG.info("Scroll vertically down and click on delete icon in Action column of Banks Data Table of Bank page.");
-		UIKeywords.scrollVerticalDown(banks_scrollVerticalTableBody);
-		UIKeywords.clickOnElement(banks_action_deleteIcon);
+		LOG.info("Click on delete icon in Action column of Banks Data Table (if not found then scroll page vertically down and perform click action) of Bank page.");
+		if(UIKeywords.isElementDisplayed(banks_action_deleteIcon_next))
+			UIKeywords.clickOnElement(banks_action_deleteIcon);
+		else {
+			UIKeywords.scrollPageVerticalDown(2000);
+			UIKeywords.scrollVerticalDown(banks_action_deleteIcon_next);
+			UIKeywords.clickOnElement(banks_action_deleteIcon);			
+		}
 	}
 
 	public String getAlertText() {

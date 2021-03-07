@@ -3,17 +3,15 @@
 <suite name="Suite">
   <test name="MastersTest">
     <classes>
-      <class name="com.bhiman.test.BaseTest"/>
-      <class name="com.bhiman.test.masters.BanksTest"/>
-      <class name="com.bhiman.test.masters.UsersTest"/>
- <!--     <class name="com.bhiman.test.masters.BranchesTest"/>	-->
- <!--     <class name="com.bhiman.test.masters.CustomersTest"/> -->
-      <class name="com.bhiman.test.masters.BrokersTest"/>
- <!--     <class name="com.bhiman.test.masters.VendorsTest"/>   -->
-      <class name="com.bhiman.test.masters.EnquiryTests"/>
-<!--      <class name="com.bhiman.test.masters.ProjectsTests"/>   -->
- <!-- <class name="com.bhiman.test.setup.RolesTest"/> -->
-      
+      <class name="com.bhiman.test.BaseTest" />
+			<class name="com.bhiman.test.masters.BanksTest" />
+			<class name="com.bhiman.test.masters.UsersTest" />
+			<class name="com.bhiman.test.masters.BranchesTest"/>
+			<class name="com.bhiman.test.masters.CustomersTest"/>
+			<class name="com.bhiman.test.masters.BrokersTest" />
+			<class name="com.bhiman.test.masters.VendorsTest"/>
+			<class name="com.bhiman.test.masters.EnquiryTests" />
+			<class name="com.bhiman.test.masters.ProjectsTests"/>
     </classes>
   </test> <!-- MastersTest -->
 </suite> <!-- Suite -->

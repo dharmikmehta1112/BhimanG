@@ -19,7 +19,7 @@ public class Branches {
 	@FindBy(xpath = "//span[text() = 'Masters']")
 	private static WebElement masters;
 
-	@FindBy(xpath = "//a[text()='Branches ']")
+	@FindBy(xpath = "//a[text()='Branches']")
 	private static WebElement masters_branches;
 
 	@FindBy(css = "#add_btn")
@@ -100,7 +100,6 @@ public class Branches {
 
 	public void mouseHoverToMasters() {
 		LOG.info("At Index page mouse hover to Masters");
-		WaitsInHelp.threadSleepInMilliSeconds(2000);
 		UIKeywords.mouseHover(masters);
 	}
 	
@@ -155,7 +154,6 @@ public class Branches {
 	public String getSwitchWindowURL() {
 		LOG.info("Click to handle print window.");
 		UIKeywords.switchToChildWindow();
-		WaitsInHelp.threadSleepInMilliSeconds(2000);
 		return UIKeywords.getPageUrl();
 	}
 
@@ -171,14 +169,24 @@ public class Branches {
 
 	public void clickOnEditIcon() {
 		LOG.info("Scroll vertically down and click on edit icon in Action column of Branch Data Table of Branches page.");
-		UIKeywords.scrollVerticalDown(branches_scrollVerticalTableBody);
-		UIKeywords.clickOnElement(branches_action_editIcon);
+		if(UIKeywords.isElementDisplayed(branches_action_editIcon))
+			UIKeywords.clickOnElement(branches_action_editIcon);
+		else {
+			UIKeywords.scrollVerticalDown(branches_scrollVerticalTableBody);
+			UIKeywords.scrollPageVerticalDown(1500);
+			UIKeywords.clickOnElement(branches_action_editIcon);			
+		}
 	}
 
 	public void clickOnDeleteIcon() {
 		LOG.info("Scroll vertically down and click on delete icon in Action column of Branch Data Table of Branches page.");
-		UIKeywords.scrollVerticalDown(branches_scrollVerticalTableBody);
-		UIKeywords.clickOnElement(branches_action_deleteIcon);
+		if(UIKeywords.isElementDisplayed(branches_action_deleteIcon))
+			UIKeywords.clickOnElement(branches_action_deleteIcon);
+		else {
+			UIKeywords.scrollVerticalDown(branches_scrollVerticalTableBody);
+			UIKeywords.scrollPageVerticalDown(1500);
+			UIKeywords.clickOnElement(branches_action_deleteIcon);			
+		}
 	}
 
 	public String getAlertText() {

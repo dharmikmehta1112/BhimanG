@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--389107306\testng-customsuite.xml</span>
+                    <span>C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse-637883175\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.bhiman.test.masters.BanksTest" class="method navigator-link" hash-for-method="verifySearchBoxWithValidText">verifySearchBoxWithValidText</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.bhiman.test.masters.BranchesTest" class="method navigator-link" hash-for-method="verifyBranchesInMasters">verifyBranchesInMasters</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -122,16 +122,16 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.bhiman.test.masters.BanksTest</span>
+              <span class="class-name">com.bhiman.test.masters.BranchesTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifySearchBoxWithValidText">
-                  </a> <!-- verifySearchBoxWithValidText -->
-                  <span class="method-name">verifySearchBoxWithValidText</span>
+                  <a name="verifyBranchesInMasters">
+                  </a> <!-- verifyBranchesInMasters -->
+                  <span class="method-name">verifyBranchesInMasters</span>
                   <em>
-(To verify and validate search box field with valid input (text).)                  </em>
+(To verify and validate 'Branches' option in 'Masters'.)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -139,7 +139,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse--389107306\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Lenovo\AppData\Local\Temp\testng-eclipse-637883175\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -148,11 +148,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.bhiman.test.masters.BanksTest&quot;&gt;
+      &lt;class name=&quot;com.bhiman.test.masters.BranchesTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifySearchBoxWithValidText&quot;/&gt;
+          &lt;include name=&quot;verifyBranchesInMasters&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.bhiman.test.masters.BanksTest --&gt;
+      &lt;/class&gt; &lt;!-- com.bhiman.test.masters.BranchesTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -180,7 +180,7 @@
               <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">verifySearchBoxWithValidText</span>
+                <span class="method-in-group-name">verifyBranchesInMasters</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -202,14 +202,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifySearchBoxWithValidText')
-data.setCell(0, 2, 'com.bhiman.test.masters.BanksTest')
-data.setCell(0, 3, 2150);
+data.setCell(0, 1, 'verifyBranchesInMasters')
+data.setCell(0, 2, 'com.bhiman.test.masters.BranchesTest')
+data.setCell(0, 3, 611);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 611 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -224,35 +224,25 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">12 ignored methods</span>
+            <span class="header-content">7 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.bhiman.test.masters.BanksTest</span>
+              <span class="ignored-class-name">com.bhiman.test.masters.BranchesTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyBankNameAfterClickOnAddBank</span>
-                <br/>
                 <span class="ignored-method-name">verifyClickOnCopyButton</span>
-                <br/>
-                <span class="ignored-method-name">verifyClickOnDeleteIcon</span>
-                <br/>
-                <span class="ignored-method-name">verifySearchBoxWithInValidText</span>
-                <br/>
-                <span class="ignored-method-name">verifyClickOnCSVButton</span>
-                <br/>
-                <span class="ignored-method-name">verifyClickOnPDFButton</span>
-                <br/>
-                <span class="ignored-method-name">verifyClickOnAddBankButton</span>
                 <br/>
                 <span class="ignored-method-name">verifyClickOnExcelButton</span>
                 <br/>
                 <span class="ignored-method-name">verifyClickOnBanksInMasters</span>
                 <br/>
-                <span class="ignored-method-name">verifyBanksInMasters</span>
+                <span class="ignored-method-name">verifyClickOnPDFButton</span>
                 <br/>
-                <span class="ignored-method-name">verifyClickOnViewBankButtonAfterClickOnAddBank</span>
+                <span class="ignored-method-name">verifyClickOnPrintButton</span>
                 <br/>
-                <span class="ignored-method-name">verifyAccountNameAfterClickOnAddBank</span>
+                <span class="ignored-method-name">verifySearchBoxWithInValidText</span>
+                <br/>
+                <span class="ignored-method-name">verifyClickOnCSVButton</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -264,19 +254,15 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.bhiman.test.masters.BanksTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.bhiman.test.masters.BranchesTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifySearchBoxWithValidText</span>
-                <span class="method-start">14318 ms</span>
+                <span class="method-name">verifyBranchesInMasters</span>
+                <span class="method-start">17113 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">16497 ms</span>
-              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
