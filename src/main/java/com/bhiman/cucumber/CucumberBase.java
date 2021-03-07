@@ -42,7 +42,7 @@ private static final Logger LOG = Logger.getLogger(CucumberBase.class);
 		UIKeywords.clickOnElement(click_ok);
 		String expectedURL = "http://103.50.162.196/testing/index.php";
 		String actualURL = UIKeywords.getPageUrl();
-		Assert.assertEquals(expectedURL, actualURL, "Login to application failed.");
+		Assert.assertEquals(expectedURL, actualURL, "Login to application failed due to invalid URL.");
 		LOG.info("Login to application successfully.");
 		}
 	

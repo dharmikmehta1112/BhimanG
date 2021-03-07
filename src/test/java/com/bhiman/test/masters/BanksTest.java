@@ -38,7 +38,7 @@ public class BanksTest extends BaseTest {
 		banks.mouseHoverToMasters();
 		banks.clickOnBanks();
 		Constants.actual = UIKeywords.getPageUrl();
-		Constants.expected = "http://103.50.162.196/testng/bank.php";
+		Constants.expected = "http://103.50.162.196/testing/bank.php";
 		Assert.assertEquals(Constants.actual, Constants.expected);
 	}
 	
@@ -101,7 +101,7 @@ public class BanksTest extends BaseTest {
 		assertTrue(Constants.flag, "File name: " +Constants.actual+ " is not downloaded at location: " +filePath);
 	}
 
-//	@Test (groups = {"Regression"}, description = "To verify and validate click on 'Print' button.")
+	@Test (groups = {"Regression"}, description = "To verify and validate click on 'Print' button.")
 	public static void verifyClickOnPrintButton() {
 		LOG.info("Verifying click on 'Print' button in Banks page.");
 		Banks banks = new Banks();
@@ -136,7 +136,7 @@ public class BanksTest extends BaseTest {
 		Assert.assertEquals(Constants.actual, Constants.expected);	
 	}
 
-//	@Test (groups = {"Regression"}, description = "To verify and validate click on 'Edit' icon on Banks Data Table.")
+	@Test (groups = {"Regression"}, description = "To verify and validate click on 'Edit' icon on Banks Data Table.")
 	public static void verifyClickOnEditIcon() {
 		LOG.info("Verifying click on 'Edit' icon of Action column of Bank Data Table in Banks page.");
 		Banks banks = new Banks();

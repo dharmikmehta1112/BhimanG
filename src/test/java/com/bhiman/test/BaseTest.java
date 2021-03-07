@@ -9,7 +9,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import com.bhiman.main.Constants;
 import com.bhiman.main.UIKeywords;
-import com.bhiman.main.WaitsInHelp;
 import com.bhiman.main.utility.PropertyReader;
 
 /**
@@ -46,11 +45,11 @@ public class BaseTest extends UIKeywords {
 		UIKeywords.clickOnElement(click_ok);
 		String expectedURL = "http://103.50.162.196/testing/index.php";
 		String actualURL = UIKeywords.getPageUrl();
-		Assert.assertEquals(expectedURL, actualURL, "Login to application failed.");
+		Assert.assertEquals(expectedURL, actualURL, "Login to application failed due to invalid URL.");
 		LOG.info("Login to application successfully.");
 		}
 	
-	@AfterMethod		// Post-condition
+//	@AfterMethod		// Post-condition
 	public void tearDown() {
 		LOG.info("After (tearDown) method started.");
 		UIKeywords.closeAllBrowser();

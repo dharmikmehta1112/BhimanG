@@ -134,8 +134,8 @@ public class UIKeywords {
 	 * @param element as {@code WebElement}.
 	 */
 	public static String getText(WebElement element) {
-		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Reading text for element: " +element+ " in page.");
+		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		return element.getText();
 		
 	} // end of method
@@ -147,8 +147,8 @@ public class UIKeywords {
 	 */
 	public static void mouseHover(WebElement element) {
 		LOG.info("Mouse hover to web element: " +element+ "in page.");
-		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		Constants.actions = new Actions(Constants.driver);
+		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		Constants.actions.moveToElement(element).build().perform();
 		
 	} // end of method
@@ -242,17 +242,30 @@ public class UIKeywords {
 	} // end of method
 	
 	/**
-	 * Use to scroll vertically down the page up to view of @Webelement element.
+	 * Use to scroll web page vertically down to yPixel.
+	 * 
+	 * @param yPixel as {@code int}.
+	 */	
+	public static void scrollPageVerticalDown(int yPixel) {
+		LOG.info("Scrolling webpage vertically down to " +yPixel+ " pixel.");
+		JavascriptExecutor jse = (JavascriptExecutor) Constants.driver;
+		jse.executeScript("window.scrollBy(0,yPixel)");
+		
+	} // end of method
+	
+	/**
+	 * Use to scroll web page vertically down up to view of @Webelement element.
 	 * 
 	 * @param element as {@code WebElement}.
 	 */
 	public static void scrollVerticalDown(WebElement element) {
-		LOG.info("Scrolling vertically down upto web element: " +element+ " to come view in page.");
+		LOG.info("Scrolling webpage vertically down upto web element: " +element+ " to come view in page.");
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		JavascriptExecutor jse = (JavascriptExecutor) Constants.driver;	
 		jse.executeScript("arguments[0].scrollIntoView();", element);
 		
 	} // end of method
+	
 	
 	/**
 	 * Use to select @Webelement element from the drop-down using visible text.

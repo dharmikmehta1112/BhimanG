@@ -3,6 +3,7 @@ package com.bhiman.main;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -28,6 +29,9 @@ public class Constants {
 	public static String filePath;
 	public static final int WebDriverWaitTimeOutInSec = 10;
 	public static final int WebDriverWaitSleepInMilli = 200;
+	public static JavascriptExecutor jse;
+	public static int count;
+	public static int sum;
 	
 	
 

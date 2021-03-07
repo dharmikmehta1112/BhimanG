@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.bhiman.test.masters.BanksTest">
+      <class name="com.bhiman.test.masters.BranchesTest">
         <methods>
-          <include name="setUp"/>
-          <include name="verifyBanksInMasters"/>
-          <include name="tearDown"/>
+          <include name="verifySearchBoxWithInValidText"/>
         </methods>
-      </class> <!-- com.bhiman.test.masters.BanksTest -->
+      </class> <!-- com.bhiman.test.masters.BranchesTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

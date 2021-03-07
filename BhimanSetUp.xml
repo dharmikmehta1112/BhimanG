@@ -5,5 +5,5 @@
     <classes>
       <class name="com.bhiman.test.setup.RolesTest"/>
     </classes>
-  </test> <!-- MastersTest -->
+  </test> <!-- SetUpTest -->
 </suite> <!-- Suite -->
