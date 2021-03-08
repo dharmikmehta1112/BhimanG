@@ -82,7 +82,7 @@ public class Brokers extends UIKeywords{
 	@FindBy(xpath="//select[@id='blood_group']")
 	private static WebElement brokersBlood_group;
 	
-	@FindBy(name="//select[@id='status']")
+	@FindBy(xpath="//select[@id='status']")
 	private static WebElement brokersStatus;
 	
 	@FindBy(name = "bank_name")
@@ -92,7 +92,7 @@ public class Brokers extends UIKeywords{
 	private static WebElement brokersAccount_no;
 
 	@FindBy(xpath = "//input[@id='ifsc_code']")
-	private static WebElement BrokersIFSC_code;
+	private static WebElement brokersIFSC_code;
 	
 	@FindBy(xpath="//input[@id='resume']")
 	private static WebElement brokersResume;
@@ -146,6 +146,10 @@ public class Brokers extends UIKeywords{
 			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
+		public String getTextOfBrokers() {
+			LOG.info("Reading Banks text after mouse hover to Masters.");
+			return UIKeywords.getText(brokers);
+		}
 		public void clickOnPDFBtnAtBrokersPage() {
 			LOG.info("Master->Brokers: Click on PDF Button");
 			clickOnElement(brokersPDF);
@@ -185,7 +189,8 @@ public class Brokers extends UIKeywords{
 		public void attachResume() {
 			LOG.info("Attaching Resume to Add Broker form");
 			brokersResume.sendKeys("F:\\Bhiman Requirements\\RESUME.docx");
-			WaitsInHelp.threadSleepInMilliSeconds(2000);
+			WaitsInHelp.threadSleepInMilliSeconds(5000);
+			
 		}
 		
 		public void attachAgreement() {
@@ -202,12 +207,15 @@ public class Brokers extends UIKeywords{
 		
 		public void fillAddBrokerForm() {
 			LOG.info("Adding values to Add Broker form");
-			UIKeywords.enterText(brokersBroker_name, "Abhay");
+			UIKeywords.enterText(brokersBroker_name, "AbhayG");
 			UIKeywords.enterText(brokersMobile_no, "8765432109");
 			UIKeywords.enterText(brokersBroker_address, "Amravati");
 			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
-			UIKeywords.enterText(brokersBlood_group, "B positive");
+			UIKeywords.selectByTextFromDropdown(brokersBlood_group, "B positive");
 			UIKeywords.selectByTextFromDropdown(brokersStatus, "Active");
+			UIKeywords.enterText(brokersBank_name,"HDFC Bank");
+			UIKeywords.enterText(brokersAccount_no, "12345678909");
+			UIKeywords.enterText(brokersIFSC_code, "HDFC1983456");
 			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\RESUME.docx");
 			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\Agreement.docx");
 			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\KYC.docx");
@@ -221,6 +229,7 @@ public class Brokers extends UIKeywords{
 		public void clickOnSubmit() {
 			LOG.info("Master->Brokers: Click on Submit button of Add Broker page.");
 			UIKeywords.clickOnElement(brokersSubmit);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		
