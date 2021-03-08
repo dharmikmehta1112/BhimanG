@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.bhiman.test.masters.BranchesTest">
+      <class name="com.bhiman.cucumber.RunnerTest">
         <methods>
-          <include name="verifySearchBoxWithInValidText"/>
+          <include name="runScenario" invocation-numbers="0 1 2 3 4 5 6"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
         </methods>
-      </class> <!-- com.bhiman.test.masters.BranchesTest -->
+      </class> <!-- com.bhiman.cucumber.RunnerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

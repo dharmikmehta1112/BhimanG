@@ -29,6 +29,10 @@ private static final Logger LOG = Logger.getLogger(CucumberBase.class);
 	@FindBy(xpath = "//button[normalize-space()='OK']")
 	private static WebElement click_ok;
 	
+	public CucumberBase() {
+		PageFactory.initElements(Constants.driver, this);
+	}
+	
 	@Before		// Pre-condition
 	public void setUp() {
 		LOG.info("Before (setUp) method started.");
@@ -44,6 +48,7 @@ private static final Logger LOG = Logger.getLogger(CucumberBase.class);
 		String actualURL = UIKeywords.getPageUrl();
 		Assert.assertEquals(expectedURL, actualURL, "Login to application failed due to invalid URL.");
 		LOG.info("Login to application successfully.");
+		
 		}
 	
 	@After		// Post-condition
@@ -51,6 +56,7 @@ private static final Logger LOG = Logger.getLogger(CucumberBase.class);
 		LOG.info("After (tearDown) method started.");
 		UIKeywords.closeAllBrowser();
 		LOG.info("All Browser closed successfully.");
+		
 	}
 
 }
