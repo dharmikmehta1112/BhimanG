@@ -1,241 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="0" failed="7" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-08T15:46:36 IST" name="Default suite" finished-at="2021-03-08T15:46:37 IST" duration-ms="1370">
+  <suite started-at="2021-03-08T16:37:05 IST" name="Default suite" finished-at="2021-03-08T16:37:19 IST" duration-ms="14080">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
+      <group name="Regression">
+        <method signature="IndexTest.getNavbarCount()[pri:0, instance:com.bhiman.test.index.IndexTest@632ceb35]" name="getNavbarCount" class="com.bhiman.test.index.IndexTest"/>
+      </group> <!-- Regression -->
     </groups>
-    <test started-at="2021-03-08T15:46:36 IST" name="Default test" finished-at="2021-03-08T15:46:37 IST" duration-ms="1370">
-      <class name="com.bhiman.cucumber.RunnerTest">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:36 IST" name="setUpClass" finished-at="2021-03-08T15:46:36 IST" duration-ms="459" status="PASS">
+    <test started-at="2021-03-08T16:37:05 IST" name="Default test" finished-at="2021-03-08T16:37:19 IST" duration-ms="14080">
+      <class name="com.bhiman.test.index.IndexTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bhiman.test.index.IndexTest@632ceb35]" started-at="2021-03-08T16:37:05 IST" name="setUp" finished-at="2021-03-08T16:37:18 IST" duration-ms="12553" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="432" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify and validate Branches option in Masters."]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy23.toString(Unknown Source)
-at java.base/java.lang.String.valueOf(String.java:2951)
-at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
-at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
-at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
-at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
-at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:5)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        </test-method> <!-- setUp -->
+        <test-method signature="getNavbarCount()[pri:0, instance:com.bhiman.test.index.IndexTest@632ceb35]" started-at="2021-03-08T16:37:18 IST" name="getNavbarCount" description="To verify and validate the number of available options count on navigation bar." finished-at="2021-03-08T16:37:18 IST" duration-ms="199" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="29" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify and validate after click on Branches option in Masters"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy23.toString(Unknown Source)
-at java.base/java.lang.String.valueOf(String.java:2951)
-at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
-at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
-at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
-at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
-at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:10)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        </test-method> <!-- getNavbarCount -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bhiman.test.index.IndexTest@632ceb35]" started-at="2021-03-08T16:37:18 IST" name="tearDown" finished-at="2021-03-08T16:37:19 IST" duration-ms="1064" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="26" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verifying click on Copy button in Branches page."]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy23.toString(Unknown Source)
-at java.base/java.lang.String.valueOf(String.java:2951)
-at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
-at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
-at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
-at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
-at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:16)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="30" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify and validate click on Excel button."]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy23.toString(Unknown Source)
-at java.base/java.lang.String.valueOf(String.java:2951)
-at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
-at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
-at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
-at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
-at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:23)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="32" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify and validate click on CSV button."]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy23.toString(Unknown Source)
-at java.base/java.lang.String.valueOf(String.java:2951)
-at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
-at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
-at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
-at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
-at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:30)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="32" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify and validate click on PDF button."]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy23.toString(Unknown Source)
-at java.base/java.lang.String.valueOf(String.java:2951)
-at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
-at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
-at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
-at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
-at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:37)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="23" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify and validate click on Print button."]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy23.toString(Unknown Source)
-at java.base/java.lang.String.valueOf(String.java:2951)
-at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
-at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
-at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
-at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
-at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:44)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="tearDownClass" finished-at="2021-03-08T15:46:37 IST" duration-ms="20" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- com.bhiman.cucumber.RunnerTest -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.bhiman.test.index.IndexTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

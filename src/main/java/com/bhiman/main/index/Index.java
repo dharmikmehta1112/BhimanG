@@ -21,6 +21,12 @@ public class Index extends UIKeywords {
 	@FindBys(@FindBy(css = "body div.main-horizontal-nav nav ul#respMenu span.toggle-none"))
 	private static List<WebElement> nav_bar_options;
 
+	@FindBy(xpath = "//span[text() = 'Masters']")
+	private static WebElement masters;
+	
+	@FindBy(css = "a.dropdown-toggle")
+	private static WebElement admin;
+
 // Constructor to instantiate an instance of class and set a lazy proxy for each of the WebElement
 
 	public Index() {
@@ -45,6 +51,22 @@ public class Index extends UIKeywords {
 			Constants.count++;
 		}
 	}
+
+	public void clickOnAdmin() {
+		LOG.info("Clicking on Admin dropdown on Index page.");
+		UIKeywords.clickOnElement(admin);		
+	}
+	
+	public String getAdminText() {
+		LOG.info("Reading text of Admin dropdown on Index page.");
+		return UIKeywords.getText(admin);
+	}
+	
+//	public int getCountofMastersOptions() {
+//		LOG.info("Counting number of options under Masters tab of Index page.");
+//		return masters;
+//	}
+	
 	
 	
 

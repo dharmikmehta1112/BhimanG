@@ -17,16 +17,27 @@ public class IndexTest extends BaseTest {
 		Index in = new Index();
 		LOG.info("Reading navigation bar text on Index page.");
 		Constants.count = in.getCountOfNavBarOptions();
+		LOG.info("Number of available options count on navigation bar:: " +Constants.count);
 		Assert.assertEquals(Constants.count, 8);
 	}
 	
-//	@Test (groups = {"Regression"}, description = "To verify and validate the text of available options on navigation bar.")
+	@Test (groups = {"Regression"}, description = "To verify and validate the text of available options on navigation bar.")
 	public void readNavBarText() {
 		Index in = new Index();
 		LOG.info("Reading navigation bar text on Index page.");
-		in.getTextOfNavBarOptions();
-		
+		in.getTextOfNavBarOptions();		
 	}
+	
+	@Test (groups = {"Regression"}, description = "To verify and validate the click on Admin dropdown.")
+	public void verifyClickOnAdmin() {
+		Index in = new Index();
+		LOG.info("Clicking on admin dropdown on Index page.");
+		in.clickOnAdmin();
+		Constants.actual = "Admin";
+		Constants.expected = in.getAdminText();
+		Assert.assertEquals(Constants.actual, Constants.expected);
+	}
+	
 	
 	
 	

@@ -49,7 +49,7 @@ public class BaseTest extends UIKeywords {
 		LOG.info("Login to application successfully.");
 		}
 	
-//	@AfterMethod		// Post-condition
+	@AfterMethod		// Post-condition
 	public void tearDown() {
 		LOG.info("After (tearDown) method started.");
 		UIKeywords.closeAllBrowser();
