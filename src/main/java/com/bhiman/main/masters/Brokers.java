@@ -82,7 +82,7 @@ public class Brokers extends UIKeywords{
 	@FindBy(xpath="//select[@id='blood_group']")
 	private static WebElement brokersBlood_group;
 	
-	@FindBy(name="//select[@id='status']")
+	@FindBy(xpath="//select[@id='status']")
 	private static WebElement brokersStatus;
 	
 	@FindBy(name = "bank_name")
@@ -92,7 +92,7 @@ public class Brokers extends UIKeywords{
 	private static WebElement brokersAccount_no;
 
 	@FindBy(xpath = "//input[@id='ifsc_code']")
-	private static WebElement BrokersIFSC_code;
+	private static WebElement brokersIFSC_code;
 	
 	@FindBy(xpath="//input[@id='resume']")
 	private static WebElement brokersResume;
@@ -103,7 +103,7 @@ public class Brokers extends UIKeywords{
 	@FindBy(name="kyc")
 	private static WebElement brokersKYC;
 	
-	@FindBy(xpath = "//input[@value = 'Submit']")
+	@FindBy(xpath ="//input[@type='submit' and @name='add_user']")
 	private static WebElement brokersSubmit;
 
 	@FindBy(xpath = "//input[@value = 'Cancel']")
@@ -122,6 +122,10 @@ public class Brokers extends UIKeywords{
 			//UIKeywords.clickOnElement(brokers);
 		}
 		
+		public String getTextOfBrokers() {
+			LOG.info("Reading Banks text after mouse hover to Masters.");
+			return UIKeywords.getText(brokers);
+		}
 		public void clickOnBrokers() {
 			LOG.info("Master->Brokers: Click on Brokers option under Masters");
 			clickOnElement(brokers);
@@ -202,21 +206,25 @@ public class Brokers extends UIKeywords{
 		
 		public void fillAddBrokerForm() {
 			LOG.info("Adding values to Add Broker form");
-			UIKeywords.enterText(brokersBroker_name, "Abhay");
+			UIKeywords.enterText(brokersBroker_name, "ALG");
 			UIKeywords.enterText(brokersMobile_no, "8765432109");
 			UIKeywords.enterText(brokersBroker_address, "Amravati");
 			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
-			UIKeywords.enterText(brokersBlood_group, "B positive");
+			UIKeywords.selectByTextFromDropdown(brokersBlood_group, "B positive");
 			UIKeywords.selectByTextFromDropdown(brokersStatus, "Active");
+			UIKeywords.enterText(brokersBank_name,"HDFC Bank");
+			UIKeywords.enterText(brokersAccount_no, "12345678909");
+			UIKeywords.enterText(brokersIFSC_code, "HDFC1983456");
 			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\RESUME.docx");
-			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\Agreement.docx");
-			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\KYC.docx");
+			UIKeywords.enterText(brokersAgreement,"F:\\Bhiman Requirements\\Agreement.docx");
+			UIKeywords.enterText(brokersKYC,"F:\\Bhiman Requirements\\KYC.docx");
 			//attachResume();
 			//attachAgreement();
 			//attachKYC();
 			LOG.info("Values added to Add Broker form");
-			WaitsInHelp.threadSleepInMilliSeconds(2000);
+			WaitsInHelp.threadSleepInMilliSeconds(1000);
 		}
+
 		
 		public void clickOnSubmit() {
 			LOG.info("Master->Brokers: Click on Submit button of Add Broker page.");
