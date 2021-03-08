@@ -149,14 +149,21 @@ public class BrokersTest extends BaseTest {
 	}
 	
 	//TC-11
-//	@Test(description = "To verify/validate functionality of search box with invalid input.")
-	private void fillAddBrokerFormTest() {
-		LOG.info("Masters-->Brokers: Entering invalid text in Search box ");
-		Brokers brokers=new Brokers();
-		brokers.mouseHoverToMastersForBrokersPage();
-		brokers.clickOnBrokers();
-		brokers.clickOnAddBroker();
-		brokers.fillAddBrokerForm();
-		brokers.clickOnSubmit();
-	}
+		@Test(description = "To verify/validate functionality of search box with invalid input.")
+		public void fillAddBrokerFormTest() {
+			LOG.info("Masters-->Brokers: Filling Add Broker Form ");
+			Brokers brokers=new Brokers();
+			brokers.mouseHoverToMastersForBrokersPage();
+			brokers.clickOnBrokers();
+			brokers.clickOnAddBroker();
+			//brokers.attachResume();
+			brokers.clickOnSubmit();
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
 }
