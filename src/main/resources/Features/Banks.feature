@@ -9,14 +9,14 @@ Scenario: To verify and validate Banks option in Masters.
 Scenario: To verify and validate after click on Banks option in Masters
 	Given Mouse Hover to master for banks
 	Then Click on Banks
-	And Verify Banks URL
+	And Verify Banks URL for banks
 	
 @Regression
 Scenario: Verifying click on Copy button in Banks page.
 	Given Mouse Hover to master for banks
 	Then Click on Banks
 	Then Click on Copy button for banks
-	And Verify copy text as 'Copy to clipboard' for banks
+	And Verify click on copy action for banks
 	
 @Regression
 Scenario: To verify and validate click on Excel button.

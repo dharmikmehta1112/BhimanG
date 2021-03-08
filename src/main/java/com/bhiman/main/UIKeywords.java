@@ -7,7 +7,6 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -146,7 +145,7 @@ public class UIKeywords {
 	 * @param element as {@code WebElement}.
 	 */
 	public static void mouseHover(WebElement element) {
-		LOG.info("Mouse hover to web element: " +element+ "in page.");
+		LOG.info("Mouse hover to webelement: " +element+ " in page.");
 		Constants.actions = new Actions(Constants.driver);
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		Constants.actions.moveToElement(element).build().perform();

@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 
 import com.bhiman.main.Constants;
 import com.bhiman.main.UIKeywords;
-import com.bhiman.main.masters.Banks;
 import com.bhiman.main.masters.Branches;
 import com.bhiman.main.utility.PropertyReader;
 import com.bhiman.test.BaseTest;
