@@ -21,13 +21,11 @@ public class BanksSteps {
 	
 	@Given("Mouse Hover to master for banks")
 	public void mouse_hover_to_master_for_banks() {
-		Banks banks = new Banks();
 		banks.mouseHoverToMasters();
 	}
 
 	@Given("Verify Banks option")
 	public void verify_banks_option() {
-		Banks banks = new Banks();
 		Constants.expected = "Banks";
 		Constants.actual = banks.getTextOfBanks();
 		Assert.assertEquals(Constants.actual, Constants.expected);
@@ -41,7 +39,7 @@ public class BanksSteps {
 	@And("Verify Banks URL for banks")
 	public void verify_banks_url() {
 		Constants.actual = UIKeywords.getPageUrl();
-		Constants.expected = "http://103.50.162.196/testng/bank.php";
+		Constants.expected = "http://103.50.162.196/testing/bank.php";
 		Assert.assertEquals(Constants.actual, Constants.expected);
 	}
 
@@ -70,9 +68,9 @@ public class BanksSteps {
 		banks.clickOnPrintButton();
 	}
 	
-	@Then("Verify copy text as {String} for banks")
-	public void verify_copy_text_as_text_for_banks(String text) {
-		Constants.expected = text;
+	@Then("Verify click on copy action for banks")
+	public void verify_click_on_copy_action_for_banks() {
+		Constants.expected = "Copy to clipboard";
 		Constants.actual = banks.getTextAfterClick();
 		Assert.assertEquals(Constants.actual, Constants.expected);		
 	}
@@ -106,6 +104,7 @@ public class BanksSteps {
 
 	@Then("Verify Print URL for banks")
 	public void verify_print_url_for_banks() {
+//		Banks banks = new Banks();
 		Constants.expected = "about:blank";
 		Constants.actual = banks.getSwitchWindowURL();
 		Assert.assertEquals(Constants.actual, Constants.expected);

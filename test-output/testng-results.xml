@@ -2,253 +2,112 @@
 <testng-results ignored="0" total="7" passed="0" failed="7" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-08T14:17:26 IST" name="Default suite" finished-at="2021-03-08T14:17:27 IST" duration-ms="1068">
+  <suite started-at="2021-03-08T15:46:36 IST" name="Default suite" finished-at="2021-03-08T15:46:37 IST" duration-ms="1370">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2021-03-08T14:17:26 IST" name="Default test" finished-at="2021-03-08T14:17:27 IST" duration-ms="1068">
+    <test started-at="2021-03-08T15:46:36 IST" name="Default test" finished-at="2021-03-08T15:46:37 IST" duration-ms="1370">
       <class name="com.bhiman.cucumber.RunnerTest">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T14:17:26 IST" name="setUpClass" finished-at="2021-03-08T14:17:26 IST" duration-ms="448" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:36 IST" name="setUpClass" finished-at="2021-03-08T15:46:36 IST" duration-ms="459" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T14:17:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T14:17:27 IST" duration-ms="146" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="432" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify and validate Banks option in Masters."]]>
+                <![CDATA["To verify and validate Branches option in Masters."]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Test cases to verify and validate Banks option in Masters]"]]>
+                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class]]>
-            </message>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class
-at io.cucumber.core.resource.ClasspathSupport.requireValidPackageName(ClasspathSupport.java:44)
-at io.cucumber.core.resource.ClasspathScanner.scanForClassesInPackage(ClasspathScanner.java:48)
-at io.cucumber.core.resource.ClasspathScanner.scanForSubClassesInPackage(ClasspathScanner.java:41)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.lambda$instantiateSubclasses$1(ScanningTypeRegistryConfigurerSupplier.java:80)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateSubclasses(ScanningTypeRegistryConfigurerSupplier.java:84)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateExactlyOneSubclass(ScanningTypeRegistryConfigurerSupplier.java:62)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier.get(ScanningTypeRegistryConfigurerSupplier.java:33)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:51)
-at java.base/java.lang.ThreadLocal$SuppliedThreadLocal.initialValue(ThreadLocal.java:305)
-at java.base/java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:195)
-at java.base/java.lang.ThreadLocal.get(ThreadLocal.java:172)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:43)
-at io.cucumber.core.runtime.CucumberExecutionContext.getRunner(CucumberExecutionContext.java:128)
-at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:115)
-at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
-at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+              <![CDATA[java.lang.NullPointerException
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy23.toString(Unknown Source)
+at java.base/java.lang.String.valueOf(String.java:2951)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
+at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
+at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
+at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
+at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:5)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T14:17:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T14:17:27 IST" duration-ms="20" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="29" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify and validate after click on Banks option in Masters"]]>
+                <![CDATA["To verify and validate after click on Branches option in Masters"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Test cases to verify and validate Banks option in Masters]"]]>
+                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class]]>
-            </message>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class
-at io.cucumber.core.resource.ClasspathSupport.requireValidPackageName(ClasspathSupport.java:44)
-at io.cucumber.core.resource.ClasspathScanner.scanForClassesInPackage(ClasspathScanner.java:48)
-at io.cucumber.core.resource.ClasspathScanner.scanForSubClassesInPackage(ClasspathScanner.java:41)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.lambda$instantiateSubclasses$1(ScanningTypeRegistryConfigurerSupplier.java:80)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateSubclasses(ScanningTypeRegistryConfigurerSupplier.java:84)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateExactlyOneSubclass(ScanningTypeRegistryConfigurerSupplier.java:62)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier.get(ScanningTypeRegistryConfigurerSupplier.java:33)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:51)
-at java.base/java.lang.ThreadLocal$SuppliedThreadLocal.initialValue(ThreadLocal.java:305)
-at java.base/java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:195)
-at java.base/java.lang.ThreadLocal.get(ThreadLocal.java:172)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:43)
-at io.cucumber.core.runtime.CucumberExecutionContext.getRunner(CucumberExecutionContext.java:128)
-at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:115)
-at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
-at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+              <![CDATA[java.lang.NullPointerException
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy23.toString(Unknown Source)
+at java.base/java.lang.String.valueOf(String.java:2951)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
+at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
+at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
+at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
+at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:10)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T14:17:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T14:17:27 IST" duration-ms="11" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="26" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Verifying click on Copy button in Banks page."]]>
+                <![CDATA["Verifying click on Copy button in Branches page."]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Test cases to verify and validate Banks option in Masters]"]]>
+                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class]]>
-            </message>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class
-at io.cucumber.core.resource.ClasspathSupport.requireValidPackageName(ClasspathSupport.java:44)
-at io.cucumber.core.resource.ClasspathScanner.scanForClassesInPackage(ClasspathScanner.java:48)
-at io.cucumber.core.resource.ClasspathScanner.scanForSubClassesInPackage(ClasspathScanner.java:41)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.lambda$instantiateSubclasses$1(ScanningTypeRegistryConfigurerSupplier.java:80)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateSubclasses(ScanningTypeRegistryConfigurerSupplier.java:84)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateExactlyOneSubclass(ScanningTypeRegistryConfigurerSupplier.java:62)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier.get(ScanningTypeRegistryConfigurerSupplier.java:33)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:51)
-at java.base/java.lang.ThreadLocal$SuppliedThreadLocal.initialValue(ThreadLocal.java:305)
-at java.base/java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:195)
-at java.base/java.lang.ThreadLocal.get(ThreadLocal.java:172)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:43)
-at io.cucumber.core.runtime.CucumberExecutionContext.getRunner(CucumberExecutionContext.java:128)
-at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:115)
-at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
-at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+              <![CDATA[java.lang.NullPointerException
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy23.toString(Unknown Source)
+at java.base/java.lang.String.valueOf(String.java:2951)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
+at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
+at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
+at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
+at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:16)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T14:17:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T14:17:27 IST" duration-ms="27" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="30" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -257,76 +116,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Test cases to verify and validate Banks option in Masters]"]]>
+                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class]]>
-            </message>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class
-at io.cucumber.core.resource.ClasspathSupport.requireValidPackageName(ClasspathSupport.java:44)
-at io.cucumber.core.resource.ClasspathScanner.scanForClassesInPackage(ClasspathScanner.java:48)
-at io.cucumber.core.resource.ClasspathScanner.scanForSubClassesInPackage(ClasspathScanner.java:41)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.lambda$instantiateSubclasses$1(ScanningTypeRegistryConfigurerSupplier.java:80)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateSubclasses(ScanningTypeRegistryConfigurerSupplier.java:84)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateExactlyOneSubclass(ScanningTypeRegistryConfigurerSupplier.java:62)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier.get(ScanningTypeRegistryConfigurerSupplier.java:33)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:51)
-at java.base/java.lang.ThreadLocal$SuppliedThreadLocal.initialValue(ThreadLocal.java:305)
-at java.base/java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:195)
-at java.base/java.lang.ThreadLocal.get(ThreadLocal.java:172)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:43)
-at io.cucumber.core.runtime.CucumberExecutionContext.getRunner(CucumberExecutionContext.java:128)
-at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:115)
-at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
-at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+              <![CDATA[java.lang.NullPointerException
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy23.toString(Unknown Source)
+at java.base/java.lang.String.valueOf(String.java:2951)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
+at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
+at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
+at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
+at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:23)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T14:17:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T14:17:27 IST" duration-ms="11" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="32" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -335,76 +147,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Test cases to verify and validate Banks option in Masters]"]]>
+                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class]]>
-            </message>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class
-at io.cucumber.core.resource.ClasspathSupport.requireValidPackageName(ClasspathSupport.java:44)
-at io.cucumber.core.resource.ClasspathScanner.scanForClassesInPackage(ClasspathScanner.java:48)
-at io.cucumber.core.resource.ClasspathScanner.scanForSubClassesInPackage(ClasspathScanner.java:41)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.lambda$instantiateSubclasses$1(ScanningTypeRegistryConfigurerSupplier.java:80)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateSubclasses(ScanningTypeRegistryConfigurerSupplier.java:84)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateExactlyOneSubclass(ScanningTypeRegistryConfigurerSupplier.java:62)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier.get(ScanningTypeRegistryConfigurerSupplier.java:33)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:51)
-at java.base/java.lang.ThreadLocal$SuppliedThreadLocal.initialValue(ThreadLocal.java:305)
-at java.base/java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:195)
-at java.base/java.lang.ThreadLocal.get(ThreadLocal.java:172)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:43)
-at io.cucumber.core.runtime.CucumberExecutionContext.getRunner(CucumberExecutionContext.java:128)
-at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:115)
-at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
-at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+              <![CDATA[java.lang.NullPointerException
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy23.toString(Unknown Source)
+at java.base/java.lang.String.valueOf(String.java:2951)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
+at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
+at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
+at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
+at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:30)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T14:17:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T14:17:27 IST" duration-ms="18" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="32" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -413,76 +178,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Test cases to verify and validate Banks option in Masters]"]]>
+                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class]]>
-            </message>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class
-at io.cucumber.core.resource.ClasspathSupport.requireValidPackageName(ClasspathSupport.java:44)
-at io.cucumber.core.resource.ClasspathScanner.scanForClassesInPackage(ClasspathScanner.java:48)
-at io.cucumber.core.resource.ClasspathScanner.scanForSubClassesInPackage(ClasspathScanner.java:41)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.lambda$instantiateSubclasses$1(ScanningTypeRegistryConfigurerSupplier.java:80)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateSubclasses(ScanningTypeRegistryConfigurerSupplier.java:84)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateExactlyOneSubclass(ScanningTypeRegistryConfigurerSupplier.java:62)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier.get(ScanningTypeRegistryConfigurerSupplier.java:33)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:51)
-at java.base/java.lang.ThreadLocal$SuppliedThreadLocal.initialValue(ThreadLocal.java:305)
-at java.base/java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:195)
-at java.base/java.lang.ThreadLocal.get(ThreadLocal.java:172)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:43)
-at io.cucumber.core.runtime.CucumberExecutionContext.getRunner(CucumberExecutionContext.java:128)
-at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:115)
-at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
-at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+              <![CDATA[java.lang.NullPointerException
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy23.toString(Unknown Source)
+at java.base/java.lang.String.valueOf(String.java:2951)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
+at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
+at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
+at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
+at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:37)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T14:17:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T14:17:27 IST" duration-ms="29" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-08T15:46:37 IST" duration-ms="23" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -491,76 +209,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Test cases to verify and validate Banks option in Masters]"]]>
+                <![CDATA["Optional[Test cases to verify and validate Branches option in Masters]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class]]>
-            </message>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Invalid part(s) in package name: com.bhiman.cucumber.stepdefinitions.BanksSteps.class
-at io.cucumber.core.resource.ClasspathSupport.requireValidPackageName(ClasspathSupport.java:44)
-at io.cucumber.core.resource.ClasspathScanner.scanForClassesInPackage(ClasspathScanner.java:48)
-at io.cucumber.core.resource.ClasspathScanner.scanForSubClassesInPackage(ClasspathScanner.java:41)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.lambda$instantiateSubclasses$1(ScanningTypeRegistryConfigurerSupplier.java:80)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateSubclasses(ScanningTypeRegistryConfigurerSupplier.java:84)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier$Reflections.instantiateExactlyOneSubclass(ScanningTypeRegistryConfigurerSupplier.java:62)
-at io.cucumber.core.runtime.ScanningTypeRegistryConfigurerSupplier.get(ScanningTypeRegistryConfigurerSupplier.java:33)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:51)
-at java.base/java.lang.ThreadLocal$SuppliedThreadLocal.initialValue(ThreadLocal.java:305)
-at java.base/java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:195)
-at java.base/java.lang.ThreadLocal.get(ThreadLocal.java:172)
-at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:43)
-at io.cucumber.core.runtime.CucumberExecutionContext.getRunner(CucumberExecutionContext.java:128)
-at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:115)
-at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
-at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+              <![CDATA[java.lang.NullPointerException
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy23.toString(Unknown Source)
+at java.base/java.lang.String.valueOf(String.java:2951)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
+at com.bhiman.main.UIKeywords.mouseHover(UIKeywords.java:148)
+at com.bhiman.main.masters.Branches.mouseHoverToMasters(Branches.java:103)
+at com.bhiman.cucumber.stepdefinitions.BranchesSteps.mouse_hover_to_master_for_branches(BranchesSteps.java:25)
+at ✽.Mouse Hover to master for branches(file:///E:/BBhiman%20Group/BhimanG/src/main/resources/Features/Branches.feature:44)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T14:17:27 IST" name="tearDownClass" finished-at="2021-03-08T14:17:27 IST" duration-ms="24" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.bhiman.cucumber.RunnerTest@7b420819]" started-at="2021-03-08T15:46:37 IST" name="tearDownClass" finished-at="2021-03-08T15:46:37 IST" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
