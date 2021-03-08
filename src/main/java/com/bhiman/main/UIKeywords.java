@@ -5,9 +5,10 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
+import javax.imageio.ImageIO;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -22,9 +23,12 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class UIKeywords {
-	
+
 	private static Logger LOG = Logger.getLogger(UIKeywords.class);
 
 	/**
@@ -36,7 +40,7 @@ public class UIKeywords {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Clearing text from WebElement: " +element);
 		element.clear();
-		
+
 	} // end of method
 
 	/**
@@ -48,7 +52,7 @@ public class UIKeywords {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Clicking on WebElement: " +element);
 		element.click();
-		
+
 	} // end of method
 
 	/**
@@ -58,7 +62,7 @@ public class UIKeywords {
 		LOG.info("Closing current browser window.");
 		Constants.driver.close();
 		LOG.info("Closed current browser window.");
-		
+
 	} // end of method
 
 	/**
@@ -69,7 +73,7 @@ public class UIKeywords {
 		Constants.driver.quit();
 		LOG.info("Closed all browser window.");
 	}
-		
+
 	/**
 	 * Use to deletes all cookies of browser.
 	 * Cookies are messages that web servers pass to your web browser when you visit Internet sites.
@@ -78,10 +82,10 @@ public class UIKeywords {
 		LOG.info("Deleting all browser cookies");
 		Constants.driver.manage().deleteAllCookies();
 		LOG.info("Deleted all cookies");
-		
+
 	} // end of method
-	
-	
+
+
 	/**
 	 * Use to enter text on @WebElement element  like textbox etc.
 	 * 
@@ -92,9 +96,9 @@ public class UIKeywords {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		LOG.info("Entering text as " +textToEnter+ " in WebElement: " + element);
 		element.sendKeys(textToEnter);
-		
+
 	} // end of method
-	
+
 	/**
 	 * Create a @WebDriver driver instance.
 	 * 
@@ -107,7 +111,7 @@ public class UIKeywords {
 			LOG.info("Driver instance created.");
 			return Constants.driver;			
 		}
-		
+
 	} // end of method
 
 	/**
@@ -116,18 +120,18 @@ public class UIKeywords {
 	public static String getPageTitle() {
 		LOG.info("Reading current page title.");
 		return Constants.driver.getTitle();
-		
+
 	} // end of method
-	
+
 	/**
 	 * Read current page URL.
 	 */
 	public static String getPageUrl() {
 		LOG.info("Reading current page URL.");
 		return Constants.driver.getCurrentUrl();
-		
+
 	} // end of method
-  
+
 	/**
 	 * Use to read text of @Webelement element.
 	 * 
@@ -137,9 +141,9 @@ public class UIKeywords {
 		LOG.info("Reading text for element: " +element+ " in page.");
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		return element.getText();
-		
+
 	} // end of method
-	
+
 	/**
 	 * Use to hover the mouse to @Webelement element.
 	 * 
@@ -150,7 +154,7 @@ public class UIKeywords {
 		Constants.actions = new Actions(Constants.driver);
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		Constants.actions.moveToElement(element).build().perform();
-		
+
 	} // end of method
 
 	/**
@@ -159,7 +163,7 @@ public class UIKeywords {
 	public static void maximizeWindow() {
 		LOG.info("Maximize browser window.");
 		Constants.driver.manage().window().maximize();
-		
+
 	} // end of method
 
 	/**
@@ -168,16 +172,16 @@ public class UIKeywords {
 	public static void navigateBack() {
 		LOG.info("Navigate to back page from current page.");
 		Constants.driver.navigate().back();
-		
+
 	} // end of method
-	
+
 	/**
 	 * Navigate to forward page from current page.
 	 */
 	public static void navigateForward() {
 		LOG.info("Navigate to forward page from current page.");
 		Constants.driver.navigate().forward();
-		
+
 	} // end of method
 
 	/**
@@ -218,9 +222,9 @@ public class UIKeywords {
 			LOG.error("Invalid browser name: "+browserName+".\nExpected: 'chrome','firefox','edge','ie',and 'opera'.");
 			break;
 		}
-		
+
 	} // end of method
-	
+
 	/**
 	 * Open the specified url.
 	 * 
@@ -229,7 +233,7 @@ public class UIKeywords {
 	public static void openUrl(String url) {
 		LOG.info("Launching application URL: "+url);
 		Constants.driver.get(url);
-		
+
 	} // end of method
 
 	/**
@@ -238,9 +242,9 @@ public class UIKeywords {
 	public static void refreshPage() {
 		LOG.info("Refreshing current page.");
 		Constants.driver.navigate().refresh();
-		
+
 	} // end of method
-	
+
 	/**
 	 * Use to scroll web page vertically down to yPixel.
 	 * 
@@ -250,9 +254,9 @@ public class UIKeywords {
 		LOG.info("Scrolling webpage vertically down to " +yPixel+ " pixel.");
 		JavascriptExecutor jse = (JavascriptExecutor) Constants.driver;
 		jse.executeScript("window.scrollBy(0,yPixel)");
-		
+
 	} // end of method
-	
+
 	/**
 	 * Use to scroll web page vertically down up to view of @Webelement element.
 	 * 
@@ -263,10 +267,10 @@ public class UIKeywords {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		JavascriptExecutor jse = (JavascriptExecutor) Constants.driver;	
 		jse.executeScript("arguments[0].scrollIntoView();", element);
-		
+
 	} // end of method
-	
-	
+
+
 	/**
 	 * Use to select @Webelement element from the drop-down using visible text.
 	 * 
@@ -278,9 +282,9 @@ public class UIKeywords {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		Constants.select = new Select(element);
 		Constants.select.selectByVisibleText(textToSelect);
-		
+
 	} // end of method
-		
+
 	/**
 	 *  Use to switch driver from parent(main) window to child window. It will also print both window handles.
 	 */		
@@ -298,9 +302,9 @@ public class UIKeywords {
 				LOG.error("Parent(main) and child window hanldles are same.");
 			}
 		}
-		
+
 	} // end of method
-	
+
 	/**
 	 * Overload Method:
 	 * 
@@ -325,7 +329,7 @@ public class UIKeywords {
 		LOG.info("Switching to frame");
 		Constants.driver.switchTo().frame(element);
 		LOG.info("Switched to frame");
-		
+
 	} // end of method
 
 	/**
@@ -337,9 +341,9 @@ public class UIKeywords {
 	public static Boolean isElementDisplayed(WebElement element) {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
 		return element.isDisplayed();
-		
+
 	} // end of method
-	
+
 	/**
 	 * Returns true if file is downloaded or false if file is not downloaded
 	 * 
@@ -357,7 +361,7 @@ public class UIKeywords {
 		}
 
 		return Constants.flag;
-		
+
 	} // end of method
 
 	/**
@@ -373,28 +377,45 @@ public class UIKeywords {
 		} else {
 			LOG.error("Failed to delete the file.");
 		}
-		 
+
 	} // end of method
-	
+
 	/**
 	 * Takes screenshot
 	 * 
 	 * @param filePath as {@code String}.
 	 * @param screenshotName as {@code String}.
+	 * @throws IOException 
 	 */
-	public static void takeScreenshot(String filePath, String screenshotName) {
-		//Take the screenshot
-       File screenshot = ((TakesScreenshot) Constants.driver).getScreenshotAs(OutputType.FILE);
-       
-       //Copy the file to a location and use try catch block to handle exception
-       try {
-           FileUtils.copyFile(screenshot, new File(filePath+"\\"+screenshotName));
-       } catch (IOException e) {
-           System.out.println(e.getMessage());
-       }
-	
+	public static void captureScreenshot(String filePath, String screenshotName) throws IOException {
+		
+		// will create object only if shot is null, otherwise will use existing created instance
+		if(Constants.shot == null){
+			Constants.shot = new AShot();
+		}
+
+		// specify screenshot capture strategy - full page screenshot in this case
+		Screenshot screenshot = Constants.shot.shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(Constants.driver);
+		
+		//Save the screenshot and sepecify the image format
+		try {
+			ImageIO.write(screenshot.getImage(), "jpg", new File(filePath+"\\"+screenshotName));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		//Take the screenshot
+//		File screenshot = ((TakesScreenshot) Constants.driver).getScreenshotAs(OutputType.FILE);
+//
+//		//Copy the file to a location and use try catch block to handle exception
+//		try {
+//			FileUtils.copyFile(screenshot, new File(filePath+"\\"+screenshotName));
+//		} catch (IOException e) {
+//			System.out.println(e.getMessage());
+//		}
+
 	} // end of method
-	
-	
-	
+
+
+
 }
