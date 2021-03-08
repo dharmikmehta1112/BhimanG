@@ -20,14 +20,12 @@ public class BranchesSteps extends Branches {
 	Branches branch = new Branches();
 	
 	@Given("Mouse Hover to master for branches")
-	public void mouse_hover_to_master_for_branches() {
-		Branches branch = new Branches();		
+	public void mouse_hover_to_master_for_branches() {	
 		branch.mouseHoverToMasters();
 	}
 
 	@Given("Verify Branches option")
-	public void verify_branches_option() {
-		Branches branch = new Branches();	
+	public void verify_branches_option() {	
 		Constants.expected = "Branches";
 		Constants.actual = branch.getTextOfBranches();
 		Assert.assertEquals(Constants.actual, Constants.expected);
