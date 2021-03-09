@@ -2,6 +2,7 @@ package com.bhiman.pages.masters;
 
 import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -206,7 +207,7 @@ public class BrokersPage extends UIKeywords{
 			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
-		public void fillAddBrokerForm() {
+		public void fillAddBrokerForm() throws Exception {
 			LOG.info("Adding values to Add Broker form");
 			UIKeywords.enterText(brokersBroker_name, "VG");
 			UIKeywords.enterText(brokersMobile_no, "8765432109");
@@ -217,14 +218,16 @@ public class BrokersPage extends UIKeywords{
 			UIKeywords.enterText(brokersBank_name,"HDFC Bank");
 			UIKeywords.enterText(brokersAccount_no, "12345678909");
 			UIKeywords.enterText(brokersIFSC_code, "HDFC1983456");
-			UIKeywords.clickOnElement(brokersResume);
-			try {
-				Runtime.getRuntime().exec("F:\\Bhiman Requirements\\AutoIT Script\\uploadResume.exe");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			//UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\RESUME.docx");
+			//JavascriptExecutor jse = (JavascriptExecutor) Constants.driver;
+			
+              
+			UIKeywords.scrollPageVerticalDown(4000);
+//			UIKeywords.scrollVerticalDown(brokersResume);
+//			UIKeywords.clickOnElement(brokersResume);
+//			
+//				Runtime.getRuntime().exec(Constants.basePath+"\\src\\main\\resources\\AutoIT\\uploadResume.exe");
+//			
+			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\RESUME.docx");
 			UIKeywords.enterText(brokersAgreement,"F:\\Bhiman Requirements\\Agreement.docx");
 			UIKeywords.enterText(brokersKYC,"F:\\Bhiman Requirements\\KYC.docx");
 			//attachResume();
@@ -232,6 +235,9 @@ public class BrokersPage extends UIKeywords{
 			//attachKYC();
 			LOG.info("Values added to Add Broker form");
 			WaitsInHelp.threadSleepInMilliSeconds(1000);
+			UIKeywords.scrollPageVerticalDown(4000);
+			UIKeywords.clickOnElement(brokersSubmit);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 
 		
