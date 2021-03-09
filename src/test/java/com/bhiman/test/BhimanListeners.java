@@ -8,8 +8,8 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.bhiman.main.Constants;
-import com.bhiman.main.UIKeywords;
+import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
 
 public class BhimanListeners implements ITestListener {
 

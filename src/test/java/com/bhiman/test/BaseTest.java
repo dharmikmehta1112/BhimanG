@@ -7,9 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import com.bhiman.main.Constants;
-import com.bhiman.main.UIKeywords;
-import com.bhiman.main.utility.PropertyReader;
+
+import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
+import com.bhiman.utility.PropertyReader;
 
 /**
  * Contains setup {@BeforeMethod} and tearDown {@AfterMethod} annotated methods compulsorily required 
@@ -39,6 +40,7 @@ public class BaseTest extends UIKeywords {
 		UIKeywords.openUrl(PropertyReader.getLocatorValue("url"));
 		PageFactory.initElements(Constants.driver, BaseTest.class);
 		UIKeywords.maximizeWindow();
+		
 		UIKeywords.enterText(mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
 		UIKeywords.enterText(password, PropertyReader.getLocatorValue("admin_password"));
 		UIKeywords.clickOnElement(login_Btn);

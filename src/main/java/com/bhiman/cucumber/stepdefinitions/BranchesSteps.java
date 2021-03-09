@@ -6,18 +6,18 @@ import java.io.File;
 
 import org.testng.Assert;
 
-import com.bhiman.main.Constants;
-import com.bhiman.main.UIKeywords;
-import com.bhiman.main.masters.Branches;
-import com.bhiman.main.utility.PropertyReader;
+import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.masters.BranchesPage;
+import com.bhiman.utility.PropertyReader;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-public class BranchesSteps extends Branches {
+public class BranchesSteps extends BranchesPage {
 	
-	Branches branch = new Branches();
+	BranchesPage branch = new BranchesPage();
 	
 	@Given("Mouse Hover to master for branches")
 	public void mouse_hover_to_master_for_branches() {	

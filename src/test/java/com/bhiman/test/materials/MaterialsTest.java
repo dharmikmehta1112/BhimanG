@@ -4,12 +4,11 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.bhiman.main.Constants;
-import com.bhiman.main.UIKeywords;
-import com.bhiman.main.materials.Materials;
-import com.bhiman.main.utility.PropertyReader;
+import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.materials.MaterialsPage;
 import com.bhiman.test.BaseTest;
-import com.bhiman.test.masters.UsersTest;
+import com.bhiman.utility.PropertyReader;
 
 public class MaterialsTest extends BaseTest {
   
@@ -19,7 +18,7 @@ public class MaterialsTest extends BaseTest {
 		@Test(groups = "Regression",description = "To verify and validate Material tab ")
 
 		public void toverifyClickOnMaterial() {
-			Materials material = new Materials();
+			MaterialsPage material = new MaterialsPage();
 			material.clickonMaterials();
 			Constants.expected = "http://103.50.162.196/testing/material.php";
 			Constants.actual = UIKeywords.getPageUrl();
@@ -30,7 +29,7 @@ public class MaterialsTest extends BaseTest {
 		@Test(groups = "Regression",description = "To verify and validate Text of Material  ")
 
 		public void toVrifynameofmaterial() {
-			Materials material = new Materials();
+			MaterialsPage material = new MaterialsPage();
 			Constants.expected="Materials";
 			Constants.actual=material.getTextofMaterial();
 			Assert.assertEquals(Constants.actual, Constants.expected);	
@@ -40,7 +39,7 @@ public class MaterialsTest extends BaseTest {
 		@Test(groups = "Regression",description = "To verify and validate Text of copy on material page  ")
 
 		public void toVerifytextofCopyTabforMaterialPage() {
-			Materials material = new Materials();
+			MaterialsPage material = new MaterialsPage();
 			material.clickonMaterials();
 			String Materialpage_copy_expected="Copy";
 			String Material_Copy_actual=material.getTextofCopyonMaterialPage();
@@ -50,7 +49,7 @@ public class MaterialsTest extends BaseTest {
 		//test case for Excel, csv, pdf, print and Search box*************
 		@Test(groups = "Regression",description = "To verify and validate add material tab is clickable  ")
 		public void toVerifyaddMaterialTabisclickable() {
-			Materials material = new Materials();
+			MaterialsPage material = new MaterialsPage();
 			material.clickonMaterials();
 			material.clickonaddMaterial();
 			String Materials_expectedUrl = "http://103.50.162.196/testing/material.php#";
@@ -64,7 +63,7 @@ public class MaterialsTest extends BaseTest {
 	  
 		@Test(groups = "Regression",description = "To verify and validate view material tab is clickable   ")
 		public void toverifyviewMaterialTabisclickable() {
-			Materials material = new Materials();
+			MaterialsPage material = new MaterialsPage();
 			material.clickonMaterials();
 			material.clickonaddMaterial();
 			material.clickonViewMaterial();
@@ -75,7 +74,7 @@ public class MaterialsTest extends BaseTest {
 		}
 		@Test
 		public void EndtoEndTestofMaterial() {
-			Materials material = new Materials();
+			MaterialsPage material = new MaterialsPage();
 			Constants.flag = false;
 			material.clickonMaterials();
 			material.clickonaddMaterial();
@@ -97,7 +96,7 @@ public class MaterialsTest extends BaseTest {
 		@Test(groups = "Regression",description = "To verify and validate Date format is valid  ")
 
 		public void toVerifyDateTabonMatrialPage() {
-			Materials material = new Materials();
+			MaterialsPage material = new MaterialsPage();
 			Constants.flag = false;
 			material.clickonMaterials();
 			material.clickonaddMaterial();
@@ -113,7 +112,7 @@ public class MaterialsTest extends BaseTest {
 		
 		@Test(groups = "Regression",description = " verify and validate material name format ")
 		public void toVerifyvalidmaterialname() {
-			Materials material = new Materials();
+			MaterialsPage material = new MaterialsPage();
 			Constants.flag = false;
 			material.clickonMaterials();
 			material.clickonaddMaterial();
@@ -127,7 +126,7 @@ public class MaterialsTest extends BaseTest {
 		
 		@Test(groups = "Regression",description = " verify and in validate material name format  ")
 		public void toVerifyinvalidMaterialNameformat() {
-			Materials material = new Materials();
+			MaterialsPage material = new MaterialsPage();
 			Constants.flag = false;
 			material.clickonMaterials();
 			material.clickonaddMaterial();
