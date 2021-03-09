@@ -5,7 +5,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.File;
 
 import org.apache.log4j.Logger;
-
+import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import org.testng.annotations.Test;
@@ -155,14 +155,35 @@ public class BrokersTest extends BaseTest {
 			brokers.mouseHoverToMastersForBrokersPage();
 			brokers.clickOnBrokers();
 			brokers.clickOnAddBroker();
+			brokers.scrollPageOperation();
 			brokers.fillAddBrokerForm();
-			//brokers.clickOnSubmit();
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			brokers.scrollPageOperation();
+			brokers.clickOnSubmit();
+			Constants.expected = "Broker Added.";
+			Constants.actual = Constants.driver.findElement(By.xpath("//div[contains(text(),\"Broker Added.\")]")).getText();
+			Assert.assertEquals(Constants.actual, Constants.expected);	
+			
 		}
+		
+		//TC-12
+				@Test(description = "To verify/validate functionality of search box with invalid input.")
+				public void fillAddBrokerFormTestwithAutoIT() throws Exception {
+					LOG.info("Masters-->Brokers: Filling Add Broker Form ");
+					BrokersPage brokers=new BrokersPage();
+					brokers.mouseHoverToMastersForBrokersPage();
+					brokers.clickOnBrokers();
+					brokers.clickOnAddBroker();
+					brokers.scrollPageOperation();
+					brokers.fillAddBrokerFormwithAutoIT();;
+					brokers.clickOnAttachResume();
+					brokers.scrollPageOperation();
+					brokers.clickOnSubmit();
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 
 }
