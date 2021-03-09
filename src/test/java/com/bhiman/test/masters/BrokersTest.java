@@ -149,15 +149,14 @@ public class BrokersTest extends BaseTest {
 	
 	//TC-11
 		@Test(description = "To verify/validate functionality of search box with invalid input.")
-		public void fillAddBrokerFormTest() {
+		public void fillAddBrokerFormTest() throws Exception {
 			LOG.info("Masters-->Brokers: Filling Add Broker Form ");
 			BrokersPage brokers=new BrokersPage();
 			brokers.mouseHoverToMastersForBrokersPage();
 			brokers.clickOnBrokers();
 			brokers.clickOnAddBroker();
 			brokers.fillAddBrokerForm();
-			//brokers.attachResume();
-			brokers.clickOnSubmit();
+			//brokers.clickOnSubmit();
 			try {
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
