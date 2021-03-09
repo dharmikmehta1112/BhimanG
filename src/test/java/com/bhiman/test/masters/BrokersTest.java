@@ -32,7 +32,7 @@ public class BrokersTest extends BaseTest {
 	}
 	
 	//TC-02
-	@Test( description="To verify functionality of Add Broker option. ", alwaysRun=true)
+	@Test( groups = {"Regression"}, description="To verify functionality of Add Broker option. ", alwaysRun=true)
 	public void clickingOnBrokersPageFromMasters() {
 		LOG.info("Clicking on Add Broker from Masters Broker");
 		BrokersPage brokers=new BrokersPage();
@@ -46,7 +46,7 @@ public class BrokersTest extends BaseTest {
 	}
 	
 	//TC-03
-	@Test( description="Clicking on View Broker Button after clicked on Add Broker")
+	@Test( groups = {"Regression"}, description="Clicking on View Broker Button after clicked on Add Broker")
 	public void clickOnViewBrokers() {
 		LOG.info("Clicking on View Broker after clicked on Add Broker from Masters Broker");
 		BrokersPage brokers=new BrokersPage();
@@ -60,7 +60,7 @@ public class BrokersTest extends BaseTest {
 	}
 	
 	//TC-04
-	@Test( description="Clicking on Copy Button")
+	@Test( groups = {"Regression"}, description="Clicking on Copy Button")
 	public void clickOnCopyBtnOnBroker() {
 		LOG.info("Clicking on Copy Button");
 		BrokersPage brokers=new BrokersPage();
@@ -70,7 +70,7 @@ public class BrokersTest extends BaseTest {
 	}
 	
 	//TC-05
-	@Test(description="Clicking on Excel Button")
+	@Test(groups = {"Regression"}, description="Clicking on Excel Button")
 	public void clickOnExcelBtn() {
 		LOG.info("Clicking on Excel Button");
 		BrokersPage brokers=new BrokersPage();
@@ -85,7 +85,7 @@ public class BrokersTest extends BaseTest {
 	}
 	
 	//TC-06
-	@Test( description="Clicking on CSV Button")
+	@Test( groups = {"Regression"}, description="Clicking on CSV Button")
 	public void clickOnCSVBtn() {
 		LOG.info("Clicking on CSV Button");
 		BrokersPage brokers=new BrokersPage();
@@ -100,7 +100,7 @@ public class BrokersTest extends BaseTest {
 	}
 	
 	//TC-07
-	@Test( description="Clicking on PDF Button")
+	@Test( groups = {"Regression"},  description="Clicking on PDF Button")
 	public void clickOnPDFBtn() {
 		LOG.info("Clicking on PDF Button");
 		BrokersPage brokers=new BrokersPage();
@@ -115,7 +115,7 @@ public class BrokersTest extends BaseTest {
 	}
 	
 	//TC-08
-	@Test( description="Clicking on Print Button")
+	@Test( groups = {"Regression"}, description="Clicking on Print Button")
 	public void clickOnPrintBtn() {
 		LOG.info("Clicking on Print Button");
 		BrokersPage brokers=new BrokersPage();
@@ -125,7 +125,7 @@ public class BrokersTest extends BaseTest {
 	}
 	
 	//TC-09
-	@Test(description = "To verify/validate functionality of search box with valid input.")
+	@Test(groups = {"Regression"}, description = "To verify/validate functionality of search box with valid input.")
 	public void searchBoxWithValidText() {
 		LOG.info("Masters-->Brokers: Entering invalid text in Search box ");
 		BrokersPage brokers=new BrokersPage();
@@ -135,7 +135,7 @@ public class BrokersTest extends BaseTest {
 	}
 		
 	//TC-10
-	@Test(description = "To verify/validate functionality of search box with invalid input.")
+	@Test(groups = {"Regression"}, description = "To verify/validate functionality of search box with invalid input.")
 	public void searchBoxWithInvalidText() {
 		LOG.info("Masters-->Brokers: Entering invalid text in Search box ");
 		BrokersPage brokers=new BrokersPage();
@@ -155,6 +155,7 @@ public class BrokersTest extends BaseTest {
 			brokers.mouseHoverToMastersForBrokersPage();
 			brokers.clickOnBrokers();
 			brokers.clickOnAddBroker();
+			brokers.fillAddBrokerForm();
 			//brokers.attachResume();
 			brokers.clickOnSubmit();
 			try {

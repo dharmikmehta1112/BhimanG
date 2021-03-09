@@ -1,5 +1,7 @@
 package com.bhiman.pages.masters;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -206,7 +208,7 @@ public class BrokersPage extends UIKeywords{
 		
 		public void fillAddBrokerForm() {
 			LOG.info("Adding values to Add Broker form");
-			UIKeywords.enterText(brokersBroker_name, "ALG");
+			UIKeywords.enterText(brokersBroker_name, "VG");
 			UIKeywords.enterText(brokersMobile_no, "8765432109");
 			UIKeywords.enterText(brokersBroker_address, "Amravati");
 			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
@@ -215,7 +217,14 @@ public class BrokersPage extends UIKeywords{
 			UIKeywords.enterText(brokersBank_name,"HDFC Bank");
 			UIKeywords.enterText(brokersAccount_no, "12345678909");
 			UIKeywords.enterText(brokersIFSC_code, "HDFC1983456");
-			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\RESUME.docx");
+			UIKeywords.clickOnElement(brokersResume);
+			try {
+				Runtime.getRuntime().exec("F:\\Bhiman Requirements\\AutoIT Script\\uploadResume.exe");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\RESUME.docx");
 			UIKeywords.enterText(brokersAgreement,"F:\\Bhiman Requirements\\Agreement.docx");
 			UIKeywords.enterText(brokersKYC,"F:\\Bhiman Requirements\\KYC.docx");
 			//attachResume();
