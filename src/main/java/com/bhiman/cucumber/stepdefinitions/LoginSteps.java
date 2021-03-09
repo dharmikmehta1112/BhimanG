@@ -1,13 +1,13 @@
 package com.bhiman.cucumber.stepdefinitions;
 
-import com.bhiman.main.login.Admin;
+import com.bhiman.pages.adminlogin.AdminLoginPage;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-public class LoginSteps extends Admin {
+public class LoginSteps extends AdminLoginPage {
 	
-	Admin adm = new Admin();
+	AdminLoginPage adm = new AdminLoginPage();
 	
 	@Given("Enter valid mobile no.")
 	public void enter_valid_mobile_no() {

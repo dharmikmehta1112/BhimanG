@@ -15,13 +15,13 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.bhiman.main.Constants;
-import com.bhiman.main.UIKeywords;
-import com.bhiman.main.masters.Banks;
-import com.bhiman.main.masters.Users;
-import com.bhiman.main.utility.PropertyReader;
+import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.masters.BanksPage;
+import com.bhiman.pages.masters.UsersPage;
 import com.bhiman.test.BaseTest;
 import com.bhiman.test.BhimanListeners;
+import com.bhiman.utility.PropertyReader;
 @Listeners(BhimanListeners.class)
 public class UsersTest extends BaseTest {
 
@@ -30,7 +30,7 @@ public class UsersTest extends BaseTest {
 	@Test(groups = "Regression",description = "To verify and validate 'Users' option in 'Masters'.")
 	public void verifyUsersInMasters() {
 		LOG.info("userPageTest_01");
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		users.mouseHoverToMastersforuser();
 		Constants.expected= "Users";
 		Constants.actual=users.getTextofUsersforC();
@@ -39,7 +39,7 @@ public class UsersTest extends BaseTest {
 
 	@Test(groups = "Regression",description = "To verify and validate after click on 'Users' option in 'Masters'")
 	public void verifyaddUserinUsers() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
@@ -50,7 +50,7 @@ public class UsersTest extends BaseTest {
 	
 	@Test (groups = "Regression",description = "To verify and validate after click on 'View Users btn.")
 	public void toverifyViewUsersBtn() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
@@ -63,7 +63,7 @@ public class UsersTest extends BaseTest {
 
 	@Test(groups = "Regression",description = "To verify and validate click on 'Copy' button on User page.")
 	public void verifyClickOnCopyButton() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		LOG.info("Verifying click on 'Copy' button in user page.");
 		String user_expectedUrl = "http://103.50.162.196/testing/user.php";
 		users.mouseHoverToMastersforuser();
@@ -75,7 +75,7 @@ public class UsersTest extends BaseTest {
 
 	@Test(groups = "Regression",description = "To verify and validate click on 'Excel' button on User page.")
 	public void verifyClickOnExcelButton() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		LOG.info("Verifying click on ''Excel' button in user page.");
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -91,7 +91,7 @@ public class UsersTest extends BaseTest {
 	@Test(groups = "Regression",description = "To verify and validate click on 'CSV' button in User page.")
 	public static void verifyClickOnCSVButton() {
 		LOG.info("Verifying click on 'CSV' button in User page.");
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		Constants.actual = "Users.csv";
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -106,7 +106,7 @@ public class UsersTest extends BaseTest {
 	@Test(groups = "Regression",description = "To verify and validate click on 'PDF' button in User page.")
 	public static void verifyClickOnPDFButton() {
 		LOG.info("Verifying click on 'CSV' button in User page.");
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		Constants.actual = "Users.pdf";
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -121,7 +121,7 @@ public class UsersTest extends BaseTest {
 	@Test(groups = "Regression",description = "To verify and validate click on 'Print' button in User page")
 	public static void verifyPrintButton() {
 		LOG.info("Verifying click on 'Print' button in User page.");
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		//Constants.actual = "Users.pdf";
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -133,7 +133,7 @@ public class UsersTest extends BaseTest {
 	@Test (groups = "Regression",description = "To verify and validate search box field with In-valid input (text).")
 	public void verifySearchBoxWithInValidText() {
 		LOG.info("Entering invalid text on 'Search' textbox in User page.");
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.sarchonUsersSearchBox(PropertyReader.getLocatorValue("Users_search_invalid_text"));		
@@ -145,7 +145,7 @@ public class UsersTest extends BaseTest {
 	@Test(groups = "Regression",description = "To verify and validate search box field with valid input (text).")
 	public void verifySearchBoxWithValidText() {
 		LOG.info("Entering valid text on 'Search' textbox in Users page.");
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		String value=PropertyReader.getLocatorValue("Users_search_valid_text");
@@ -154,7 +154,7 @@ public class UsersTest extends BaseTest {
 	
 	@Test (groups = "Regression",description = "To verify save button. when all field is blank.")
 	public void toVerifySavebtnWhenAlltheFieldAreBlank() {	
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
@@ -171,7 +171,7 @@ public class UsersTest extends BaseTest {
 	
 	@Test (groups = "Regression",description = "To verify and validate Save button. when enter a Valid entry.")
 	public void endToendTestforUserenterALLValidData() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
@@ -203,7 +203,7 @@ public class UsersTest extends BaseTest {
 	
 	@Test (groups = "Regression",description = "To verify when enter a In-Valid user Name.")
 	public void toverifyUserEnterInvaldUsername() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -218,7 +218,7 @@ public class UsersTest extends BaseTest {
 	}
 	@Test (groups = "Regression",description = "To verify users enter a In-Valid mobile no .")
 	public void toverifySavebtnWhenEnterInvaldMobileNo() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -246,7 +246,7 @@ public class UsersTest extends BaseTest {
 	
 	@Test (groups = "Regression",description = "To verify users  enter a In-Valid Email_id .")
 	public void toverifyInvaldEmailId() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -263,7 +263,7 @@ public class UsersTest extends BaseTest {
 	
 	@Test (groups = "Regression",description = "To verify users enter a  in valid joining date format")
 	public void toverifyvalidDateFormat() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -280,7 +280,7 @@ public class UsersTest extends BaseTest {
 	
 	@Test(groups = "Regression",description = "To verify users enter valid bank name for user")
 	public void toVerifyValidBankNameforuser() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -295,7 +295,7 @@ public class UsersTest extends BaseTest {
 	}
 	@Test(groups = "Regression",description = "To verify users enter valid Account no for user Bank")
 	public void toVerifyValidAccountNumberforUserBank() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -310,7 +310,7 @@ public class UsersTest extends BaseTest {
 	}
 	@Test (groups = "Regression",description = "To verify users enter valid IFSC code for user Bank")
 	public void toVerifyValidIFSCCodeforUserBank() {
-		Users users = new Users();
+		UsersPage users = new UsersPage();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();

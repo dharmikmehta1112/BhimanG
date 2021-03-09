@@ -11,11 +11,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.bhiman.main.Constants;
-import com.bhiman.main.UIKeywords;
-import com.bhiman.main.masters.Projects;
-import com.bhiman.main.utility.PropertyReader;
+import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.masters.ProjectsPage;
 import com.bhiman.test.BaseTest;
+import com.bhiman.utility.PropertyReader;
 
 public class ProjectsTest extends BaseTest {
 	
@@ -28,7 +28,7 @@ public class ProjectsTest extends BaseTest {
 	@Test(groups ="Regression", description= "To verify Projects option is visible under masters")
 	public void verifyProjectsOptionUderMaster() throws IOException {
 		LOG.info("Verifying Projects option is visible under masters");
-		Projects project = new Projects();
+		ProjectsPage project = new ProjectsPage();
 		project.mouseHoverToMasters();
 		project.clickOnProjectsUnderMaster();
 		Constants.actual="Projects";
@@ -38,7 +38,7 @@ public class ProjectsTest extends BaseTest {
 	@Test(groups="Regression", description = "To verify and validate Projects options is clickable or not")
 	 public void verifyClickOnProjectsOptionUnderMaster() {
 		LOG.info("Verifying Projects option is clickable or not ");
-		Projects project = new Projects();
+		ProjectsPage project = new ProjectsPage();
 		project.mouseHoverToMasters();
 		project.clickOnProjectsUnderMaster();
 		Constants.actual="http://103.50.162.196/testing/project.php";
@@ -49,7 +49,7 @@ public class ProjectsTest extends BaseTest {
 	@Test(groups="Regression", description = "To verify and validate 'Copy' Button on Projects Page")
 	public void verifyCopyButtonOfProjects() {
 		LOG.info("Verifying Copy Button on Projects Page ");
-		Projects project = new Projects();
+		ProjectsPage project = new ProjectsPage();
 		project.mouseHoverToMasters();
 		project.clickOnProjectsUnderMaster();
 		project.clickOnProjectcsCopyButton();
@@ -58,7 +58,7 @@ public class ProjectsTest extends BaseTest {
 	@Test(groups="Regression", description = "To verify and validate 'Excel' Button on Projects Page")
 	public void verifyExcelButtonOfProjects() {
 		LOG.info("Verifying Excel Button on Projects Page ");
-		Projects project = new Projects();
+		ProjectsPage project = new ProjectsPage();
 		project.mouseHoverToMasters();
 		project.clickOnProjectsUnderMaster();
 		project.clickOnProjectcsExcelButton();
@@ -72,7 +72,7 @@ public class ProjectsTest extends BaseTest {
 	@Test(groups="Regression", description = "To verify and validate 'CSV' Button on Projects Page")
 	public void verifyCSVButtonOfProjects() {
 		LOG.info("Verifying Copy Button on Projects Page ");
-		Projects project = new Projects();
+		ProjectsPage project = new ProjectsPage();
 		project.mouseHoverToMasters();
 		project.clickOnProjectsUnderMaster();
 		project.clickOnProjectcsCSVButton();
@@ -87,7 +87,7 @@ public class ProjectsTest extends BaseTest {
 	@Test(groups="Regression", description = "To verify and validate 'PDF' Button on Projects Page")
 	public void verifyPDFButtonOfProjects() {
 		LOG.info("Verifying PDF Button on Projects Page ");
-		Projects project = new Projects();
+		ProjectsPage project = new ProjectsPage();
 		project.mouseHoverToMasters();
 		project.clickOnProjectsUnderMaster();
 		project.clickOnProjectcsPDFButton();
@@ -101,7 +101,7 @@ public class ProjectsTest extends BaseTest {
 	@Test(groups="Regression", description = "To verify and validate 'Print' Button on Projects Page")
 	public void verifyPrintButtonOfProjects() {
 		LOG.info("Verifying Print Button on Projects Page ");
-		Projects project = new Projects();
+		ProjectsPage project = new ProjectsPage();
 		project.mouseHoverToMasters();
 		project.clickOnProjectsUnderMaster();
 		project.clickOnProjectcsPrintButton();

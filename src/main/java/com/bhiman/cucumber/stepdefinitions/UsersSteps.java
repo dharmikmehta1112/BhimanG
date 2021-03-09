@@ -7,17 +7,17 @@ import java.io.File;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 
-import com.bhiman.main.Constants;
-import com.bhiman.main.UIKeywords;
-import com.bhiman.main.masters.Users;
-import com.bhiman.main.utility.PropertyReader;
+import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.masters.UsersPage;
+import com.bhiman.utility.PropertyReader;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class UsersSteps {
 	private static final Logger LOG = Logger.getLogger(UsersSteps.class);
-	Users users = new Users();
+	UsersPage users = new UsersPage();
 
 	@Given("Verify Users option.")
 	public void verify_users_option() {

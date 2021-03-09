@@ -10,12 +10,11 @@ import org.testng.Assert;
 
 import org.testng.annotations.Test;
 
-import com.bhiman.main.Constants;
-import com.bhiman.main.UIKeywords;
-
-import com.bhiman.main.masters.Brokers;
-import com.bhiman.main.utility.PropertyReader;
+import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.masters.BrokersPage;
 import com.bhiman.test.BaseTest;
+import com.bhiman.utility.PropertyReader;
 
 
 
@@ -27,7 +26,7 @@ public class BrokersTest extends BaseTest {
 	@Test(priority=-1, description="To verify whether 'Brokers' option is visible and clickable in Masters Tab or not.")
 	public void toCheckBrokersOption()  {
 		LOG.info("Checking for Brokers option in Masters Tab After MouseHover");
-		Brokers brokers=new Brokers();
+		BrokersPage brokers=new BrokersPage();
 		brokers.mouseHoverToMastersForBrokersPage();
 		//Constants.driver.close();	
 	}
@@ -36,7 +35,7 @@ public class BrokersTest extends BaseTest {
 	@Test( description="To verify functionality of Add Broker option. ", alwaysRun=true)
 	public void clickingOnBrokersPageFromMasters() {
 		LOG.info("Clicking on Add Broker from Masters Broker");
-		Brokers brokers=new Brokers();
+		BrokersPage brokers=new BrokersPage();
 		String brokers_expectedUrl = "http://103.50.162.196/testing/broker.php#";
 		brokers.mouseHoverToMastersForBrokersPage();
 		brokers.clickOnBrokers();
@@ -50,7 +49,7 @@ public class BrokersTest extends BaseTest {
 	@Test( description="Clicking on View Broker Button after clicked on Add Broker")
 	public void clickOnViewBrokers() {
 		LOG.info("Clicking on View Broker after clicked on Add Broker from Masters Broker");
-		Brokers brokers=new Brokers();
+		BrokersPage brokers=new BrokersPage();
 		String brokers_expectedUrl = "http://103.50.162.196/testing/broker.php#";
 		brokers.mouseHoverToMastersForBrokersPage();
 		brokers.clickOnBrokers();
@@ -64,7 +63,7 @@ public class BrokersTest extends BaseTest {
 	@Test( description="Clicking on Copy Button")
 	public void clickOnCopyBtnOnBroker() {
 		LOG.info("Clicking on Copy Button");
-		Brokers brokers=new Brokers();
+		BrokersPage brokers=new BrokersPage();
 		brokers.mouseHoverToMastersForBrokersPage();
 		brokers.clickOnBrokers();
 		brokers.clickOnCopyAtBrokersPage();
@@ -74,7 +73,7 @@ public class BrokersTest extends BaseTest {
 	@Test(description="Clicking on Excel Button")
 	public void clickOnExcelBtn() {
 		LOG.info("Clicking on Excel Button");
-		Brokers brokers=new Brokers();
+		BrokersPage brokers=new BrokersPage();
 		brokers.mouseHoverToMastersForBrokersPage();
 		brokers.clickOnBrokers();
 		brokers.clickOnExcelBtnAtBrokersPage();
@@ -89,7 +88,7 @@ public class BrokersTest extends BaseTest {
 	@Test( description="Clicking on CSV Button")
 	public void clickOnCSVBtn() {
 		LOG.info("Clicking on CSV Button");
-		Brokers brokers=new Brokers();
+		BrokersPage brokers=new BrokersPage();
 		brokers.mouseHoverToMastersForBrokersPage();
 		brokers.clickOnBrokers();
 		brokers.clickOnCSVBtnAtBrokersPage();
@@ -104,7 +103,7 @@ public class BrokersTest extends BaseTest {
 	@Test( description="Clicking on PDF Button")
 	public void clickOnPDFBtn() {
 		LOG.info("Clicking on PDF Button");
-		Brokers brokers=new Brokers();
+		BrokersPage brokers=new BrokersPage();
 		brokers.mouseHoverToMastersForBrokersPage();
 		brokers.clickOnBrokers();
 		brokers.clickOnPDFBtnAtBrokersPage();
@@ -119,7 +118,7 @@ public class BrokersTest extends BaseTest {
 	@Test( description="Clicking on Print Button")
 	public void clickOnPrintBtn() {
 		LOG.info("Clicking on Print Button");
-		Brokers brokers=new Brokers();
+		BrokersPage brokers=new BrokersPage();
 		brokers.mouseHoverToMastersForBrokersPage();
 		brokers.clickOnBrokers();
 		brokers.clickOnPrintBtnAtBrokersPage();
@@ -129,7 +128,7 @@ public class BrokersTest extends BaseTest {
 	@Test(description = "To verify/validate functionality of search box with valid input.")
 	public void searchBoxWithValidText() {
 		LOG.info("Masters-->Brokers: Entering invalid text in Search box ");
-		Brokers brokers=new Brokers();
+		BrokersPage brokers=new BrokersPage();
 		brokers.mouseHoverToMastersForBrokersPage();
 		brokers.clickOnBrokers();
 		brokers.enterTextInSearchBox(PropertyReader.getLocatorValue("brokers_search_valid_text"));
@@ -139,7 +138,7 @@ public class BrokersTest extends BaseTest {
 	@Test(description = "To verify/validate functionality of search box with invalid input.")
 	public void searchBoxWithInvalidText() {
 		LOG.info("Masters-->Brokers: Entering invalid text in Search box ");
-		Brokers brokers=new Brokers();
+		BrokersPage brokers=new BrokersPage();
 		brokers.mouseHoverToMastersForBrokersPage();
 		brokers.clickOnBrokers();
 		brokers.enterTextInSearchBox(PropertyReader.getLocatorValue("brokers_search_invalid_text"));
@@ -152,7 +151,7 @@ public class BrokersTest extends BaseTest {
 		@Test(description = "To verify/validate functionality of search box with invalid input.")
 		public void fillAddBrokerFormTest() {
 			LOG.info("Masters-->Brokers: Filling Add Broker Form ");
-			Brokers brokers=new Brokers();
+			BrokersPage brokers=new BrokersPage();
 			brokers.mouseHoverToMastersForBrokersPage();
 			brokers.clickOnBrokers();
 			brokers.clickOnAddBroker();

@@ -6,16 +6,16 @@ import java.io.File;
 
 import org.testng.Assert;
 
-import com.bhiman.main.Constants;
-import com.bhiman.main.UIKeywords;
-import com.bhiman.main.masters.Brokers;
+import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.masters.BrokersPage;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 
 public class BrokersSteps {
-	Brokers brokers=new Brokers();
+	BrokersPage brokers=new BrokersPage();
 	
 	@Given("Mouse Hover to master for brokers")
 	public void mouse_hover_to_master_for_brokers() {

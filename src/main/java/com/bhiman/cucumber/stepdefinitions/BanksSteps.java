@@ -6,10 +6,10 @@ import java.io.File;
 
 import org.testng.Assert;
 
-import com.bhiman.main.Constants;
-import com.bhiman.main.UIKeywords;
-import com.bhiman.main.masters.Banks;
-import com.bhiman.main.utility.PropertyReader;
+import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.masters.BanksPage;
+import com.bhiman.utility.PropertyReader;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -17,7 +17,7 @@ import io.cucumber.java.en.Then;
 
 public class BanksSteps {
 	
-	Banks banks = new Banks();
+	BanksPage banks = new BanksPage();
 	
 	@Given("Mouse Hover to master for banks")
 	public void mouse_hover_to_master_for_banks() {
