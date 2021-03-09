@@ -39,4 +39,3 @@ Scenario: To verify and validate click on Print button.
 	Then Click on Brokers
 	Then Click on Print button on brokers
 	And Verify Print URL for brokers
-
