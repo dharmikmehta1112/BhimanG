@@ -2,6 +2,7 @@ package com.bhiman.pages.masters;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.log4testng.Logger;
 
 import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIAlerts;
 import com.bhiman.keywords.UIKeywords;
 import com.bhiman.keywords.WaitsInHelp;
 
@@ -164,6 +166,11 @@ public class BrokersPage extends UIKeywords{
 			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
+		public void clickOnAttachResume() {
+			clickOnElement(brokersResume);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
+		}
+		
 		public void enterTextInSearchBox(String enterText) {
 			LOG.info("Entering text on search box of Banks page");
 			UIKeywords.enterText(brokersSearchbox, enterText);
@@ -207,43 +214,69 @@ public class BrokersPage extends UIKeywords{
 			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
+		public void scrollPageOperation() throws InterruptedException {
+
+			String javaScript = "window.scrollBy(0,1600);";
+			JavascriptExecutor js = (JavascriptExecutor) Constants.driver;
+			js.executeScript(javaScript);
+		}
+
+		
 		public void fillAddBrokerForm() throws Exception {
 			LOG.info("Adding values to Add Broker form");
-			UIKeywords.enterText(brokersBroker_name, "VG");
+			UIKeywords.enterText(brokersBroker_name, "MAG");
 			UIKeywords.enterText(brokersMobile_no, "8765432109");
 			UIKeywords.enterText(brokersBroker_address, "Amravati");
 			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
-			UIKeywords.selectByTextFromDropdown(brokersBlood_group, "B positive");
+			UIKeywords.selectByTextFromDropdown(brokersBlood_group, "B positive");			
 			UIKeywords.selectByTextFromDropdown(brokersStatus, "Active");
 			UIKeywords.enterText(brokersBank_name,"HDFC Bank");
 			UIKeywords.enterText(brokersAccount_no, "12345678909");
 			UIKeywords.enterText(brokersIFSC_code, "HDFC1983456");
-			//JavascriptExecutor jse = (JavascriptExecutor) Constants.driver;
-			
-              
-			UIKeywords.scrollPageVerticalDown(4000);
-//			UIKeywords.scrollVerticalDown(brokersResume);
-//			UIKeywords.clickOnElement(brokersResume);
-//			
-//				Runtime.getRuntime().exec(Constants.basePath+"\\src\\main\\resources\\AutoIT\\uploadResume.exe");
-//			
-			UIKeywords.enterText(brokersResume,"F:\\Bhiman Requirements\\RESUME.docx");
-			UIKeywords.enterText(brokersAgreement,"F:\\Bhiman Requirements\\Agreement.docx");
-			UIKeywords.enterText(brokersKYC,"F:\\Bhiman Requirements\\KYC.docx");
-			//attachResume();
-			//attachAgreement();
-			//attachKYC();
+			UIKeywords.enterText(brokersResume,Constants.basePath+"\\src\\main\\resources\\Bhiman Requirements\\RESUME.pdf");
+			UIKeywords.enterText(brokersAgreement,Constants.basePath+"\\src\\main\\resources\\Bhiman Requirements\\Agreement.docx");
+			UIKeywords.enterText(brokersKYC,Constants.basePath+"\\src\\main\\resources\\Bhiman Requirements\\KYC.docx");
 			LOG.info("Values added to Add Broker form");
 			WaitsInHelp.threadSleepInMilliSeconds(1000);
-			UIKeywords.scrollPageVerticalDown(4000);
-			UIKeywords.clickOnElement(brokersSubmit);
-			WaitsInHelp.threadSleepInMilliSeconds(2000);
+			
 		}
+		
+		public void fillAddBrokerFormwithAutoIT() throws Exception {
+			LOG.info("Adding values to Add Broker form");
+			UIKeywords.enterText(brokersBroker_name, "MAG");
+			UIKeywords.enterText(brokersMobile_no, "8765432109");
+			UIKeywords.enterText(brokersBroker_address, "Amravati");
+			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
+			UIKeywords.selectByTextFromDropdown(brokersBlood_group, "B positive");			
+			UIKeywords.selectByTextFromDropdown(brokersStatus, "Active");
+			UIKeywords.enterText(brokersBank_name,"HDFC Bank");
+			UIKeywords.enterText(brokersAccount_no, "12345678909");
+			UIKeywords.enterText(brokersIFSC_code, "HDFC1983456");
+			//UIKeywords.clickOnElement(brokersResume);
+			//brokersResume.click();
+			Constants.driver.findElement(By.xpath("//input[@id='resume']")).click();
+			Runtime.getRuntime().exec(Constants.basePath+"\\src\\main\\resources\\AutoIT\\uploadResume.exe");
+			
+			UIKeywords.clickOnElement(brokersAgreement);
+			Runtime.getRuntime().exec(Constants.basePath+"\\src\\main\\resources\\AutoIT\\uploadAgreement.exe");
+			
+			UIKeywords.clickOnElement(brokersKYC);
+			Runtime.getRuntime().exec(Constants.basePath+"\\src\\main\\resources\\AutoIT\\uploadKYC.exe");
+			
+			LOG.info("Values added to Add Broker form");
+			WaitsInHelp.threadSleepInMilliSeconds(1000);
+			//UIKeywords.scrollPageVerticalDown(4000);
+			//UIKeywords.clickOnElement(brokersSubmit);
+			//WaitsInHelp.threadSleepInMilliSeconds(2000);
+		}
+
 
 		
 		public void clickOnSubmit() {
 			LOG.info("Master->Brokers: Click on Submit button of Add Broker page.");
 			UIKeywords.clickOnElement(brokersSubmit);
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
+			//UIAlerts.acceptAlert();
 		}
 		
 		
