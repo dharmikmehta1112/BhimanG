@@ -81,4 +81,25 @@ Scenario: To verify and validate click on 'PDF' button in User page.
 					Then Click on users
 					And Click on add User
 					Then verify and validate click on PDF button and Users_download_filePath
+
+Scenario: To verify and validate users should enter father name format
+					Given Mouse Hover to master
+					When Click on users
+					And Click on add User
+					Then Scroll page Vertically upto visibility of element
+					And verify and validate users should enter father name 
+					
+Scenario: To verify and validate users should enter father_mobile no format 
+					Given Mouse Hover to master
+					When Click on users
+					And Click on add User
+					Then Scroll page Vertically upto visibility of element
+					And verify and validate father_mobile no 
+
+Scenario: To verify users enter a Valid occupation string format
+					Given Mouse Hover to master
+					When Click on users
+					And Click on add User
+					Then Scroll page Vertically upto visibility of element
+					And verify and validate fatherV occupation string format is consider
 					
