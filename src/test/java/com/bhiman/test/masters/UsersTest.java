@@ -3,12 +3,14 @@ package com.bhiman.test.masters;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import java.awt.List;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -17,6 +19,7 @@ import org.testng.annotations.Test;
 
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIKeywords;
+
 import com.bhiman.pages.masters.BanksPage;
 import com.bhiman.pages.masters.UsersPage;
 import com.bhiman.test.BaseTest;
@@ -323,5 +326,132 @@ public class UsersTest extends BaseTest {
 		Assert.assertTrue(true,"Valid IFSC code is consider");
 
 	}
+	
+	@Test (description = "To verify users enter valid father name format")
+	public void toVerifyValidFatherNameformatEnter() {
+		UsersPage users = new UsersPage();
+		Constants.flag = false;
+		users.mouseHoverToMastersforuser();
+		users.clickOnUsers();
+		users.clickOnAddUsers();
+		users.scrollVerticalDownloadWhenRequired();
+		String value=PropertyReader.getLocatorValue("User_Father_Name");
+		if (value != null && value.matches("^[a-zA-Z ]*$")) {
+			users.enterFatherName(value);
+			Constants.flag=true;
+		}
+		Assert.assertTrue(true,"Valid Father name is consider");
+	}
+	@Test(description = "To verify users enter a Valid Father mobile no .")
+	public void toVerifyValidFatherMobileNo() {
+		UsersPage users = new UsersPage();
+		Constants.flag = false;
+		users.mouseHoverToMastersforuser();
+		users.clickOnUsers();
+		users.clickOnAddUsers();
+		users.scrollVerticalDownloadWhenRequired();
+		String value=PropertyReader.getLocatorValue("User_Father_Mobile_No");
+		if ((value !=null) && (value.length()<=10) && (value.matches("\\d{10}") ) ) {
+			users.enterFatherMobileNo(value);
+			Constants.flag=true;
+		}
+		Assert.assertTrue(true, "Valid mobile no format is consider");
+	}
+
+	@Test (description = "To verify users enter a Valid occupation string format")
+	public void toVrifyuserEntervalidFatherOccupationFormat() {
+		UsersPage users = new UsersPage();
+		Constants.flag = false;
+		users.mouseHoverToMastersforuser();
+		users.clickOnUsers();
+		users.clickOnAddUsers();
+		users.scrollVerticalDownloadWhenRequired();
+		String value=PropertyReader.getLocatorValue("User_Father_Occupation");
+		if (value !=null && value.matches("^[a-zA-Z ]*$")) {
+			users.enterFatherOccupation(value);
+			Constants.flag=true;	
+		}
+		Assert.assertTrue(true, "Valid occupation string format is consider");
+	}
+	@Test(description = "To verify users enter a Valid password format")
+	public void toVerifyUserEnterValidPassword() {
+		UsersPage users = new UsersPage();
+		Constants.flag = false;
+		users.mouseHoverToMastersforuser();
+		users.clickOnUsers();
+		users.clickOnAddUsers();
+		users.scrollVerticalDownloadWhenRequired();
+		String value=PropertyReader.getLocatorValue("User_enter_password");
+		if (value !=null && value.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$")) {
+			users.enterPassword(value);
+			Constants.flag=true;	
+		}
+		Assert.assertTrue(true, "Valid password format is consider");
+	}
+	@Test (description = "To verify users enter a Valid Confirm password format")
+	public void toVerifyUserEnterConfirmPasswordFormat() {
+		UsersPage users = new UsersPage();
+		Constants.flag = false;
+		users.mouseHoverToMastersforuser();
+		users.clickOnUsers();
+		users.clickOnAddUsers();
+		users.scrollVerticalDownloadWhenRequired();
+		String value=PropertyReader.getLocatorValue("User_enter_password");
+		if (value !=null && value.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$")) {
+			users.enterConfirmPassword(value);
+			Constants.flag=true;	
+		}
+		Assert.assertTrue(true, "Valid confirm password format is consider");
+
+	}
+	@Test
+	public void toCompairpasswordandconfirmpassword() {
+		UsersPage users = new UsersPage();
+		Constants.flag = false;
+		users.mouseHoverToMastersforuser();
+		users.clickOnUsers();
+		users.clickOnAddUsers();
+		users.scrollVerticalDownloadWhenRequired();
+		String value1=PropertyReader.getLocatorValue("User_enter_password");
+		String value2=PropertyReader.getLocatorValue("User_enter_Confpassword");
+	
+		users.enterPassword(value1);
+		//users.enterConfirmPassword("123456MMM");
+		
+	System.out.println(Constants.driver.findElement(By.cssSelector("#password")).getAttribute("value1"));
+		
+		//assertEquals("Retrievd password not equal to the enter password","",_Constants. false);
+	
+	}
+	
+	//use for valid password ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8, 20}$”
+	@Test
+	public void TableDataTest() {
+
+		UsersPage users = new UsersPage();
+		users.mouseHoverToMastersforuser();
+		users.clickOnUsers();
+		
+		List <WebElement> rowElement = Constants.driver.findElements(By.xpath("//table[@id='datatable3']//tbody//tr"));
+		int rowSize= rowElement.size();
+		
+		List <WebElement> colElement = Constants.driver.findElements(By.xpath("//table[@id='datatable3']//tbody//tr[1]//td"));
+		int colSize= colElement.size();
+		
+		WebElement element = Constants.driver.findElement(By.xpath("//table[@id='datatable3']//tbody//tr[1]//td[1]"));
+		String firstpart1="//table[@id='datatable3']//tbody//tr[";
+		String Secodpart1="]//td[";
+		String thirepart ="]";
+		
+		for(int i = 1; i <=rowSize; i++) {
+			
+			for(int j=1;j<=colSize; j++) {
+				element= Constants.driver.findElement(By.xpath(firstpart1+i+Secodpart1+j+thirepart));
+			String data1=	element.getText();
+			System.out.print(data1+ " \t");
+			
+			}System.out.println();	
+		}	
+	}	
 	
 }

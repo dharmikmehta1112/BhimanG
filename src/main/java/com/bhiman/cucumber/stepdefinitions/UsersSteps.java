@@ -168,5 +168,39 @@ public class UsersSteps {
 		Constants.flag = file.exists();
 		assertTrue(Constants.flag, "File name: " + Constants.actual + " is not downloaded at location: " + filePath);
 	}
+	@Then("Scroll page Vertically upto visibility of element")
+	public void scroll_page_vertically_upto_visibility_of_element() {
+		users.scrollVerticalDownloadWhenRequired();
+	}
+
+	@Then("verify and validate users should enter father name")
+	public void verify_and_validate_users_should_enter_father_name() {
+		String value=PropertyReader.getLocatorValue("User_Father_Name");
+		if (value != null && value.matches("^[a-zA-Z ]*$")) {
+			users.enterFatherName(value);
+			Constants.flag=true;
+		}
+		Assert.assertTrue(true,"Valid Father name is consider");
+	}
+	
+	@Then("verify and validate father_mobile no")
+	public void verify_and_validate_father_mobile_no() {
+		String value=PropertyReader.getLocatorValue("User_Father_Mobile_No");
+		if ((value !=null) && (value.length()<=10) && (value.matches("\\d{10}") ) ) {
+			users.enterFatherMobileNo(value);
+			Constants.flag=true;
+		}
+		Assert.assertTrue(true, "Valid mobile no format is consider");
+	}
+	
+	@Then("verify and validate fatherV occupation string format is consider")
+	public void verify_and_validate_father_v_occupation_string_format_is_consider() {
+		String value=PropertyReader.getLocatorValue("User_Father_Occupation");
+		if (value !=null && value.matches("^[a-zA-Z ]*$")) {
+			users.enterFatherOccupation(value);
+			Constants.flag=true;	
+		}
+		Assert.assertTrue(true, "Valid occupation string format is consider");
+	}
 
 }
