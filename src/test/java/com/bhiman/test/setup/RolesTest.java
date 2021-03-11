@@ -1,5 +1,6 @@
 package com.bhiman.test.setup;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.File;
@@ -9,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIAlerts;
 import com.bhiman.keywords.UIKeywords;
 import com.bhiman.pages.setup.RolesPage;
 import com.bhiman.test.BaseTest;
@@ -34,6 +36,9 @@ public class RolesTest extends BaseTest {
 		RolesPage role = new RolesPage();
 		role.mouseHoverToSetUp();
 		role.clickOnRolesUnderSetup();
+		Constants.actual="Roles";
+		Constants.expected= UIKeywords.getPageTitle();
+		assertEquals(Constants.actual, Constants.expected);
 	}
 
 	@Test(groups = "Regression", description = "To verify 'Copy' button on roles page")
@@ -49,6 +54,7 @@ public class RolesTest extends BaseTest {
 	public void verifyExcelButtonOnRoles() {
 		LOG.info("To verify 'Excel' button on roles page");
 		RolesPage role = new RolesPage();
+		Constants.flag=false;
 		role.mouseHoverToSetUp();
 		role.clickOnRolesUnderSetup();
 		role.clickOnExcelInRoles();
@@ -63,6 +69,7 @@ public class RolesTest extends BaseTest {
 	public void verifyCSVButtonOnRoles() {
 		LOG.info("To verify 'CSV' button on roles page");
 		RolesPage role = new RolesPage();
+		Constants.flag=false;
 		role.mouseHoverToSetUp();
 		role.clickOnRolesUnderSetup();
 		role.clickOnCSVInRoles();
@@ -76,6 +83,7 @@ public class RolesTest extends BaseTest {
 	@Test(groups = "Regression", description = "To verify 'PDF' button on roles page")
 	public void verifyPDFButtonOnRoles() {
 		LOG.info("To verify 'PDF' button on roles page");
+		Constants.flag=false;
 		RolesPage role = new RolesPage();
 		role.mouseHoverToSetUp();
 		role.clickOnRolesUnderSetup();
@@ -106,6 +114,7 @@ public class RolesTest extends BaseTest {
 
 		LOG.info("To verify add new role with permissions");
 		RolesPage role = new RolesPage();
+		Constants.flag=false;
 		role.mouseHoverToSetUp();
 		role.clickOnRolesUnderSetup();
 		role.clickOnAddRole();
@@ -130,6 +139,10 @@ public class RolesTest extends BaseTest {
 		role.scrollPageOperation();
 		role.permissions();
 		role.clickOnSubmitInRoles();
+		Constants.actual="Role Added.";
+		Constants.expected= role.getRoleAddedText();
+		role.clickOnRoleAddedOkButton();
+		assertEquals(Constants.actual,Constants.expected);
 	}
 
 	@Test(groups = "Regression", description = "verify click on cancle button it will reset the upadted data ")
@@ -154,6 +167,9 @@ public class RolesTest extends BaseTest {
 		String value = PropertyReader.getLocatorValue("roles_search_valid_text");
 		if(value != null && value.matches("^[a-zA-Z ]*$")){
 		role.enterRoleInSearchBoxInRole(value);
+		Constants.actual= value;
+		Constants.expected=role.getTextFromTable();
+		assertEquals(Constants.actual,Constants.expected);
 	}
 
 	}
@@ -171,6 +187,11 @@ public class RolesTest extends BaseTest {
 		role.scrollPageOperation();
 		role.permissions();
 		role.clickOnSubmitInRoles();
+		Constants.actual="Something went wrong. Please try again.";
+		Constants.expected=role.getRoleUpdatedText();
+		role.clickOnRoleUpdatedOkButton();
+		assertEquals(Constants.actual,Constants.expected);
+		
 
 	}
 
@@ -181,5 +202,11 @@ public class RolesTest extends BaseTest {
 		role.mouseHoverToSetUp();
 		role.clickOnRolesUnderSetup();
 		role.clickOnDeleteIconInRole();
+		Constants.actual="Role Deleted.";
+		Constants.expected=role.getRoleDeletedText();
+		role.clickOnRoleDeleteOkButton();
+		assertEquals(Constants.actual,Constants.expected);
+		
+		
 	}
 }
