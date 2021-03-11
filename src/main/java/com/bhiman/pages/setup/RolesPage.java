@@ -55,6 +55,15 @@ public class RolesPage extends UIKeywords {
 
 	@FindBy(xpath = "//*[@id=\"datatable3\"]/tbody/tr[1]/td[3]/button[2]/i")
 	private static WebElement role_action_delete_icon;
+	
+	@FindBy(xpath = "//*[@id='datatable3']/tbody/tr/td[2]")
+	private static WebElement role_search_box_get_text;
+	
+	@FindBy(css="div[class='swal2-content']")
+	private static WebElement role_deleted_text;
+	
+	@FindBy(css="button[class='swal2-confirm styled']")
+	private static WebElement role_deleted_OkBtn;
 
 	// Page Object Locators after click on AddRole button in Roles page
 
@@ -153,6 +162,15 @@ public class RolesPage extends UIKeywords {
 
 	@FindBy(name = "role_add")
 	private static WebElement role_cancel;
+	
+	@FindBy(css="div[class='swal2-content']")
+	private static WebElement role_added_text;
+	
+	@FindBy(css="div[class='swal2-content']")
+	private static WebElement role_updated_text;
+	
+	@FindBy(css="button[class='swal2-confirm styled']")
+	private static WebElement role_updated_OkBtn;
 
 	// Page Object Methods for Roles page in Setup
 
@@ -281,5 +299,41 @@ public class RolesPage extends UIKeywords {
 		LOG.info("Editing role");
 		UIKeywords.clickOnElement(role_enter_rollName);
 		WaitsInHelp.threadSleepInMilliSeconds(1000);
+	} 
+		
+	public String getTextFromTable() {
+		LOG.info("Getting related text as per input provided in search box");
+		return UIKeywords.getText(role_search_box_get_text);
+	}
+	
+	public String getRoleAddedText() {
+		LOG.info("Geting Text after adding Role");
+		return UIKeywords.getText(role_added_text);
+	}
+	
+	public void clickOnRoleAddedOkButton() {
+		LOG.info("Clicking on OK Button");
+		UIKeywords.clickOnElement(role_updated_OkBtn);
+	}
+	
+	public String getRoleUpdatedText() {
+		LOG.info("Geting Text after editing Role");
+		return UIKeywords.getText(role_updated_text);
+	}
+	
+	public void clickOnRoleUpdatedOkButton() {
+		LOG.info("Clicking on OK Button");
+		UIKeywords.clickOnElement(role_updated_OkBtn);
+	}
+	
+	public String getRoleDeletedText() {
+		LOG.info("Geting Text after Deleting Role");
+		return UIKeywords.getText(role_deleted_text);
+	}
+	
+	public void clickOnRoleDeleteOkButton() {
+		LOG.info("Clicking on OK Button");
+		UIKeywords.clickOnElement(role_deleted_OkBtn);
+
 	}
 }
