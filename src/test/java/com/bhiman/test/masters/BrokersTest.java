@@ -148,7 +148,7 @@ public class BrokersTest extends BaseTest {
 	}
 	
 	//TC-11
-		@Test(description = "To verify/validate functionality of search box with invalid input.")
+		@Test(groups = {"Regression"}, description = "To fill Add Vendor form using sendkeys.")
 		public void fillAddBrokerFormTest() throws Exception {
 			LOG.info("Masters-->Brokers: Filling Add Broker Form ");
 			BrokersPage brokers=new BrokersPage();
@@ -166,24 +166,19 @@ public class BrokersTest extends BaseTest {
 		}
 		
 		//TC-12
-				@Test(description = "To verify/validate functionality of search box with invalid input.")
+				@Test(groups = {"Regression"}, description = "To fill Add Vendor form using AutoIT.")
 				public void fillAddBrokerFormTestwithAutoIT() throws Exception {
-					LOG.info("Masters-->Brokers: Filling Add Broker Form ");
+					LOG.info("Masters-->Brokers: Filling Add Broker Form using AutoIT tool.");
 					BrokersPage brokers=new BrokersPage();
 					brokers.mouseHoverToMastersForBrokersPage();
 					brokers.clickOnBrokers();
-					brokers.clickOnAddBroker();
-					brokers.scrollPageOperation();
+					brokers.clickOnAddBroker();					
 					brokers.fillAddBrokerFormwithAutoIT();;
-					brokers.clickOnAttachResume();
-					brokers.scrollPageOperation();
 					brokers.clickOnSubmit();
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+					Constants.expected = "Broker Added.";
+					Constants.actual = Constants.driver.findElement(By.xpath("//div[contains(text(),\"Broker Added.\")]")).getText();
+					Assert.assertEquals(Constants.actual, Constants.expected);
+
 				}
 
 }

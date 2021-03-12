@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.log4testng.Logger;
@@ -16,7 +17,7 @@ import com.bhiman.keywords.WaitsInHelp;
 
 public class BrokersPage extends UIKeywords{
 	private static final Logger LOG = Logger.getLogger(BrokersPage.class);
-	// Page Object Locators for Banks page in Masters --> Intialize at runtime
+	// Page Object Locators for Brokers page in Masters --> Intialize at runtime
 	
 	public BrokersPage() {
 		PageFactory.initElements(Constants.driver, this);
@@ -128,7 +129,7 @@ public class BrokersPage extends UIKeywords{
 		}
 		
 		public String getTextOfBrokers() {
-			LOG.info("Reading Banks text after mouse hover to Masters.");
+			LOG.info("Reading Brokers text after mouse hover to Masters.");
 			return UIKeywords.getText(brokers);
 		}
 		public void clickOnBrokers() {
@@ -172,13 +173,13 @@ public class BrokersPage extends UIKeywords{
 		}
 		
 		public void enterTextInSearchBox(String enterText) {
-			LOG.info("Entering text on search box of Banks page");
+			LOG.info("Entering text on search box of Brokers page");
 			UIKeywords.enterText(brokersSearchbox, enterText);
 			WaitsInHelp.threadSleepInMilliSeconds(2000);
 		}
 		
 		public String getTextForInvalidBrokersSearch() {
-			LOG.info("Reading text from bank data table for invalid search of Banks page");
+			LOG.info("Reading text from Broker data table for invalid search of Brokers page");
 			WaitsInHelp.threadSleepInMilliSeconds(2000);
 			return UIKeywords.getText(brokersNoRecords);
 			
@@ -249,22 +250,34 @@ public class BrokersPage extends UIKeywords{
 			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
 			UIKeywords.selectByTextFromDropdown(brokersBlood_group, "B positive");			
 			UIKeywords.selectByTextFromDropdown(brokersStatus, "Active");
+			scrollPageOperation();
 			UIKeywords.enterText(brokersBank_name,"HDFC Bank");
 			UIKeywords.enterText(brokersAccount_no, "12345678909");
-			UIKeywords.enterText(brokersIFSC_code, "HDFC1983456");
+			UIKeywords.enterText(brokersIFSC_code, "HDFC0000001");
+			
 			//UIKeywords.clickOnElement(brokersResume);
 			//brokersResume.click();
-			Constants.driver.findElement(By.xpath("//input[@id='resume']")).click();
+			//WebElement brkResume=Constants.driver.findElement(By.xpath("//input[@id='resume']"));
+			
+			WaitsInHelp.threadSleepInMilliSeconds(1000);
+			Actions act=new Actions(Constants.driver);
+			act.moveToElement(brokersResume).click().build().perform();
+			WaitsInHelp.threadSleepInMilliSeconds(2000);
 			Runtime.getRuntime().exec(Constants.basePath+"\\src\\main\\resources\\AutoIT\\uploadResume.exe");
 			
-			UIKeywords.clickOnElement(brokersAgreement);
+			WaitsInHelp.threadSleepInMilliSeconds(1000);
+			act.moveToElement(brokersAgreement).click().build().perform();
+			WaitsInHelp.threadSleepInMilliSeconds(1000);
 			Runtime.getRuntime().exec(Constants.basePath+"\\src\\main\\resources\\AutoIT\\uploadAgreement.exe");
 			
-			UIKeywords.clickOnElement(brokersKYC);
+			WaitsInHelp.threadSleepInMilliSeconds(1000);
+			act.moveToElement(brokersKYC).click().build().perform();
+			WaitsInHelp.threadSleepInMilliSeconds(1000);
 			Runtime.getRuntime().exec(Constants.basePath+"\\src\\main\\resources\\AutoIT\\uploadKYC.exe");
 			
 			LOG.info("Values added to Add Broker form");
 			WaitsInHelp.threadSleepInMilliSeconds(1000);
+			//WaitsInHelp.threadSleepInMilliSeconds(1000);
 			//UIKeywords.scrollPageVerticalDown(4000);
 			//UIKeywords.clickOnElement(brokersSubmit);
 			//WaitsInHelp.threadSleepInMilliSeconds(2000);
