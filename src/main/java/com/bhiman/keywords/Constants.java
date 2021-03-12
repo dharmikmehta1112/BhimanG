@@ -27,7 +27,7 @@ public class Constants {
 	public static String expected;
 	public static String actual;
 	public static String filePath;
-	public static final int WebDriverWaitTimeOutInSec = 10;
+	public static final int WebDriverWaitTimeOutInSec = 5;
 	public static final int WebDriverWaitSleepInMilli = 200;
 	public static JavascriptExecutor jse;
 	public static int count;

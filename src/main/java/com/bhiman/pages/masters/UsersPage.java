@@ -6,10 +6,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIKeywords;
 import com.bhiman.keywords.WaitsInHelp;
+import com.bhiman.pages.adminlogin.AdminLoginPage;
 
 public class UsersPage extends UIKeywords {
 	private static final Logger LOG = Logger.getLogger(UsersPage.class);
@@ -143,11 +145,20 @@ public class UsersPage extends UIKeywords {
 	public UsersPage() {
 		PageFactory.initElements(Constants.driver, this);
 	}
+	
+	
 	public  String gettextofUserNameErroeMessage() {
 		LOG.info("to get err messge ");
 		return UIKeywords.getText(U_name_error);
 	}
 	// ***********Page Object Methods for Users page in Masters******************
+	
+	public void loginToApplication() {
+		AdminLoginPage admin = new AdminLoginPage();
+		admin.login();		
+		LOG.info("Login to application successfull.");
+	}
+	
 	public static void clickOnUserCopyButton() {
 		LOG.info("Click on Copy button of User page");
 		WaitsInHelp.implicitWaitInSeconds(10);

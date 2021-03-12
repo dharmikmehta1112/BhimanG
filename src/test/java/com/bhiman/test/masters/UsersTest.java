@@ -3,7 +3,6 @@ package com.bhiman.test.masters;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -19,21 +18,23 @@ import org.testng.annotations.Test;
 
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIKeywords;
-
+import com.bhiman.pages.adminlogin.AdminLoginPage;
 import com.bhiman.pages.masters.BanksPage;
 import com.bhiman.pages.masters.UsersPage;
 import com.bhiman.test.BaseTest;
 import com.bhiman.test.BhimanListeners;
 import com.bhiman.utility.PropertyReader;
+
 @Listeners(BhimanListeners.class)
 public class UsersTest extends BaseTest {
 
 	private static final Logger LOG = Logger.getLogger(UsersTest.class);
-
+	
 	@Test(groups = "Regression",description = "To verify and validate 'Users' option in 'Masters'.")
 	public void verifyUsersInMasters() {
 		LOG.info("userPageTest_01");
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		users.mouseHoverToMastersforuser();
 		Constants.expected= "Users";
 		Constants.actual=users.getTextofUsersforC();

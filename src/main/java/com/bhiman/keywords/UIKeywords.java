@@ -94,6 +94,7 @@ public class UIKeywords {
 	 */
 	public static void enterText(WebElement element, String textToEnter) {
 		WaitsInHelp.webDriverWaitInSeconds(element, Constants.WebDriverWaitTimeOutInSec, Constants.WebDriverWaitSleepInMilli);
+		UIKeywords.clearText(element);
 		LOG.info("Entering text as " +textToEnter+ " in WebElement: " + element);
 		element.sendKeys(textToEnter);
 
