@@ -1,13 +1,19 @@
 package com.bhiman.pages.adminlogin;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIKeywords;
+import com.bhiman.keywords.WaitsInHelp;
+import com.bhiman.utility.PropertyReader;
 
-public class AdminLoginPage {
+public class AdminLoginPage extends UIKeywords {
+	
+	private static final Logger LOG = Logger.getLogger(AdminLoginPage.class);
 	
 	public AdminLoginPage(){
 		PageFactory.initElements(Constants.driver, this);
@@ -21,53 +27,39 @@ public class AdminLoginPage {
 
 	@FindBy(css = "button[type='submit']")
 	private static WebElement login_Btn;
-
-	@FindBy(xpath = "//button[text()='OK']")
-	public static WebElement loginSignInBtn;
 	
-	@FindBy(xpath = "//button[text()='OK']")
-	private static WebElement loginErrorInBtn;
-
 	
-	@FindBy(xpath="//div[contains(text(),'Login Successfull.')]")
-	private static WebElement getSignInMessage;
 	
-	@FindBy(xpath="//div[contains(text(),'start with 6,7,8,9')]")
-	private static WebElement getErrorInMessage;
-
 //	----------------------Methods------------------------
 	
+	public void login() {
+		enterUsername();
+		enterPassword();
+		clickOnLoginButton();
+	}
+	
+	public void enterUsername() {
+		UIKeywords.enterText(mobile_no, PropertyReader.getLocatorValue("admin_mobile_no"));
+	}
+	
 	public void enterUsername(String mobileNo) {
-		UIKeywords.clearText(mobile_no);
 		UIKeywords.enterText(mobile_no, mobileNo);
 	}
 	
+	public void enterPassword() {
+		UIKeywords.enterText(pass_word, PropertyReader.getLocatorValue("admin_password"));
+	}
+	
 	public void enterPassword(String password) {
-		UIKeywords.clearText(pass_word);
 		UIKeywords.enterText(pass_word, password);
 	}
+	
 	public void clickOnLoginButton() {
 		UIKeywords.clickOnElement(login_Btn);
 	}
-	
-	public void clickOnSignInOkButton() {
-		UIKeywords.clickOnElement(loginSignInBtn);
-	}
-	
-	public void clickOnErrorInOkButton() {
-		UIKeywords.clickOnElement(loginErrorInBtn);
-	}
-	
-	public String getSignInMessage() {
-		 return getSignInMessage.getText();
-	}
-
-	public void RefershPage() {
+		
+	public void refreshLoginPage() {
 		UIKeywords.refreshPage();
 	}
 	
-	public String getErrorInMessage() {
-		 return getErrorInMessage.getText();
-	}
-
 }

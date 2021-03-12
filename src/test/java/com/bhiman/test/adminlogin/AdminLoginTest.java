@@ -3,64 +3,42 @@ package com.bhiman.test.adminlogin;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.bhiman.keywords.Constants;
+import com.bhiman.keywords.UIKeywords;
 import com.bhiman.keywords.WaitsInHelp;
 import com.bhiman.pages.adminlogin.AdminLoginPage;
 import com.bhiman.test.BaseTest;
 import com.bhiman.utility.ExcelReader;
-import com.bhiman.utility.PropertyReader;
 
 public class AdminLoginTest extends BaseTest {
 	
 	private static final Logger LOG = Logger.getLogger(AdminLoginTest.class);
-
-	public AdminLoginTest() {
-		PageFactory.initElements(Constants.driver, this);
-	}
-
+	
 	@Test(dataProvider = "loginData")
-	public void adminLogin(String mobileNo, String password, String expected_Result) throws InterruptedException {
-
+	public void adminLogin(String mobileNo, String password, String expected_Result) {
 		AdminLoginPage admin = new AdminLoginPage();
-		PageFactory.initElements(Constants.driver, this);
-		admin.RefershPage();
+		admin.refreshLoginPage();
 		//LOG.info("Enter input mobile no as username");
 		admin.enterUsername(mobileNo);
 		//LOG.info("Enter input as the password");
 		admin.enterPassword(password);
 		//LOG.info("click on Login button");
 		admin.clickOnLoginButton();
-
-		if (mobileNo.contentEquals("9876543210") && password.contentEquals("admin")) {
-			WaitsInHelp.threadSleepInMilliSeconds(2000);
-			LOG.info("Username and password is correct");
-			admin.clickOnSignInOkButton();
-			Assert.assertEquals("Login Successfull.", expected_Result);
-
-		} else if (mobileNo.contentEquals("9876543210") && password.contentEquals("ADMIN")) {
-			WaitsInHelp.threadSleepInMilliSeconds(2000);
-			LOG.info("Username and password is Incorrect");
-			admin.clickOnErrorInOkButton();
-			Assert.assertEquals("Username/Password is wrong. Please try again.", expected_Result);
-		}
-
-		else {
-			WaitsInHelp.threadSleepInMilliSeconds(2000);
-			LOG.info("Username and password is Incorrect");
-			admin.clickOnErrorInOkButton();
-			Assert.assertEquals("Please enter proper mobile no. Mobile No must be start with 6,7,8,9", expected_Result);
-		}
+		WaitsInHelp.threadSleepInMilliSeconds(3);
+		Constants.expected = "http://103.50.162.196/testing/index.php";
+		Constants.actual = UIKeywords.getPageUrl();
+		Assert.assertEquals(Constants.actual, Constants.expected, "Login to application failed due to invalid URL.");
+		LOG.info("Login to application successfully.");
 	}
 
 	@DataProvider(name = "loginData")
 	public String[][] getData() throws IOException {
 		LOG.info("Taking xlfile path from property file");
-		String path = (PropertyReader.getLocatorValue("testDataPath"));
+		String path = Constants.basePath + "\\src\\main\\resources\\ExcelData\\LoginCredentials.xlsx";
 		LOG.info("Taking row count for login page");
 		int rownum = ExcelReader.getRowCount(path, "LoginPage");
 		LOG.info("Taking Cell count for login page for one row");

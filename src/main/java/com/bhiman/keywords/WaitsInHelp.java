@@ -18,7 +18,7 @@ public class WaitsInHelp {
 	 */
 	public static void implicitWaitInSeconds(int time) {
 		LOG.info("Implicity Waiting for "+time+  " seconds.");
-		Constants.driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
+		Constants.driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);		
 	}
 
 	/**

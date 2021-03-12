@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.adminlogin.AdminLoginPage;
 import com.bhiman.pages.masters.BanksPage;
 import com.bhiman.test.BaseTest;
 import com.bhiman.test.BhimanListeners;
@@ -24,7 +25,13 @@ public class BanksTest extends BaseTest {
 	@Test (groups = {"Regression"}, description = "To verify and validate 'Banks' option in 'Masters'.")
 	public void verifyBanksInMasters() {
 		LOG.info("Verify Banks option in Masters.");
+		AdminLoginPage admin = new AdminLoginPage();
 		BanksPage banks = new BanksPage();
+		admin.login();
+		Constants.expected = "http://103.50.162.196/testing/index.php";
+		Constants.actual = UIKeywords.getPageUrl();
+		Assert.assertEquals(Constants.actual, Constants.expected, "Login to application failed due to invalid URL.");
+		LOG.info("Login to application successfully.");
 		banks.mouseHoverToMasters();
 		Constants.expected = "Banks";
 		Constants.actual = banks.getTextOfBanks();
