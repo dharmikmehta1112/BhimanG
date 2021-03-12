@@ -15,7 +15,6 @@ Scenario: Verifying click on Copy button in Brokers page.
 	Then Click on Copy button on brokers
 	And Verify Copy to Clipboard Text
 	
-	
 Scenario: To verify and validate click on Excel button.
 	Given Mouse Hover to master for brokers
 	Then Click on Brokers
