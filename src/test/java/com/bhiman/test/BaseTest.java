@@ -24,7 +24,6 @@ public class BaseTest extends UIKeywords {
 		UIKeywords.openUrl(PropertyReader.getLocatorValue("url"));
 		UIKeywords.maximizeWindow();
 		LOG.info("Before (setUp) method completed.");
-		
 	} // end of Pre-condition
 	
 	@AfterMethod		// Post-condition
@@ -32,6 +31,6 @@ public class BaseTest extends UIKeywords {
 		LOG.info("After (tearDown) method started.");
 		UIKeywords.closeAllBrowser();
 		LOG.info("All Browser closed successfully.");
-		
 	} // end of Post-condition
+  
 }
