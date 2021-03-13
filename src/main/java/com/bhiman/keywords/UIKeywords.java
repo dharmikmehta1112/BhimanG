@@ -2,6 +2,7 @@ package com.bhiman.keywords;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -416,6 +417,39 @@ public class UIKeywords {
 //		}
 
 	} // end of method
+	
+	/**
+	 * Takes screenshot
+	 * 
+	 * @param filePath as {@code String}.
+	 * @param screenshotName as {@code String}.
+	 * @throws IOException 
+	 */
+	public static void captureScreenshot(WebElement element, String screenshotName) throws IOException {
+		
+		// will create object only if shot is null, otherwise will use existing created instance
+		if(Constants.shot == null){
+			Constants.shot = new AShot();
+		}
+
+		Date date = new Date();
+		String name = date.getDate() + "_" + date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds()+".jpg";
+		String filePath = Constants.basePath+"\\screenshots\\elements";
+		// specify screenshot capture strategy - full page screenshot in this case
+		Screenshot screenshot = Constants.shot.shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(Constants.driver,element);
+		
+		//Save the screenshot and sepecify the image format
+		try {
+			ImageIO.write(screenshot.getImage(), "jpg", new File(filePath+"\\"+screenshotName+"_"+name));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	} // end of method
+
+
 
 
 

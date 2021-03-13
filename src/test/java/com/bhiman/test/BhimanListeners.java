@@ -23,6 +23,16 @@ public class BhimanListeners implements ITestListener {
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
+		LOG.info("Test case "+ result.getName() +" success.");
+		Date date = new Date();
+		String screenshotName = result.getName() + "_" + date.getDate() + "_" + date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds()+".jpg";
+		LOG.info("Taking screenshot of "+ result.getName() +" test case.");
+		try {
+			UIKeywords.captureScreenshot(Constants.basePath+"\\screenshots\\passed", screenshotName);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		LOG.info("Successfully completed run for "+result+ "test case.");
 		
 	} // end of method
@@ -34,7 +44,7 @@ public class BhimanListeners implements ITestListener {
 		String screenshotName = result.getClass().getName() + "_" + result.getName() + "_" + date.getDate() + "_" + date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds()+".jpg";
 		LOG.info("Taking screenshot of "+ result +" failed test case.");
 		try {
-			UIKeywords.captureScreenshot(Constants.basePath+"\\screenshots", screenshotName);
+			UIKeywords.captureScreenshot(Constants.basePath+"\\screenshots\\failed", screenshotName);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -1,5 +1,7 @@
 package com.bhiman.pages.adminlogin;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,6 +57,12 @@ public class AdminLoginPage extends UIKeywords {
 	}
 	
 	public void clickOnLoginButton() {
+		try {
+			UIKeywords.captureScreenshot(login_Btn, "LoginButton");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		UIKeywords.clickOnElement(login_Btn);
 	}
 		
