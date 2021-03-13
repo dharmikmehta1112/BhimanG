@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.adminlogin.AdminLoginPage;
 import com.bhiman.pages.masters.BanksPage;
 
 public class MaterialsPage extends UIKeywords {
@@ -73,7 +74,11 @@ public class MaterialsPage extends UIKeywords {
 	public MaterialsPage() {
 		PageFactory.initElements(Constants.driver, this);
 	}
-  
+	public void loginToApplication() {
+		AdminLoginPage admin = new AdminLoginPage();
+		admin.login();		
+		LOG.info("Login to application successfull.");
+	}
 	public String getTextofMaterial() {
 		LOG.info("get material Name");
 		return UIKeywords.getText(materials);

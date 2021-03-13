@@ -44,6 +44,7 @@ public class UsersTest extends BaseTest {
 	@Test(groups = "Regression",description = "To verify and validate after click on 'Users' option in 'Masters'")
 	public void verifyaddUserinUsers() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
@@ -55,6 +56,7 @@ public class UsersTest extends BaseTest {
 	@Test (groups = "Regression",description = "To verify and validate after click on 'View Users btn.")
 	public void toverifyViewUsersBtn() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
@@ -68,6 +70,7 @@ public class UsersTest extends BaseTest {
 	@Test(groups = "Regression",description = "To verify and validate click on 'Copy' button on User page.")
 	public void verifyClickOnCopyButton() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		LOG.info("Verifying click on 'Copy' button in user page.");
 		String user_expectedUrl = "http://103.50.162.196/testing/user.php";
 		users.mouseHoverToMastersforuser();
@@ -80,6 +83,7 @@ public class UsersTest extends BaseTest {
 	@Test(groups = "Regression",description = "To verify and validate click on 'Excel' button on User page.")
 	public void verifyClickOnExcelButton() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		LOG.info("Verifying click on ''Excel' button in user page.");
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -96,6 +100,7 @@ public class UsersTest extends BaseTest {
 	public static void verifyClickOnCSVButton() {
 		LOG.info("Verifying click on 'CSV' button in User page.");
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.actual = "Users.csv";
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -111,6 +116,7 @@ public class UsersTest extends BaseTest {
 	public static void verifyClickOnPDFButton() {
 		LOG.info("Verifying click on 'CSV' button in User page.");
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.actual = "Users.pdf";
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -126,6 +132,7 @@ public class UsersTest extends BaseTest {
 	public static void verifyPrintButton() {
 		LOG.info("Verifying click on 'Print' button in User page.");
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		//Constants.actual = "Users.pdf";
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -138,6 +145,7 @@ public class UsersTest extends BaseTest {
 	public void verifySearchBoxWithInValidText() {
 		LOG.info("Entering invalid text on 'Search' textbox in User page.");
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.sarchonUsersSearchBox(PropertyReader.getLocatorValue("Users_search_invalid_text"));		
@@ -150,6 +158,7 @@ public class UsersTest extends BaseTest {
 	public void verifySearchBoxWithValidText() {
 		LOG.info("Entering valid text on 'Search' textbox in Users page.");
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		String value=PropertyReader.getLocatorValue("Users_search_valid_text");
@@ -159,6 +168,7 @@ public class UsersTest extends BaseTest {
 	@Test (groups = "Regression",description = "To verify save button. when all field is blank.")
 	public void toVerifySavebtnWhenAlltheFieldAreBlank() {	
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
@@ -176,6 +186,7 @@ public class UsersTest extends BaseTest {
 	@Test (groups = "Regression",description = "To verify and validate Save button. when enter a Valid entry.")
 	public void endToendTestforUserenterALLValidData() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
@@ -208,6 +219,7 @@ public class UsersTest extends BaseTest {
 	@Test (groups = "Regression",description = "To verify when enter a In-Valid user Name.")
 	public void toverifyUserEnterInvaldUsername() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -223,23 +235,13 @@ public class UsersTest extends BaseTest {
 	@Test (groups = "Regression",description = "To verify users enter a In-Valid mobile no .")
 	public void toverifySavebtnWhenEnterInvaldMobileNo() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		users.clickOnAddUsers();
 		String value = PropertyReader.getLocatorValue("User_mobile_No");
-//		if(value !=null  ) {
-//			users.enterMobileNo(value);
-//			Constants.flag = true;
-//		} 
-//		if (value.length()<=10) {
-//			users.enterMobileNo(value);
-//			Constants.flag = true;
-//		}
-//		if (value.matches("\\d{10}") ) {
-//			users.enterMobileNo(value);
-//			Constants.flag = true;
-//		}
+
 		if ((value !=null) && (value.length()<=10) && (value.matches("\\d{10}") ) ) {
 			users.enterMobileNo(value);
 			Constants.flag = true;
@@ -251,6 +253,7 @@ public class UsersTest extends BaseTest {
 	@Test (groups = "Regression",description = "To verify users  enter a In-Valid Email_id .")
 	public void toverifyInvaldEmailId() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -268,6 +271,7 @@ public class UsersTest extends BaseTest {
 	@Test (groups = "Regression",description = "To verify users enter a  in valid joining date format")
 	public void toverifyvalidDateFormat() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -285,6 +289,7 @@ public class UsersTest extends BaseTest {
 	@Test(groups = "Regression",description = "To verify users enter valid bank name for user")
 	public void toVerifyValidBankNameforuser() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -300,6 +305,7 @@ public class UsersTest extends BaseTest {
 	@Test(groups = "Regression",description = "To verify users enter valid Account no for user Bank")
 	public void toVerifyValidAccountNumberforUserBank() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -315,6 +321,7 @@ public class UsersTest extends BaseTest {
 	@Test (groups = "Regression",description = "To verify users enter valid IFSC code for user Bank")
 	public void toVerifyValidIFSCCodeforUserBank() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -331,6 +338,7 @@ public class UsersTest extends BaseTest {
 	@Test (description = "To verify users enter valid father name format")
 	public void toVerifyValidFatherNameformatEnter() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -346,6 +354,7 @@ public class UsersTest extends BaseTest {
 	@Test(description = "To verify users enter a Valid Father mobile no .")
 	public void toVerifyValidFatherMobileNo() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -362,6 +371,7 @@ public class UsersTest extends BaseTest {
 	@Test (description = "To verify users enter a Valid occupation string format")
 	public void toVrifyuserEntervalidFatherOccupationFormat() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -377,6 +387,7 @@ public class UsersTest extends BaseTest {
 	@Test(description = "To verify users enter a Valid password format")
 	public void toVerifyUserEnterValidPassword() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -392,6 +403,7 @@ public class UsersTest extends BaseTest {
 	@Test (description = "To verify users enter a Valid Confirm password format")
 	public void toVerifyUserEnterConfirmPasswordFormat() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -408,6 +420,7 @@ public class UsersTest extends BaseTest {
 	@Test
 	public void toCompairpasswordandconfirmpassword() {
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		Constants.flag = false;
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
@@ -430,6 +443,7 @@ public class UsersTest extends BaseTest {
 	public void TableDataTest() {
 
 		UsersPage users = new UsersPage();
+		users.loginToApplication();
 		users.mouseHoverToMastersforuser();
 		users.clickOnUsers();
 		
