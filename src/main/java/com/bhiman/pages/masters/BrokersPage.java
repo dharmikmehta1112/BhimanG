@@ -14,6 +14,7 @@ import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIAlerts;
 import com.bhiman.keywords.UIKeywords;
 import com.bhiman.keywords.WaitsInHelp;
+import com.bhiman.pages.adminlogin.AdminLoginPage;
 
 public class BrokersPage extends UIKeywords{
 	private static final Logger LOG = Logger.getLogger(BrokersPage.class);
@@ -117,9 +118,10 @@ public class BrokersPage extends UIKeywords{
 
 	// Page Object Methods for Brokers page in Masters
 	
-	
+	AdminLoginPage alp=new AdminLoginPage();
 	
 		public void mouseHoverToMastersForBrokersPage() {
+			alp.login();
 			LOG.info("Master->Brokers: Mouse Hover to Masters");
 			WaitsInHelp.threadSleepInMilliSeconds(2000);
 			UIKeywords.mouseHover(masters);
@@ -231,12 +233,13 @@ public class BrokersPage extends UIKeywords{
 			UIKeywords.enterText(brokersJoining_date,"24-02-2021");
 			UIKeywords.selectByTextFromDropdown(brokersBlood_group, "B positive");			
 			UIKeywords.selectByTextFromDropdown(brokersStatus, "Active");
+			scrollPageOperation();
 			UIKeywords.enterText(brokersBank_name,"HDFC Bank");
 			UIKeywords.enterText(brokersAccount_no, "12345678909");
-			UIKeywords.enterText(brokersIFSC_code, "HDFC1983456");
+			UIKeywords.enterText(brokersIFSC_code, "HDFC0000001");
 			UIKeywords.enterText(brokersResume,Constants.basePath+"\\src\\main\\resources\\Bhiman Requirements\\RESUME.pdf");
-			UIKeywords.enterText(brokersAgreement,Constants.basePath+"\\src\\main\\resources\\Bhiman Requirements\\Agreement.docx");
-			UIKeywords.enterText(brokersKYC,Constants.basePath+"\\src\\main\\resources\\Bhiman Requirements\\KYC.docx");
+			UIKeywords.enterText(brokersAgreement,Constants.basePath+"\\src\\main\\resources\\Bhiman Requirements\\Agreement.pdf");
+			UIKeywords.enterText(brokersKYC,Constants.basePath+"\\src\\main\\resources\\Bhiman Requirements\\KYC.jpg");
 			LOG.info("Values added to Add Broker form");
 			WaitsInHelp.threadSleepInMilliSeconds(1000);
 			
