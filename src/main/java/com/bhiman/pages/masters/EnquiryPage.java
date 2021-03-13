@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIAlerts;
 import com.bhiman.keywords.UIKeywords;
+import com.bhiman.pages.adminlogin.AdminLoginPage;
 
 public class EnquiryPage extends UIKeywords{
 	private static final Logger LOG = Logger.getLogger(EnquiryPage.class);
@@ -23,9 +24,14 @@ public class EnquiryPage extends UIKeywords{
 	
 	public EnquiryPage(){
 		PageFactory.initElements(Constants.driver, this);
+		
 	}
 	
-	
+	public void loginToApplication() {
+		AdminLoginPage admin = new AdminLoginPage();
+		admin.login();		
+		LOG.info("Login to application successfull.");
+	}
 	//  Locators for Enquire page in Masters 
 		
 		@FindBy(xpath ="//span[text()='Masters']")			 

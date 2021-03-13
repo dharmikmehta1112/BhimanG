@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -22,13 +23,15 @@ import com.bhiman.test.BhimanListeners;
 public class EnquiryTests extends BaseTest {
 
 	private static final Logger LOG = Logger.getLogger(EnquiryTests.class);
+	EnquiryPage enquiry;
 	
-
+    
 	@Test(priority=1, description = "Verify user should be able to navigate to enquiry page through master navigation tab")
 	public void tc_01() throws InterruptedException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		// EnquiryPage enquiry = new EnquiryPage();
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
 		enquiry.goToEnquiryPage();
 		
 		Assert.assertTrue(Constants.driver.getCurrentUrl().contains("enquiry"));
@@ -39,7 +42,8 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=2, description = "Verify user should be able to see Copy, Excel, CSV, PDF and Print buttons on enquiry page")
 	public void tc_02() throws InterruptedException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
 		
 		enquiry.goToEnquiryPage();
 		
@@ -52,8 +56,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=3, description = "Verify user should be able to see 'Add Enquiry' button on enquiry page")
 	public void tc_03() throws InterruptedException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		
 		Assert.assertTrue(enquiry.isAddEnquiryButtonDisplayed());
@@ -63,8 +68,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=4, description = "Verify user should be able to see existing added enquiries in a table on enquiry page")
 	public void tc_04() throws InterruptedException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		
 		Assert.assertTrue(enquiry.isEnquiryTableDispalyed());
@@ -74,8 +80,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=5, description = "Verify user should be able to add enquiry using 'Add Enquiry' button on enquiry page")
 	public void tc_05() throws InterruptedException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		
 		enquiry.clickOnAddEnquiry();
@@ -100,8 +107,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=6, description = "Verify user should be able to edit existing enquiry using 'Edit Enquiry' icon on enquiry page")
 	public void tc_06() throws InterruptedException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		//Thread.sleep(5000);
 		enquiry.clickOnEditEnquiryIcon(1);
@@ -125,8 +133,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=7, description = "Verify user should be able to search data from enquiry table by entering search text into searchTextBox on enquiry page")
 	public void tc_07() throws InterruptedException, UnsupportedFlavorException, IOException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		String searchText = "Fareen";
 		enquiry.enterTextIntoSearchBox(searchText);
@@ -154,8 +163,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=8, description = "Verify user should be able to delete existing enquiry using 'Delete Enquiry' icon on enquiry page")
 	public void tc_08() throws InterruptedException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		
 		enquiry.clickOnDeleteEnquiryIcon(1);
@@ -169,8 +179,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=9, description = "Verify user should be able to copy table data by clicking on Copy button on enquiry page")
 	public void tc_09() throws InterruptedException, UnsupportedFlavorException, IOException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		
 		enquiry.clickOnCopyButton();
@@ -195,8 +206,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=10, description = "Verify user should be able to download table data in excel format by clicking on Excel button on enquiry page")
 	public void tc_10() throws InterruptedException, UnsupportedFlavorException, IOException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		
 		String userPath = System.getProperty("user.home"); // "C:\\Users\\fareen"
@@ -218,8 +230,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=11, description = "Verify user should be able to download table data in csv format by clicking on CSV button on enquiry page")
 	public void tc_11() throws InterruptedException, UnsupportedFlavorException, IOException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		
 		String userPath = System.getProperty("user.home");
@@ -241,8 +254,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=12, description = "Verify user should be able to download table data in pdf format by clicking on PDF button on enquiry page")
 	public void tc_12() throws InterruptedException, UnsupportedFlavorException, IOException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		
 		String userPath = System.getProperty("user.home");
@@ -266,8 +280,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=13, description = "Verify user should be get validation error message when user clicks on submit button while adding enquiring for invalid data")
 	public void tc_13() throws InterruptedException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		//Thread.sleep(5000);
 		enquiry.clickOnAddEnquiry();
@@ -283,8 +298,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=14, description = "Verify user should be get validation error message when user enter less than 10 digits for mobile number")
 	public void tc_14() throws InterruptedException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		//Thread.sleep(5000);
 		enquiry.clickOnAddEnquiry();
@@ -299,8 +315,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=15, description = "Verify user should be get error message when user enter invalid mobile number which does not starts with 6,7,8,9")
 	public void tc_15() throws InterruptedException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 	//	Thread.sleep(5000);
 		enquiry.clickOnAddEnquiry();
@@ -318,8 +335,9 @@ public class EnquiryTests extends BaseTest {
 	@Test(priority=16, description = "Verify user should be able to print table data by clicking on Print button on enquiry page")
 	public void tc_16() throws InterruptedException, UnsupportedFlavorException, IOException {
 		
-		EnquiryPage enquiry = new EnquiryPage();
-		
+		enquiry = new EnquiryPage();
+        enquiry.loginToApplication();
+        
 		enquiry.goToEnquiryPage();
 		
 		enquiry.clickOnPrintButton();
