@@ -19,6 +19,7 @@ public class MaterialsTest extends BaseTest {
 
 		public void toverifyClickOnMaterial() {
 			MaterialsPage material = new MaterialsPage();
+			material.loginToApplication();
 			material.clickonMaterials();
 			Constants.expected = "http://103.50.162.196/testing/material.php";
 			Constants.actual = UIKeywords.getPageUrl();
@@ -30,6 +31,7 @@ public class MaterialsTest extends BaseTest {
 
 		public void toVrifynameofmaterial() {
 			MaterialsPage material = new MaterialsPage();
+			material.loginToApplication();
 			Constants.expected="Materials";
 			Constants.actual=material.getTextofMaterial();
 			Assert.assertEquals(Constants.actual, Constants.expected);	
@@ -40,6 +42,7 @@ public class MaterialsTest extends BaseTest {
 
 		public void toVerifytextofCopyTabforMaterialPage() {
 			MaterialsPage material = new MaterialsPage();
+			material.loginToApplication();
 			material.clickonMaterials();
 			String Materialpage_copy_expected="Copy";
 			String Material_Copy_actual=material.getTextofCopyonMaterialPage();
@@ -50,6 +53,7 @@ public class MaterialsTest extends BaseTest {
 		@Test(groups = "Regression",description = "To verify and validate add material tab is clickable  ")
 		public void toVerifyaddMaterialTabisclickable() {
 			MaterialsPage material = new MaterialsPage();
+			material.loginToApplication();
 			material.clickonMaterials();
 			material.clickonaddMaterial();
 			String Materials_expectedUrl = "http://103.50.162.196/testing/material.php#";
@@ -64,6 +68,7 @@ public class MaterialsTest extends BaseTest {
 		@Test(groups = "Regression",description = "To verify and validate view material tab is clickable   ")
 		public void toverifyviewMaterialTabisclickable() {
 			MaterialsPage material = new MaterialsPage();
+			material.loginToApplication();
 			material.clickonMaterials();
 			material.clickonaddMaterial();
 			material.clickonViewMaterial();
@@ -75,6 +80,7 @@ public class MaterialsTest extends BaseTest {
 		@Test
 		public void EndtoEndTestofMaterial() {
 			MaterialsPage material = new MaterialsPage();
+			material.loginToApplication();
 			Constants.flag = false;
 			material.clickonMaterials();
 			material.clickonaddMaterial();
@@ -97,6 +103,7 @@ public class MaterialsTest extends BaseTest {
 
 		public void toVerifyDateTabonMatrialPage() {
 			MaterialsPage material = new MaterialsPage();
+			material.loginToApplication();
 			Constants.flag = false;
 			material.clickonMaterials();
 			material.clickonaddMaterial();
@@ -113,6 +120,7 @@ public class MaterialsTest extends BaseTest {
 		@Test(groups = "Regression",description = " verify and validate material name format ")
 		public void toVerifyvalidmaterialname() {
 			MaterialsPage material = new MaterialsPage();
+			material.loginToApplication();
 			Constants.flag = false;
 			material.clickonMaterials();
 			material.clickonaddMaterial();
@@ -127,6 +135,7 @@ public class MaterialsTest extends BaseTest {
 		@Test(groups = "Regression",description = " verify and in validate material name format  ")
 		public void toVerifyinvalidMaterialNameformat() {
 			MaterialsPage material = new MaterialsPage();
+			material.loginToApplication();
 			Constants.flag = false;
 			material.clickonMaterials();
 			material.clickonaddMaterial();
