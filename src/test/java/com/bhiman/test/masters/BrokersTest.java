@@ -7,19 +7,20 @@ import java.io.File;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIKeywords;
 import com.bhiman.pages.masters.BrokersPage;
 import com.bhiman.test.BaseTest;
+import com.bhiman.test.BhimanListeners;
 import com.bhiman.utility.PropertyReader;
 
 
-
+@Listeners(BhimanListeners.class)
 public class BrokersTest extends BaseTest {
-	private static final Logger LOG = Logger.getLogger(BanksTest.class);
+	private static final Logger LOG = Logger.getLogger(BrokersTest.class);
 
 	//Brokers broker=PageFactory.initElements(Constants.driver, Brokers.class);
 	//TC-01
@@ -157,7 +158,7 @@ public class BrokersTest extends BaseTest {
 			brokers.clickOnAddBroker();
 			brokers.scrollPageOperation();
 			brokers.fillAddBrokerForm();
-			brokers.scrollPageOperation();
+			//brokers.scrollPageOperation();
 			brokers.clickOnSubmit();
 			Constants.expected = "Broker Added.";
 			Constants.actual = Constants.driver.findElement(By.xpath("//div[contains(text(),\"Broker Added.\")]")).getText();

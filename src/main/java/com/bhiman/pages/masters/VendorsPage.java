@@ -9,6 +9,7 @@ import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIAlerts;
 import com.bhiman.keywords.UIKeywords;
 import com.bhiman.keywords.WaitsInHelp;
+import com.bhiman.pages.adminlogin.AdminLoginPage;
 
 public class VendorsPage {
 	
@@ -88,10 +89,13 @@ public class VendorsPage {
 		private static WebElement vendorsCancelBtn;
 
 	
-
+     
 	// Page Object Methods for Vendors page in Masters
+		
+		AdminLoginPage alp=new AdminLoginPage();
 
 		public void mouseHoverToMasters() {
+			alp.login();
 			LOG.info("Master->Vendors: Mouse Hover to Masters");
 			UIKeywords.mouseHover(masters);
 		}
