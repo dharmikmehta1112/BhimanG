@@ -383,27 +383,23 @@ public class UIKeywords {
 	} // end of method
 
 	/**
-	 * Takes screenshot
+	 * Takes full page screenshot using Ashot Library 
 	 * 
 	 * @param filePath as {@code String}.
 	 * @param screenshotName as {@code String}.
 	 * @throws IOException 
 	 */
 	public static void captureScreenshot(String filePath, String screenshotName) throws IOException {
-		
 		// will create object only if shot is null, otherwise will use existing created instance
 		if(Constants.shot == null){
 			Constants.shot = new AShot();
 		}
-
 		// specify screenshot capture strategy - full page screenshot in this case
 		Screenshot screenshot = Constants.shot.shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(Constants.driver);
-		
 		//Save the screenshot and sepecify the image format
 		try {
 			ImageIO.write(screenshot.getImage(), "jpg", new File(filePath+"\\"+screenshotName));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 //		//Take the screenshot
@@ -419,33 +415,28 @@ public class UIKeywords {
 	} // end of method
 	
 	/**
-	 * Takes screenshot
+	 * Takes screenshot of any webelement on webpage
 	 * 
 	 * @param filePath as {@code String}.
 	 * @param screenshotName as {@code String}.
 	 * @throws IOException 
 	 */
 	public static void captureScreenshot(WebElement element, String screenshotName) throws IOException {
-		
 		// will create object only if shot is null, otherwise will use existing created instance
 		if(Constants.shot == null){
 			Constants.shot = new AShot();
 		}
-
 		Date date = new Date();
 		String name = date.getDate() + "_" + date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds()+".jpg";
 		String filePath = Constants.basePath+"\\screenshots\\elements";
 		// specify screenshot capture strategy - full page screenshot in this case
 		Screenshot screenshot = Constants.shot.shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(Constants.driver,element);
-		
 		//Save the screenshot and sepecify the image format
 		try {
 			ImageIO.write(screenshot.getImage(), "jpg", new File(filePath+"\\"+screenshotName+"_"+name));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 
 	} // end of method
 
