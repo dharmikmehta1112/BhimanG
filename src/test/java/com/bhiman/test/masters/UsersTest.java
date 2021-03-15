@@ -1,25 +1,19 @@
 package com.bhiman.test.masters;
 
-import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIKeywords;
-import com.bhiman.pages.adminlogin.AdminLoginPage;
-import com.bhiman.pages.masters.BanksPage;
 import com.bhiman.pages.masters.UsersPage;
 import com.bhiman.test.BaseTest;
 import com.bhiman.test.BhimanListeners;
