@@ -9,6 +9,7 @@ import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIAlerts;
 import com.bhiman.keywords.UIKeywords;
 import com.bhiman.keywords.WaitsInHelp;
+import com.bhiman.pages.adminlogin.AdminLoginPage;
 
 public class BranchesPage {
 	
@@ -97,6 +98,12 @@ public class BranchesPage {
 	}
 
 // Page Object Methods for Banks page in Masters
+	
+	public void loginToApplication() {
+		AdminLoginPage admin = new AdminLoginPage();
+		admin.login();		
+		LOG.info("Login to application successfull.");
+	}
 
 	public void mouseHoverToMasters() {
 		LOG.info("At Index page mouse hover to Masters");

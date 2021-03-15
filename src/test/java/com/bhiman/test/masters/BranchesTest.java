@@ -6,14 +6,17 @@ import java.io.File;
 
 import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIKeywords;
 import com.bhiman.pages.masters.BranchesPage;
 import com.bhiman.test.BaseTest;
+import com.bhiman.test.BhimanListeners;
 import com.bhiman.utility.PropertyReader;
 
+@Listeners(BhimanListeners.class)
 public class BranchesTest extends BaseTest {
 	
 	private static final Logger LOG = Logger.getLogger(BranchesTest.class);
@@ -22,6 +25,7 @@ public class BranchesTest extends BaseTest {
 	public void verifyBranchesInMasters() {
 		LOG.info("Verify Branches option in Masters.");
 		BranchesPage branch = new BranchesPage();
+		branch.loginToApplication();
 		branch.mouseHoverToMasters();
 		Constants.expected = "Branches";
 		Constants.actual = branch.getTextOfBranches();
@@ -32,6 +36,7 @@ public class BranchesTest extends BaseTest {
 	public void verifyClickOnBanksInMasters() {
 		LOG.info("Verify click on 'Branches' option in Masters");
 		BranchesPage branch = new BranchesPage();
+		branch.loginToApplication();
 		branch.mouseHoverToMasters();
 		branch.clickOnBranches();
 		Constants.actual = UIKeywords.getPageUrl();
@@ -43,6 +48,7 @@ public class BranchesTest extends BaseTest {
 	public void verifyClickOnCopyButton() {	
 		LOG.info("Verifying click on 'Copy' button in Branches page.");
 		BranchesPage branch = new BranchesPage();
+		branch.loginToApplication();
 		branch.mouseHoverToMasters();
 		branch.clickOnBranches();
 		branch.clickOnCopyButton();
@@ -55,6 +61,7 @@ public class BranchesTest extends BaseTest {
 	public static void verifyClickOnExcelButton() {
 		LOG.info("Verifying click on 'Excel' button in Branches page.");
 		BranchesPage branch = new BranchesPage();
+		branch.loginToApplication();
 		branch.mouseHoverToMasters();
 		branch.clickOnBranches();
 		branch.clickOnExcelButton();
@@ -69,6 +76,7 @@ public class BranchesTest extends BaseTest {
 	public static void verifyClickOnCSVButton() {
 		LOG.info("Verifying click on 'CSV' button in Branches page.");
 		BranchesPage branch = new BranchesPage();
+		branch.loginToApplication();
 		branch.mouseHoverToMasters();
 		branch.clickOnBranches();
 		branch.clickOnCSVButton();
@@ -83,6 +91,7 @@ public class BranchesTest extends BaseTest {
 	public static void verifyClickOnPDFButton() {
 		LOG.info("Verifying click on 'PDF' button in Branches page.");
 		BranchesPage branch = new BranchesPage();
+		branch.loginToApplication();
 		branch.mouseHoverToMasters();
 		branch.clickOnBranches();
 		branch.clickOnPDFButton();
@@ -97,6 +106,7 @@ public class BranchesTest extends BaseTest {
 	public static void verifyClickOnPrintButton() {
 		LOG.info("Verifying click on 'Print' button in Branches page.");
 		BranchesPage branch = new BranchesPage();
+		branch.loginToApplication();
 		branch.mouseHoverToMasters();
 		branch.clickOnBranches();
 		branch.clickOnPrintButton();
@@ -109,6 +119,7 @@ public class BranchesTest extends BaseTest {
 	public void verifySearchBoxWithValidText() {
 		LOG.info("Entering valid text on 'Search' textbox in Branches page.");
 		BranchesPage branch = new BranchesPage();
+		branch.loginToApplication();
 		branch.mouseHoverToMasters();
 		branch.clickOnBranches();
 		branch.enterTextOnSearchBox(PropertyReader.getLocatorValue("branches_search_valid_text"));
@@ -120,6 +131,7 @@ public class BranchesTest extends BaseTest {
 	public void verifySearchBoxWithInValidText() {
 		LOG.info("Entering invalid text on 'Search' textbox in Branches page.");
 		BranchesPage branch = new BranchesPage();
+		branch.loginToApplication();
 		branch.mouseHoverToMasters();
 		branch.clickOnBranches();
 		branch.enterTextOnSearchBox(PropertyReader.getLocatorValue("branches_search_invalid_text"));
@@ -132,6 +144,7 @@ public class BranchesTest extends BaseTest {
 	public static void verifyClickOnEditIcon() {
 		LOG.info("Verifying click on 'Edit' icon of Action column of Bank Data Table in Branches page.");
 		BranchesPage branch = new BranchesPage();
+		branch.loginToApplication();
 		branch.mouseHoverToMasters();
 		branch.clickOnBranches();
 		branch.clickOnEditIcon();

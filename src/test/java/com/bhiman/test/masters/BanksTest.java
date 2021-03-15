@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 import com.bhiman.keywords.Constants;
 import com.bhiman.keywords.UIKeywords;
-import com.bhiman.pages.adminlogin.AdminLoginPage;
 import com.bhiman.pages.masters.BanksPage;
 import com.bhiman.test.BaseTest;
 import com.bhiman.test.BhimanListeners;
@@ -25,13 +24,8 @@ public class BanksTest extends BaseTest {
 	@Test (groups = {"Regression"}, description = "To verify and validate 'Banks' option in 'Masters'.")
 	public void verifyBanksInMasters() {
 		LOG.info("Verify Banks option in Masters.");
-		AdminLoginPage admin = new AdminLoginPage();
 		BanksPage banks = new BanksPage();
-		admin.login();
-		Constants.expected = "http://103.50.162.196/testing/index.php";
-		Constants.actual = UIKeywords.getPageUrl();
-		Assert.assertEquals(Constants.actual, Constants.expected, "Login to application failed due to invalid URL.");
-		LOG.info("Login to application successfully.");
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();
 		Constants.expected = "Banks";
 		Constants.actual = banks.getTextOfBanks();
@@ -42,6 +36,7 @@ public class BanksTest extends BaseTest {
 	public void verifyClickOnBanksInMasters() {
 		LOG.info("Verify click on 'Banks' option in Masters");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();
 		banks.clickOnBanks();
 		Constants.actual = UIKeywords.getPageUrl();
@@ -53,6 +48,7 @@ public class BanksTest extends BaseTest {
 	public void verifyClickOnCopyButton() {	
 		LOG.info("Verifying click on 'Copy' button in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnCopyButton();
@@ -65,6 +61,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyClickOnExcelButton() {
 		LOG.info("Verifying click on 'Excel' button in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		Constants.flag = false;
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
@@ -80,6 +77,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyClickOnCSVButton() {
 		LOG.info("Verifying click on 'CSV' button in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		Constants.flag = false;
 		Constants.actual = "Banks.csv";
 		banks.mouseHoverToMasters();	
@@ -96,6 +94,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyClickOnPDFButton() {
 		LOG.info("Verifying click on 'PDF' button in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		Constants.flag = false;
 		Constants.actual = "Banks.pdf";
 		banks.mouseHoverToMasters();	
@@ -112,6 +111,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyClickOnPrintButton() {
 		LOG.info("Verifying click on 'Print' button in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnPrintButton();
@@ -124,6 +124,7 @@ public class BanksTest extends BaseTest {
 	public void verifySearchBoxWithValidText() {
 		LOG.info("Entering valid text on 'Search' textbox in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.enterTextOnSearchBox(PropertyReader.getLocatorValue("banks_search_valid_text"));
@@ -135,6 +136,7 @@ public class BanksTest extends BaseTest {
 	public void verifySearchBoxWithInValidText() {
 		LOG.info("Entering invalid text on 'Search' textbox in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.enterTextOnSearchBox(PropertyReader.getLocatorValue("banks_search_invalid_text"));
@@ -147,6 +149,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyClickOnEditIcon() {
 		LOG.info("Verifying click on 'Edit' icon of Action column of Bank Data Table in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnEditIcon();
@@ -158,6 +161,7 @@ public class BanksTest extends BaseTest {
 		LOG.info("Verifying click on 'Delete' icon of Action column of Bank Data Table in Banks page.");
 		BanksPage banks = new BanksPage();
 		banks.mouseHoverToMasters();	
+		banks.loginToApplication();
 		banks.clickOnBanks();
 		banks.clickOnDeleteIcon();
 		Constants.expected = "Are you sure you want to Delete the Bank Details?";
@@ -169,6 +173,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyClickOkOnAlertAfterClickOnDeleteIcon() {
 		LOG.info("Verifying to accept alert after click on 'Delete' icon of Action column of Bank Data Table in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnDeleteIcon();
@@ -181,6 +186,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyClickCancelOnAlertAfterClickOnDeleteIcon() {
 		LOG.info("Verifying to dismiss alert after click on 'Delete' icon of Action column of Bank Data Table in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnDeleteIcon();
@@ -193,6 +199,7 @@ public class BanksTest extends BaseTest {
 	public void verifyClickOnAddBankButton() {
 		LOG.info("Verifying click on 'Add Bank' button in Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnAddBankButton();
@@ -205,6 +212,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyBankNameAfterClickOnAddBank() {
 		LOG.info("Verifying input to 'Bank Name' to accept only blank space, lowercase and uppercase alphabets.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		Constants.flag = false;
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
@@ -221,6 +229,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyAccountNameAfterClickOnAddBank() {
 		LOG.info("Verifying input to 'Account Name' to accept only blank space, lowercase and uppercase alphabets.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		Constants.flag = false;
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
@@ -237,6 +246,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyAccountNoAfterClickOnAddBank() {
 		LOG.info("Verifying input to 'Account No.' to accept input as 5 and more than 5 digits in Add Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		Constants.flag = false;
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
@@ -254,6 +264,7 @@ public class BanksTest extends BaseTest {
 	public void verifyBankAccountTypeToSelectSavingsAfterClickOnAddBank() {
 		LOG.info("Selecting 'Bank Account Type' as 'Savings' in Add Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnAddBankButton();
@@ -268,6 +279,7 @@ public class BanksTest extends BaseTest {
 	public void verifyBankAccountTypeToSelectCurrentAfterClickOnAddBank() {
 		LOG.info("Selecting 'Bank Account Type' as 'Current' in Add Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnAddBankButton();
@@ -282,6 +294,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyIFSCCodeAfterClickOnAddBank() {
 		LOG.info("Verifying input to 'IFSC Code' to accept input as 8 and more than 8 alphanumeric values in Add Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnAddBankButton();
@@ -296,6 +309,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyMICRCodeAfterClickOnAddBank() {
 		LOG.info("Verifying input to 'MICR Code' to accept input as only 9 alphanumeric values in Add Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnAddBankButton();
@@ -310,6 +324,7 @@ public class BanksTest extends BaseTest {
 	public static void verifySubmitAfterClickOnAddBank() {
 		LOG.info("Verifying click on 'Submit' buttton in Add Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnAddBankButton();
@@ -323,6 +338,7 @@ public class BanksTest extends BaseTest {
 	public static void verifyCancelAfterClickOnAddBank() {
 		LOG.info("Verifying click on 'Cancel' buttton in Add Banks page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnAddBankButton();
@@ -336,6 +352,7 @@ public class BanksTest extends BaseTest {
 	public static void fillAddBankFormAndClickOnSubmit() {
 		LOG.info("Filling add bank form.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnAddBankButton();
@@ -352,6 +369,7 @@ public class BanksTest extends BaseTest {
 	public static void fillAddBankFormAndClickOnCancel() {
 		LOG.info("Filling add bank form.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnAddBankButton();
@@ -368,6 +386,7 @@ public class BanksTest extends BaseTest {
 	public void verifyClickOnViewBankButtonAfterClickOnAddBank() {
 		LOG.info("Verifying click on 'View Bank' button in Add Bank page.");
 		BanksPage banks = new BanksPage();
+		banks.loginToApplication();
 		banks.mouseHoverToMasters();	
 		banks.clickOnBanks();
 		banks.clickOnAddBankButton();
